@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ReportesPeajes
 {
-    public partial class AboutBox1 : KryptonForm
+    public partial class AboutBox1 : Form
     {
         private static AboutBox1 frm = null;
         public static AboutBox1 Instance()

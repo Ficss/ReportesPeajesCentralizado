@@ -82,17 +82,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2.Panel)).BeginInit();
             this.kryptonHeaderGroup2.Panel.SuspendLayout();
-            this.kryptonHeaderGroup2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
-            this.kryptonHeaderGroup1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3.Panel)).BeginInit();
             this.kryptonHeaderGroup3.Panel.SuspendLayout();
-            this.kryptonHeaderGroup3.SuspendLayout();
             this.SuspendLayout();
             // 
             // notificacionInicio
@@ -134,10 +131,16 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // kryptonManager1
+            // 
+            this.kryptonManager1.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.Office2010Blue;
+            // 
             // buttonSpecHeaderGroup1
             // 
             this.buttonSpecHeaderGroup1.Checked = ComponentFactory.Krypton.Toolkit.ButtonCheckState.Unchecked;
             this.buttonSpecHeaderGroup1.ColorMap = System.Drawing.Color.Black;
+            this.buttonSpecHeaderGroup1.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
+            this.buttonSpecHeaderGroup1.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.buttonSpecHeaderGroup1.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp;
             this.buttonSpecHeaderGroup1.UniqueName = "68A2D9E64DDB487B78B47F03D2851820";
             // 
@@ -145,6 +148,8 @@
             // 
             this.buttonSpecLeft.Checked = ComponentFactory.Krypton.Toolkit.ButtonCheckState.Unchecked;
             this.buttonSpecLeft.ColorMap = System.Drawing.Color.Black;
+            this.buttonSpecLeft.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
+            this.buttonSpecLeft.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.buttonSpecLeft.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp;
             this.buttonSpecLeft.UniqueName = "C071A30739304D5536A050ED622C4DDC";
             // 
@@ -260,17 +265,18 @@
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
             this.indexToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.indexToolStripMenuItem.Text = "Ay&uda de Sistema Reportes";
+            this.indexToolStripMenuItem.Visible = false;
             this.indexToolStripMenuItem.Click += new System.EventHandler(this.indexToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(132, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(214, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.aboutToolStripMenuItem.Text = "&Acerca de...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -278,6 +284,8 @@
             // 
             this.buttonSpecHeaderGroup2.Checked = ComponentFactory.Krypton.Toolkit.ButtonCheckState.Unchecked;
             this.buttonSpecHeaderGroup2.ColorMap = System.Drawing.Color.Black;
+            this.buttonSpecHeaderGroup2.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
+            this.buttonSpecHeaderGroup2.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.buttonSpecHeaderGroup2.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp;
             this.buttonSpecHeaderGroup2.UniqueName = "C071A30739304D5536A050ED622C4DDC";
             // 
@@ -285,6 +293,8 @@
             // 
             this.buttonSpecHeaderGroup5.Checked = ComponentFactory.Krypton.Toolkit.ButtonCheckState.Unchecked;
             this.buttonSpecHeaderGroup5.ColorMap = System.Drawing.Color.Black;
+            this.buttonSpecHeaderGroup5.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
+            this.buttonSpecHeaderGroup5.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.buttonSpecHeaderGroup5.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp;
             this.buttonSpecHeaderGroup5.UniqueName = "C071A30739304D5536A050ED622C4DDC";
             // 
@@ -344,6 +354,7 @@
             this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox2.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonTextBox2.TabIndex = 39;
             this.kryptonTextBox2.Text = "Bienvenido al Sistema de reportes.\r\n\r\nUse los botones de flecha para expandir y c" +
     "olapsar las secciones de arriba.";
@@ -366,7 +377,7 @@
             this.kryptonHeaderGroup2.Location = new System.Drawing.Point(0, 238);
             this.kryptonHeaderGroup2.Name = "kryptonHeaderGroup2";
             // 
-            // kryptonHeaderGroup2.Panel
+            // 
             // 
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.kryptonLinkLabel4);
             this.kryptonHeaderGroup2.Size = new System.Drawing.Size(243, 67);
@@ -378,6 +389,8 @@
             // 
             this.buttonSpecHeaderGroup4.Checked = ComponentFactory.Krypton.Toolkit.ButtonCheckState.Unchecked;
             this.buttonSpecHeaderGroup4.ColorMap = System.Drawing.Color.Black;
+            this.buttonSpecHeaderGroup4.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
+            this.buttonSpecHeaderGroup4.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.buttonSpecHeaderGroup4.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp;
             this.buttonSpecHeaderGroup4.UniqueName = "68A2D9E64DDB487B78B47F03D2851820";
             // 
@@ -410,7 +423,7 @@
             this.kryptonHeaderGroup1.Location = new System.Drawing.Point(0, 119);
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
             // 
-            // kryptonHeaderGroup1.Panel
+            // 
             // 
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.kryptonLinkLabel3);
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.kryptonLinkLabel2);
@@ -424,6 +437,8 @@
             // 
             this.buttonSpecHeaderGroup3.Checked = ComponentFactory.Krypton.Toolkit.ButtonCheckState.Unchecked;
             this.buttonSpecHeaderGroup3.ColorMap = System.Drawing.Color.Black;
+            this.buttonSpecHeaderGroup3.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
+            this.buttonSpecHeaderGroup3.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.buttonSpecHeaderGroup3.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp;
             this.buttonSpecHeaderGroup3.UniqueName = "C071A30739304D5536A050ED622C4DDC";
             // 
@@ -476,7 +491,7 @@
             this.kryptonHeaderGroup3.Location = new System.Drawing.Point(0, 0);
             this.kryptonHeaderGroup3.Name = "kryptonHeaderGroup3";
             // 
-            // kryptonHeaderGroup3.Panel
+            // 
             // 
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonLinkLabel5);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonLinkLabel6);
@@ -515,19 +530,16 @@
             this.kryptonHeaderGroup2.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup2.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2)).EndInit();
-            this.kryptonHeaderGroup2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
             this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
-            this.kryptonHeaderGroup1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3.Panel)).EndInit();
             this.kryptonHeaderGroup3.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup3.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3)).EndInit();
-            this.kryptonHeaderGroup3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
