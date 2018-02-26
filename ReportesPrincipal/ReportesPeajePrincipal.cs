@@ -104,39 +104,21 @@ namespace ReportesPrincipal
         {
             try
             {
-                string formated = DateTime.Now.Day.ToString() + '/' + dtpMes.Value.Month.ToString() + '/' + dtpAn.Value.Year.ToString();
-                DateTime fecha_inicial = Convert.ToDateTime(formated);
+                string formated = dtpMes.Value.Month.ToString() + '/' + dtpAn.Value.Year.ToString();
+                DateTime date = Convert.ToDateTime(formated);
+                DateTime firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
-                string fecha_finalF = null; //DateTime.Now.Day.ToString() + '/' + dtpMes.Value.AddMonths(1).ToString("MM") + '/' + dtpAn.Value.Year.ToString();
-                DateTime fecha_final = DateTime.MinValue; //Convert.ToDateTime(fecha_finalF);
+                DateTime fecha_inicial = firstDayOfMonth.Date.AddDays(-1);
 
-                string fecha_i = null;
-                string fecha_f = null;
-
-                if (dtpMes.Value.Month == 12)
-                {
-                    fecha_finalF = DateTime.Now.Day.ToString() + '/' + dtpMes.Value.Month.ToString() + '/' + dtpAn.Value.AddYears(1).ToString("yyyy"); //kryptonDateTimePicker3.Value.Date.AddYears(1).AddDays(-1);
-                }
-                else
-                {
-                    fecha_finalF = DateTime.Now.Day.ToString() + '/' + dtpMes.Value.AddMonths(1).ToString("MM") + '/' + dtpAn.Value.Year.ToString(); //kryptonDateTimePicker3.Value.Date.AddMonths(1).AddDays(-1);
-                }
-                fecha_final = Convert.ToDateTime(fecha_finalF);
-                fecha_inicial = fecha_inicial.Date.AddDays(-1);
-                fecha_final = fecha_final.Date.AddDays(-1);
-                fecha_i = fecha_inicial.ToString("dd/MM/yyyy");
-                fecha_f = fecha_final.ToString("dd/MM/yyyy");
-
-                var firstDayOfMonth = fecha_i;
-                var lastDayOfMonth = fecha_f;
 
                 using (SqlConnection con = Consultas.conectarPrincipal())
                 {
                     using (SqlCommand cmd = new SqlCommand("sp_informe_recaudacion_mensual", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_i);
-                        cmd.Parameters.Add("@v_fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_f);
+                        cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_inicial).ToShortDateString();
+                        cmd.Parameters.Add("@v_fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
@@ -145,8 +127,8 @@ namespace ReportesPrincipal
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
-                new ReportParameter("desde", firstDayOfMonth),
-                new ReportParameter("hasta", lastDayOfMonth),
+                new ReportParameter("desde", firstDayOfMonth.ToShortDateString()),
+                new ReportParameter("hasta", lastDayOfMonth.ToShortDateString()),
                 };
 
                 reportViewer2.LocalReport.SetParameters(rparams);

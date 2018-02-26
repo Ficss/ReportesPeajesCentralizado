@@ -109,7 +109,7 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 92);
             // 
             // acercaDeToolStripMenuItem1
             // 
@@ -123,6 +123,7 @@
             this.comprobarActualizacionesToolStripMenuItem.Name = "comprobarActualizacionesToolStripMenuItem";
             this.comprobarActualizacionesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.comprobarActualizacionesToolStripMenuItem.Text = "Comprobar Actualizaciones";
+            this.comprobarActualizacionesToolStripMenuItem.Click += new System.EventHandler(this.comprobarActualizacionesToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
