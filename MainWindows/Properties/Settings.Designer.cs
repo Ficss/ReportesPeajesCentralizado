@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReportesPeajes.Properties {
+namespace MainWindows.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,17 +20,6 @@ namespace ReportesPeajes.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=peajeorella-pc;Initial Catalog=peajeM;Persist Security Info=True;User" +
-            " ID=sa;Password=Vegam123")]
-        public string peajeMConnectionString {
-            get {
-                return ((string)(this["peajeMConnectionString"]));
             }
         }
     }

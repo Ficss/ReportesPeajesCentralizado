@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F754BDF-64C3-4DD7-BB0B-87E31190D344}</ProjectGuid>
+    <ProjectGuid>{C3C634D3-4CCF-4B34-AE0E-B6D485B5BDCC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ReportesPeajes</RootNamespace>
-    <AssemblyName>ReportesPeajes</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReportesPrincipal</RootNamespace>
+    <AssemblyName>ReportesPrincipal</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,22 +35,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Design.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Workspace.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -66,28 +68,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AboutBox1.Designer.cs">
-      <DependentUpon>AboutBox1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="peajeOrellaDataSet.Designer.cs">
+    <Compile Include="peajePrincipalDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>peajeOrellaDataSet.xsd</DependentUpon>
+      <DependentUpon>peajePrincipalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesPeajePrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesPeajePrincipal.Designer.cs">
+      <DependentUpon>ReportesPeajePrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportesPeajeOrella.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportesPeajeOrella.Designer.cs">
-      <DependentUpon>ReportesPeajeOrella.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AboutBox1.resx">
-      <DependentUpon>AboutBox1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,24 +91,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
     <EmbeddedResource Include="RecaudacionDiaria.rdlc" />
     <EmbeddedResource Include="RecaudacionMensual.rdlc" />
     <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
     <EmbeddedResource Include="VehiculoComprador.rdlc" />
-    <EmbeddedResource Include="ReportesPeajeOrella.resx">
-      <DependentUpon>ReportesPeajeOrella.cs</DependentUpon>
+    <EmbeddedResource Include="ReportesPeajePrincipal.resx">
+      <DependentUpon>ReportesPeajePrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="peajeOrellaDataSet.xsc">
-      <DependentUpon>peajeOrellaDataSet.xsd</DependentUpon>
+    <None Include="peajePrincipalDataSet.xsc">
+      <DependentUpon>peajePrincipalDataSet.xsd</DependentUpon>
     </None>
-    <None Include="peajeOrellaDataSet.xsd">
+    <None Include="peajePrincipalDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>peajeOrellaDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>peajePrincipalDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="peajeOrellaDataSet.xss">
-      <DependentUpon>peajeOrellaDataSet.xsd</DependentUpon>
+    <None Include="peajePrincipalDataSet.xss">
+      <DependentUpon>peajePrincipalDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,8 +128,12 @@
       <Name>AccesoDatos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\VMCC IDCorp circulo.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

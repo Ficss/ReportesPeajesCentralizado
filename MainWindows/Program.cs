@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ReportesPeajes
+namespace MainWindows
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace ReportesPeajes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReportesPeajeOrella());
+            Application.Run(new Padre());
         }
     }
 }

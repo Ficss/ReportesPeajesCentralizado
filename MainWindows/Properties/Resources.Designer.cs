@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReportesPeajes.Properties {
+namespace MainWindows.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ReportesPeajes.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ReportesPeajes.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MainWindows.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,59 @@ namespace ReportesPeajes.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VMCC_IDCorp_circulo {
+        internal static System.Drawing.Bitmap Add_User_Male_16px {
             get {
-                object obj = ResourceManager.GetObject("VMCC IDCorp circulo", resourceCulture);
+                object obj = ResourceManager.GetObject("Add User Male_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Create_16px {
+            get {
+                object obj = ResourceManager.GetObject("Create_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Color_Wheel_16px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Color_Wheel_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Live_Folder_16px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Live_Folder_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Paid_Parking_16px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Paid_Parking_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Paint_Palette_16px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Paint_Palette_16px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
