@@ -26,7 +26,8 @@ namespace ReportesPrincipal.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=peaje-principal;Initial Catalog=peaje;User ID=sa;Password=Vegam123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=peaje-principal;Initial Catalog=peaje;Persist Security Info=True;User" +
+            " ID=sa;Password=Vegam123")]
         public string peajeConnectionString {
             get {
                 return ((string)(this["peajeConnectionString"]));
