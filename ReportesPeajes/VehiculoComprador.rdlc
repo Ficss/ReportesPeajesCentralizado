@@ -48,58 +48,6 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox3">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Control Operacional</Value>
-                              <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <ColSpan>12</ColSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -107,9 +55,23 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Value>Control Operacional - </Value>
+                              <Style>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
                               <Value>="Detalle recaudación vehículo " + Parameters!nombre.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value> - Peaje Orella</Value>
+                              <Style>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -125,58 +87,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <ColSpan>12</ColSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox39">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Peaje Orella</Value>
-                              <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox39</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -253,9 +164,10 @@
                             <TextRun>
                               <Value>="Desde: " + Parameters!desdePrimerMes.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>d</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -297,9 +209,10 @@
                             <TextRun>
                               <Value>="Desde: " + Parameters!desdeSegundoMes.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>d</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -425,9 +338,10 @@
                             <TextRun>
                               <Value>=" Hasta: " + Parameters!hastaPrimerMes.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>d</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -469,9 +383,10 @@
                             <TextRun>
                               <Value>=" Hasta: " + Parameters!hastaSegundoMes.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>d</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -557,8 +472,8 @@
                             <TextRun>
                               <Value>Vehículo</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -597,8 +512,8 @@
                             <TextRun>
                               <Value>Cantidad Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -635,8 +550,8 @@
                             <TextRun>
                               <Value>Tarifa</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -673,8 +588,8 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -714,8 +629,8 @@
                             <TextRun>
                               <Value>Cantidad Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -752,8 +667,8 @@
                             <TextRun>
                               <Value>Tarifa</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -790,8 +705,8 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -828,8 +743,8 @@
                             <TextRun>
                               <Value>Diferencia Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -866,8 +781,8 @@
                             <TextRun>
                               <Value>Diferencia Dinero</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -904,8 +819,8 @@
                             <TextRun>
                               <Value>Variación Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -942,8 +857,8 @@
                             <TextRun>
                               <Value>Variación Dinero</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -983,10 +898,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!cod_vehiculos.Value &amp; "-" &amp; Fields!desc_vehiculos.Value</Value>
+                              <Value>=Fields!cod_vehiculos.Value &amp; " - " &amp; Fields!desc_vehiculos.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -1023,15 +938,15 @@
                             <TextRun>
                               <Value>=Fields!cantidad1.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1060,15 +975,15 @@
                             <TextRun>
                               <Value>=Fields!tarifa1.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1097,15 +1012,15 @@
                             <TextRun>
                               <Value>=Fields!total1.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1137,15 +1052,15 @@
                             <TextRun>
                               <Value>=Fields!cantidad2.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1174,15 +1089,15 @@
                             <TextRun>
                               <Value>=Fields!tarifa2.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1211,15 +1126,15 @@
                             <TextRun>
                               <Value>=Fields!total2.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1248,15 +1163,15 @@
                             <TextRun>
                               <Value>=Fields!cantidad2.Value - Fields!cantidad1.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1273,6 +1188,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1285,15 +1201,15 @@
                             <TextRun>
                               <Value>=Fields!total2.Value - Fields!total1.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1322,15 +1238,15 @@
                             <TextRun>
                               <Value>=(Fields!cantidad2.Value-Fields!cantidad1.Value)/Fields!cantidad1.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>0.0%</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1360,15 +1276,15 @@
                               <Value>=IIF(Fields!total2.Value &lt;&gt; 0, Fields!total2.Value / 
 	IIF(Fields!total1.Value &gt; 0, Fields!total1.Value, 0),0)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>0.0%</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1442,15 +1358,15 @@
                             <TextRun>
                               <Value>=Sum(Fields!cantidad1.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1460,7 +1376,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1520,15 +1436,15 @@
                             <TextRun>
                               <Value>=Sum(Fields!total1.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1541,7 +1457,7 @@
                         <RightBorder>
                           <Width>3pt</Width>
                         </RightBorder>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1562,14 +1478,14 @@
                             <TextRun>
                               <Value>=Sum(Fields!cantidad2.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1579,7 +1495,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1639,15 +1555,15 @@
                             <TextRun>
                               <Value>=Sum(Fields!total2.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1657,7 +1573,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1677,15 +1593,15 @@
                             <TextRun>
                               <Value>=Sum(Fields!cantidad2.Value) - Sum(Fields!cantidad1.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1695,7 +1611,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1715,15 +1631,15 @@
                             <TextRun>
                               <Value>=Sum(Fields!total2.Value) - Sum(Fields!total1.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1733,7 +1649,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1818,12 +1734,6 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
               <Group Name="Detalles" />
             </TablixMember>
             <TablixMember>
@@ -1832,7 +1742,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>4.8cm</Height>
+        <Height>3.6cm</Height>
         <Width>20.4cm</Width>
         <Style>
           <Border>
@@ -1841,7 +1751,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.88976in</Height>
+    <Height>1.41732in</Height>
     <Style />
   </Body>
   <Width>8.0315in</Width>

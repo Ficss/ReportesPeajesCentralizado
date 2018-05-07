@@ -5,7 +5,6 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 
-
 namespace ReportesPeajes
 {
     public partial class ReportesPeajeOrella : KryptonForm
@@ -33,6 +32,14 @@ namespace ReportesPeajes
         {
             //Se setea campos de fecha con la fecha desde que salio a producción el sistema
             kryptonDateTimePicker1.MaxDate = DateTime.Now.AddDays(-1);
+            DateTime today = DateTime.Today;
+
+            int daysToAdd = 7 - (int)today.DayOfWeek;
+
+            DateTime nextSaturday = today.AddDays(daysToAdd);
+
+            dtpPrimeraSemana.MaxDate = nextSaturday;
+            dtpUltimaSemana.MaxDate = nextSaturday;
         }
         #endregion
         #region Cargar Informe Al Día - Report 1

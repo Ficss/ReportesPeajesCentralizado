@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3C634D3-4CCF-4B34-AE0E-B6D485B5BDCC}</ProjectGuid>
+    <ProjectGuid>{3D948815-8905-4CFC-88E8-7A4018611DD1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ReportesPrincipal</RootNamespace>
@@ -12,7 +12,6 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -25,13 +24,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
@@ -68,10 +87,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="peajePrincipalDataSet.Designer.cs">
+    <Compile Include="peajeMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>peajePrincipalDataSet.xsd</DependentUpon>
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ReportesPeajePrincipal.cs">
       <SubType>Form</SubType>
@@ -89,25 +108,25 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RecaudacionDiaria.rdlc" />
     <EmbeddedResource Include="RecaudacionMensual.rdlc" />
+    <EmbeddedResource Include="CompradorVendedor.rdlc" />
     <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
-    <EmbeddedResource Include="VehiculoComprador.rdlc" />
+    <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
     <EmbeddedResource Include="ReportesPeajePrincipal.resx">
       <DependentUpon>ReportesPeajePrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="peajePrincipalDataSet.xsc">
-      <DependentUpon>peajePrincipalDataSet.xsd</DependentUpon>
+    <None Include="peajeMDataSet.xsc">
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </None>
-    <None Include="peajePrincipalDataSet.xsd">
-      <SubType>Designer</SubType>
+    <None Include="peajeMDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>peajePrincipalDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>peajeMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="peajePrincipalDataSet.xss">
-      <DependentUpon>peajePrincipalDataSet.xsd</DependentUpon>
+    <None Include="peajeMDataSet.xss">
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

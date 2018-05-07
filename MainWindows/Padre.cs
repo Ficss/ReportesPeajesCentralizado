@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using ReportesPeajes;
 using ReportesPrincipal;
+using ReportesBriceno;
 using Squirrel;
 
 namespace MainWindows
@@ -14,6 +15,7 @@ namespace MainWindows
         #region Variables de inicialización
         ReportesPeajeOrella po;
         ReportesPeajePrincipal pp;
+        ReportesPeajeBriceno pb;
         AboutBox1 ab;
         #endregion
         #region Constructor por defecto
@@ -62,19 +64,6 @@ namespace MainWindows
             {
                 childForm.Close();
             }
-        }
-        #endregion
-        #region Abrir reportes orella
-
-        private void kryptonLinkLabel1_LinkClicked(object sender, EventArgs e)
-        {
-            po = ReportesPeajeOrella.Instance();
-            po.MdiParent = this;
-            po.WindowState = FormWindowState.Normal;
-            po.Show();
-            po.WindowState = FormWindowState.Maximized;
-            po.Show();
-            po.Activate();
         }
         #endregion
         #region Cambiar color de tema
@@ -172,19 +161,6 @@ namespace MainWindows
             Application.Exit();
         }
         #endregion
-        #region Abrir reportes principal
-
-        private void kryptonLinkLabel7_LinkClicked(object sender, EventArgs e)
-        {
-            pp = ReportesPeajePrincipal.Instance();
-            pp.MdiParent = this;
-            pp.WindowState = FormWindowState.Normal;
-            pp.Show();
-            pp.WindowState = FormWindowState.Maximized;
-            pp.Show();
-            pp.Activate();
-        }
-        #endregion
         #region Abrir aboutbox
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -209,6 +185,43 @@ namespace MainWindows
         private void comprobarActualizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CheckForUpdate();
+        }
+        #endregion
+        #region Abrir reportes orella
+
+        private void kryptonLinkLabel1_LinkClicked(object sender, EventArgs e)
+        {
+            po = ReportesPeajeOrella.Instance();
+            po.MdiParent = this;
+            po.WindowState = FormWindowState.Normal;
+            po.Show();
+            po.WindowState = FormWindowState.Maximized;
+            po.Show();
+            po.Activate();
+        }
+        #endregion
+        #region Abrir reportes principal
+        private void kryptonLinkLabel7_LinkClicked(object sender, EventArgs e)
+        {
+            pp = ReportesPeajePrincipal.Instance();
+            pp.MdiParent = this;
+            pp.WindowState = FormWindowState.Normal;
+            pp.Show();
+            pp.WindowState = FormWindowState.Maximized;
+            pp.Show();
+            pp.Activate();
+        }
+        #endregion
+        #region Abrir reportes briceño
+        private void kryptonLinkLabel10_LinkClicked(object sender, EventArgs e)
+        {
+            pb = ReportesPeajeBriceno.Instance();
+            pb.MdiParent = this;
+            pb.WindowState = FormWindowState.Normal;
+            pb.Show();
+            pb.WindowState = FormWindowState.Maximized;
+            pb.Show();
+            pb.Activate();
         }
         #endregion
     }

@@ -25,7 +25,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,6 +35,26 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\icons8_Clipboard.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
@@ -163,12 +183,16 @@
     <None Include="Resources\icons8_Paint_Palette_16px.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ReportesBriceno\ReportesBriceno.csproj">
+      <Project>{26e27d22-44b2-4393-a6f4-c1a04d03ca20}</Project>
+      <Name>ReportesBriceno</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportesPeajes\ReportesPeajes.csproj">
       <Project>{5f754bdf-64c3-4dd7-bb0b-87e31190d344}</Project>
       <Name>ReportesPeajes</Name>
     </ProjectReference>
     <ProjectReference Include="..\ReportesPrincipal\ReportesPrincipal.csproj">
-      <Project>{c3c634d3-4ccf-4b34-ae0e-b6d485b5bdcc}</Project>
+      <Project>{3d948815-8905-4cfc-88e8-7a4018611dd1}</Project>
       <Name>ReportesPrincipal</Name>
     </ProjectReference>
   </ItemGroup>

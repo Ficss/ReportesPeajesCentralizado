@@ -26,11 +26,11 @@ namespace ReportesPrincipal.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=peaje-principal;Initial Catalog=peaje;Persist Security Info=True;User" +
-            " ID=sa;Password=Vegam123")]
-        public string peajeConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=principal-pc;Initial Catalog=peajeM;Persist Security Info=True;User I" +
+            "D=sa;Password=Vegam123")]
+        public string principalConnectionString {
             get {
-                return ((string)(this["peajeConnectionString"]));
+                return ((string)(this["principalConnectionString"]));
             }
         }
     }

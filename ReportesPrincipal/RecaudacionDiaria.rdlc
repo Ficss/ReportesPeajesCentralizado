@@ -6,93 +6,40 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
+              <Width>1.8cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.75cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.75cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.75cm</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>1.7cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.5cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.6cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.75cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.55cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.55cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.75cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.55cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.75cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.7cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.6cm</Width>
+              <Width>1.8cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox3">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Control Operacional</Value>
-                              <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                                <Language>es-CL</Language>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <ColSpan>11</ColSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-              </TablixCells>
-            </TablixRow>
             <TablixRow>
               <Height>0.6cm</Height>
               <TablixCells>
@@ -104,11 +51,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Detalle de recaudación diaria</Value>
+                              <Value EvaluationMode="Constant">Control Operacional - Detalle de recaudación al día seleccionado - Peaje Principal</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -150,59 +96,6 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox18">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Peaje Principal</Value>
-                              <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                                <Language>es-CL</Language>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <ColSpan>11</ColSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-                <TablixCell />
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Textbox42">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -212,7 +105,7 @@
                             <TextRun>
                               <Value>="Fecha: " + Parameters!fecha.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -265,6 +158,7 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -299,8 +193,8 @@
                             <TextRun>
                               <Value>Turno</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -349,6 +243,7 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -379,44 +274,6 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Código Vehículos</Value>
-                              <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Language>es-CL</Language>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -424,10 +281,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Clasificación</Value>
+                              <Value>Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -451,8 +308,10 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <ColSpan>2</ColSpan>
                   </CellContents>
                 </TablixCell>
+                <TablixCell />
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox11">
@@ -464,8 +323,8 @@
                             <TextRun>
                               <Value>Valor Unitario</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -502,8 +361,8 @@
                             <TextRun>
                               <Value>Mañana</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -542,8 +401,8 @@
                             <TextRun>
                               <Value>Tarde</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -582,8 +441,8 @@
                             <TextRun>
                               <Value>Noche</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -622,8 +481,8 @@
                             <TextRun>
                               <Value>Total Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -660,8 +519,8 @@
                             <TextRun>
                               <Value>Total Ingresos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Language>es-CL</Language>
                               </Style>
@@ -694,7 +553,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox2">
+                    <Textbox Name="Textbox52">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -710,7 +569,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <rd:DefaultName>Textbox52</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -738,8 +597,8 @@
                             <TextRun>
                               <Value>Cantidad Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -773,10 +632,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ingresos $</Value>
+                              <Value>Ingresos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -812,8 +671,8 @@
                             <TextRun>
                               <Value>Cantidad Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -847,10 +706,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ingresos $</Value>
+                              <Value>Ingresos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -886,8 +745,8 @@
                             <TextRun>
                               <Value>Cantidad Vehículos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -921,10 +780,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ingresos $</Value>
+                              <Value>Ingresos</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -990,59 +849,17 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="cod_vehiculos">
-                      <CanShrink>true</CanShrink>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!cod_vehiculos.Value</Value>
-                              <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <TextDecoration>None</TextDecoration>
-                                <Language>es-CL</Language>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Left</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>cod_vehiculos</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="desc_vehiculos">
                       <CanGrow>true</CanGrow>
-                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!desc_vehiculos.Value</Value>
+                              <Value>=Fields!cod_vehiculos.Value &amp; " - " &amp; Fields!desc_vehiculos.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
                               </Style>
@@ -1054,9 +871,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>desc_vehiculos</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1067,11 +881,12 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <WritingMode>Horizontal</WritingMode>
                       </Style>
                     </Textbox>
+                    <ColSpan>2</ColSpan>
                   </CellContents>
                 </TablixCell>
+                <TablixCell />
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="valor_vehiculos">
@@ -1083,8 +898,8 @@
                             <TextRun>
                               <Value>=Fields!valor_vehiculos.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
@@ -1092,14 +907,11 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>valor_vehiculos</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1125,23 +937,20 @@
                             <TextRun>
                               <Value>=Fields!cuenta1.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <Format>n0</Format>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
+                                <Format>#,0;(#,0)</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cuenta1</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1167,8 +976,8 @@
                             <TextRun>
                               <Value>=Fields!suma1.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
@@ -1176,14 +985,11 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>suma1</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1209,8 +1015,8 @@
                             <TextRun>
                               <Value>=Fields!cuenta2.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
@@ -1218,14 +1024,11 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cuenta2</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1251,8 +1054,8 @@
                             <TextRun>
                               <Value>=Fields!suma2.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
@@ -1260,14 +1063,11 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>suma2</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1293,8 +1093,8 @@
                             <TextRun>
                               <Value>=Fields!cuenta3.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
@@ -1302,14 +1102,11 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cuenta3</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1335,8 +1132,8 @@
                             <TextRun>
                               <Value>=Fields!suma3.Value</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
@@ -1344,14 +1141,11 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>suma3</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1377,8 +1171,8 @@
                             <TextRun>
                               <Value>=Sum(Fields!cuenta1.Value + Fields!cuenta2.Value + Fields!cuenta3.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
@@ -1386,14 +1180,11 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox36</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1419,8 +1210,8 @@
                             <TextRun>
                               <Value>=Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
@@ -1428,7 +1219,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1445,7 +1236,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1456,7 +1246,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox49">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1464,8 +1254,8 @@
                             <TextRun>
                               <Value>TOTAL</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1495,7 +1285,8 @@
                 <TablixCell />
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox52">
+                    <Textbox Name="Textbox20">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1503,25 +1294,25 @@
                             <TextRun>
                               <Value>=Sum(Fields!cuenta1.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox52</rd:DefaultName>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1533,7 +1324,8 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox53">
+                    <Textbox Name="Textbox24">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1541,25 +1333,25 @@
                             <TextRun>
                               <Value>=Sum(Fields!suma1.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <Format>n0</Format>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
+                                <Format>#,0;(#,0)</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox53</rd:DefaultName>
+                      <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1571,7 +1363,8 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox54">
+                    <Textbox Name="Textbox25">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1579,25 +1372,25 @@
                             <TextRun>
                               <Value>=Sum(Fields!cuenta2.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox54</rd:DefaultName>
+                      <rd:DefaultName>Textbox25</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1609,7 +1402,8 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox55">
+                    <Textbox Name="Textbox28">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1617,25 +1411,25 @@
                             <TextRun>
                               <Value>=Sum(Fields!suma2.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <Format>n0</Format>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
+                                <Format>#,0;(#,0)</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox55</rd:DefaultName>
+                      <rd:DefaultName>Textbox28</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1647,7 +1441,8 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox56">
+                    <Textbox Name="Textbox29">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1655,25 +1450,25 @@
                             <TextRun>
                               <Value>=Sum(Fields!cuenta3.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox56</rd:DefaultName>
+                      <rd:DefaultName>Textbox29</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1685,7 +1480,8 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox57">
+                    <Textbox Name="Textbox30">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1693,25 +1489,25 @@
                             <TextRun>
                               <Value>=Sum(Fields!suma3.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <Format>n0</Format>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
+                                <Format>#,0;(#,0)</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox57</rd:DefaultName>
+                      <rd:DefaultName>Textbox30</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1724,6 +1520,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox58">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1731,15 +1528,15 @@
                             <TextRun>
                               <Value>=Sum(Fields!cuenta1.Value + Fields!cuenta2.Value + Fields!cuenta3.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
                                 <Format>n0</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1749,7 +1546,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1762,6 +1559,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox59">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1769,15 +1567,15 @@
                             <TextRun>
                               <Value>=Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)</Value>
                               <Style>
-                                <FontFamily>tahoma</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <Format>n0</Format>
+                                <FontFamily>microsoft sans Serif</FontFamily>
+                                <FontSize>7.5pt</FontSize>
+                                <Format>'$' #,0;('$' #,0)</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -1787,12 +1585,13 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>Yellow</BackgroundColor>
+                        <BackgroundColor>Gold</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-CL</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1834,12 +1633,6 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
               <Group Name="Detalles" />
               <Visibility>
                 <Hidden>=IIF(Sum(Fields!suma1.Value + Fields!suma2.Value + Fields!suma3.Value)="0",True,False)</Hidden>
@@ -1851,8 +1644,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>5.4cm</Height>
-        <Width>20cm</Width>
+        <Height>4.2cm</Height>
+        <Width>20.55cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1860,10 +1653,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.12598in</Height>
+    <Height>1.65354in</Height>
     <Style />
   </Body>
-  <Width>7.87402in</Width>
+  <Width>8.09055in</Width>
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>
@@ -1876,18 +1669,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="peajePrincipalDataSet">
+    <DataSource Name="peajeMDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>d6668fad-85f1-47db-a780-424f74b05a1e</rd:DataSourceID>
+      <rd:DataSourceID>52503c66-b50a-4f16-afdd-3e60f61e69ee</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>peajePrincipalDataSet</DataSourceName>
+        <DataSourceName>peajeMDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1945,8 +1738,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>peajePrincipalDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Desarrollo\source\repos\ReportesPeajesCentralizado\ReportesPrincipal\peajePrincipalDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>peajeMDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Desarrollo\source\repos\ReportesPeajesCentralizado\ReportesPrincipal\peajeMDataSet.xsd</rd:SchemaPath>
         <rd:TableName>informe_diario</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1961,5 +1754,5 @@
     </ReportParameter>
   </ReportParameters>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>475c814a-c603-4389-88a4-2780ee6f1740</rd:ReportID>
+  <rd:ReportID>7e571c50-2f80-44ae-adc0-5970e33ec2d5</rd:ReportID>
 </Report>

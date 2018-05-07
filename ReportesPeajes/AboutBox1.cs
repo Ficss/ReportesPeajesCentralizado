@@ -30,7 +30,7 @@ namespace ReportesPeajes
             this.labelVersion.Text = String.Format("Versión {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.textBoxDescription.Text = "Ante dudas y consultas llamar al anexo 219 o 220";
         }
 
         #region Descriptores de acceso de atributos de ensamblado
