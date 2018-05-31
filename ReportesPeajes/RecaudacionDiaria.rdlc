@@ -18,19 +18,19 @@
               <Width>1.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.75cm</Width>
+              <Width>1.8cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.75cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.7cm</Width>
-            </TablixColumn>
-            <TablixColumn>
               <Width>1.8cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.9cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.9cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1347,7 +1347,7 @@
         <NoRowsMessage>No hay datos que mostrar, verifique fecha seleccionada</NoRowsMessage>
         <DataSetName>DataSet1</DataSetName>
         <Height>4.2cm</Height>
-        <Width>17.3cm</Width>
+        <Width>17.7cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1358,12 +1358,12 @@
     <Height>1.65354in</Height>
     <Style />
   </Body>
-  <Width>6.81102in</Width>
+  <Width>6.9685in</Width>
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
+    <RightMargin>0.5cm</RightMargin>
     <TopMargin>2cm</TopMargin>
     <BottomMargin>2cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>

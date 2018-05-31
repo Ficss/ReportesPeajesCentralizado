@@ -850,7 +850,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="desc_vehiculos">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -890,7 +890,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="valor_vehiculos">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -929,7 +929,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="cuenta1">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -968,7 +968,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="suma1">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1007,7 +1007,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="cuenta2">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1046,7 +1046,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="suma2">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1056,7 +1056,7 @@
                               <Style>
                                 <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontSize>7.5pt</FontSize>
-                                <Format>f0</Format>
+                                <Format>n0</Format>
                                 <TextDecoration>None</TextDecoration>
                                 <Language>es-CL</Language>
                               </Style>
@@ -1085,7 +1085,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="cuenta3">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1124,7 +1124,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="suma3">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1286,7 +1286,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox40">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1325,7 +1325,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox41">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1364,7 +1364,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox44">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1403,7 +1403,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox45">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1442,7 +1442,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox47">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1481,7 +1481,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox50">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>

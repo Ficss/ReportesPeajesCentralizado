@@ -37,12 +37,14 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesPeajeBriceno));
             this.informe_al_diaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peajeMDataSet = new ReportesBriceno.peajeMDataSet();
             this.informe_diarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.informe_recaudacion_mensualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.informe_recaudacion_semanalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_cajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inf_vehiculos_compara_mesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -104,11 +106,15 @@
             this.informe_recaudacion_mensualTableAdapter = new ReportesBriceno.peajeMDataSetTableAdapters.informe_recaudacion_mensualTableAdapter();
             this.informe_recaudacion_semanalTableAdapter = new ReportesBriceno.peajeMDataSetTableAdapters.informe_recaudacion_semanalTableAdapter();
             this.inf_vehiculos_compara_mesTableAdapter = new ReportesBriceno.peajeMDataSetTableAdapters.inf_vehiculos_compara_mesTableAdapter();
+            this.informe_cajeroTableAdapter = new ReportesBriceno.peajeMDataSetTableAdapters.informe_cajeroTableAdapter();
+            this.informe_acumuladoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_acumuladoTableAdapter = new ReportesBriceno.peajeMDataSetTableAdapters.informe_acumuladoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.informe_al_diaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peajeMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_diarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_recaudacion_mensualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_recaudacion_semanalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informe_cajeroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inf_vehiculos_compara_mesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
@@ -154,6 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6.Panel)).BeginInit();
             this.kryptonHeaderGroup6.Panel.SuspendLayout();
             this.kryptonHeaderGroup6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.informe_acumuladoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // informe_al_diaBindingSource
@@ -180,6 +187,11 @@
             // 
             this.informe_recaudacion_semanalBindingSource.DataMember = "informe_recaudacion_semanal";
             this.informe_recaudacion_semanalBindingSource.DataSource = this.peajeMDataSet;
+            // 
+            // informe_cajeroBindingSource
+            // 
+            this.informe_cajeroBindingSource.DataMember = "informe_cajero";
+            this.informe_cajeroBindingSource.DataSource = this.peajeMDataSet;
             // 
             // inf_vehiculos_compara_mesBindingSource
             // 
@@ -546,9 +558,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource5.Name = "DataSet1";
-            reportDataSource5.Value = this.informe_recaudacion_mensualBindingSource;
+            reportDataSource5.Value = this.informe_cajeroBindingSource;
+            reportDataSource6.Name = "DataSet2";
+            reportDataSource6.Value = this.informe_acumuladoBindingSource;
             this.reportViewer5.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewer5.LocalReport.ReportEmbeddedResource = "ReportesBriceno.RecaudacionMensual.rdlc";
+            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer5.LocalReport.ReportEmbeddedResource = "ReportesBriceno.RecaudacionCajero.rdlc";
             this.reportViewer5.Location = new System.Drawing.Point(0, 85);
             this.reportViewer5.Name = "reportViewer5";
             this.reportViewer5.Size = new System.Drawing.Size(1006, 448);
@@ -639,9 +654,9 @@
             this.reportViewer6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource6.Name = "DataSet1";
-            reportDataSource6.Value = this.inf_vehiculos_compara_mesBindingSource;
-            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource7.Name = "DataSet1";
+            reportDataSource7.Value = this.inf_vehiculos_compara_mesBindingSource;
+            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewer6.LocalReport.ReportEmbeddedResource = "ReportesBriceno.CompradorVendedor.rdlc";
             this.reportViewer6.Location = new System.Drawing.Point(0, 85);
             this.reportViewer6.Name = "reportViewer6";
@@ -762,9 +777,9 @@
             this.reportViewer7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource7.Name = "DataSet1";
-            reportDataSource7.Value = this.inf_vehiculos_compara_mesBindingSource;
-            this.reportViewer7.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource8.Name = "DataSet1";
+            reportDataSource8.Value = this.inf_vehiculos_compara_mesBindingSource;
+            this.reportViewer7.LocalReport.DataSources.Add(reportDataSource8);
             this.reportViewer7.LocalReport.ReportEmbeddedResource = "ReportesBriceno.CompradorVendedor.rdlc";
             this.reportViewer7.Location = new System.Drawing.Point(0, 85);
             this.reportViewer7.Name = "reportViewer7";
@@ -886,6 +901,19 @@
             // 
             this.inf_vehiculos_compara_mesTableAdapter.ClearBeforeFill = true;
             // 
+            // informe_cajeroTableAdapter
+            // 
+            this.informe_cajeroTableAdapter.ClearBeforeFill = true;
+            // 
+            // informe_acumuladoBindingSource
+            // 
+            this.informe_acumuladoBindingSource.DataMember = "informe_acumulado";
+            this.informe_acumuladoBindingSource.DataSource = this.peajeMDataSet;
+            // 
+            // informe_acumuladoTableAdapter
+            // 
+            this.informe_acumuladoTableAdapter.ClearBeforeFill = true;
+            // 
             // ReportesPeajeBriceno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -902,6 +930,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.informe_diarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_recaudacion_mensualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_recaudacion_semanalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informe_cajeroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inf_vehiculos_compara_mesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).EndInit();
             this.kryptonNavigator1.ResumeLayout(false);
@@ -953,6 +982,7 @@
             this.kryptonHeaderGroup6.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6)).EndInit();
             this.kryptonHeaderGroup6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.informe_acumuladoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1020,11 +1050,15 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer4;
         private System.Windows.Forms.BindingSource informe_recaudacion_semanalBindingSource;
         private peajeMDataSetTableAdapters.informe_recaudacion_semanalTableAdapter informe_recaudacion_semanalTableAdapter;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer5;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer6;
         private System.Windows.Forms.BindingSource inf_vehiculos_compara_mesBindingSource;
         private peajeMDataSetTableAdapters.inf_vehiculos_compara_mesTableAdapter inf_vehiculos_compara_mesTableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer7;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer5;
+        private System.Windows.Forms.BindingSource informe_cajeroBindingSource;
+        private peajeMDataSetTableAdapters.informe_cajeroTableAdapter informe_cajeroTableAdapter;
+        private System.Windows.Forms.BindingSource informe_acumuladoBindingSource;
+        private peajeMDataSetTableAdapters.informe_acumuladoTableAdapter informe_acumuladoTableAdapter;
     }
 }
 

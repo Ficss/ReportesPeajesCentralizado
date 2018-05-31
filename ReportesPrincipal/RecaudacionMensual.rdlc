@@ -281,7 +281,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="desc_vehiculos">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -440,7 +440,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox13">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -513,6 +513,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

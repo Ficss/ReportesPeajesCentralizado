@@ -9,7 +9,7 @@
               <Width>3cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5cm</Width>
+              <Width>3cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3cm</Width>
@@ -281,7 +281,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="desc_vehiculos">
-                      <CanGrow>true</CanGrow>
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -321,6 +321,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="valor_vehiculos">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -357,6 +358,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="cantidad">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -393,6 +395,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="monto">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -424,6 +427,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -434,6 +438,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox13">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -473,6 +478,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox29">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -511,6 +517,7 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox30">
+                      <CanShrink>true</CanShrink>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -520,7 +527,7 @@
                               <Style>
                                 <FontFamily>microsoft sans Serif</FontFamily>
                                 <FontSize>7.5pt</FontSize>
-                                <Format>n0</Format>
+                                <Format>'$' #,0;('$' #,0)</Format>
                                 <Language>es-CL</Language>
                               </Style>
                             </TextRun>
@@ -542,6 +549,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-CL</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -584,7 +592,7 @@
         <NoRowsMessage>No hay datos que mostrar, verifique fecha seleccionada</NoRowsMessage>
         <DataSetName>DataSet1</DataSetName>
         <Height>3cm</Height>
-        <Width>15cm</Width>
+        <Width>13cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -595,12 +603,12 @@
     <Height>1.1811in</Height>
     <Style />
   </Body>
-  <Width>5.90551in</Width>
+  <Width>5.11811in</Width>
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
+    <RightMargin>0.5cm</RightMargin>
     <TopMargin>2cm</TopMargin>
     <BottomMargin>2cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>

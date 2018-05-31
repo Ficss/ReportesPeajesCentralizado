@@ -194,7 +194,7 @@ namespace ReportesPeajes
 
                 using (SqlConnection con = Consultas.conectarOrella())
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_informe_mensual_cajeros", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_mensual_cajeros_nuevo", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
@@ -203,9 +203,21 @@ namespace ReportesPeajes
                         cmd.ExecuteNonQuery();
                         con.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_recaudacion_mensual' Puede moverla o quitarla según sea necesario.
-                        this.informe_recaudacion_mensualTableAdapter.Fill(this.peajeOrellaDataSet.informe_recaudacion_mensual);
+                        this.informe_cajeroTableAdapter.Fill(this.peajeOrellaDataSet.informe_cajero);
+                    }
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_acumulado_cajero", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
+                        cmd.Parameters.Add("@v_fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_recaudacion_mensual' Puede moverla o quitarla según sea necesario.
+                        this.informe_acumuladoTableAdapter.Fill(this.peajeOrellaDataSet.informe_acumulado);
                     }
                 }
+
                 ReportParameter[] rparams = new ReportParameter[] {
                 new ReportParameter("desde", firstDayOfMonth.ToShortDateString()),
                 new ReportParameter("hasta", lastDayOfMonth.ToShortDateString()),

@@ -122,6 +122,7 @@
     <EmbeddedResource Include="RecaudacionMensual.rdlc" />
     <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
     <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
+    <EmbeddedResource Include="RecaudacionCajero.rdlc" />
     <EmbeddedResource Include="VehiculoComprador.rdlc" />
     <EmbeddedResource Include="ReportesPeajeOrella.resx">
       <DependentUpon>ReportesPeajeOrella.cs</DependentUpon>

@@ -42,6 +42,7 @@ namespace ReportesPrincipal
             dtpPrimeraSemana.MaxDate = nextSaturday;
             dtpUltimaSemana.MaxDate = nextSaturday;
 
+            
         }
         #endregion
         #region Cargar informe al día - Report 7
@@ -189,7 +190,7 @@ namespace ReportesPrincipal
 
                 using (SqlConnection con = Consultas.conectarPrincipal())
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_informe_mensual_cajeros", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_mensual_cajeros_nuevo", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
@@ -197,9 +198,19 @@ namespace ReportesPrincipal
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
-
                         // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_recaudacion_mensual' Puede moverla o quitarla según sea necesario.
-                        this.informe_recaudacion_mensualTableAdapter.Fill(this.peajeMDataSet.informe_recaudacion_mensual);
+                        this.informe_cajeroTableAdapter.Fill(this.peajeMDataSet.informe_cajero);
+                    }
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_acumulado_cajero", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
+                        cmd.Parameters.Add("@v_fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_recaudacion_mensual' Puede moverla o quitarla según sea necesario.
+                        this.informe_acumuladoTableAdapter.Fill(this.peajeMDataSet.informe_acumulado);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
@@ -314,7 +325,5 @@ namespace ReportesPrincipal
             }
         }
         #endregion
-       
-        
     }
 }

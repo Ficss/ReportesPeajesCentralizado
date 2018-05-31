@@ -114,6 +114,7 @@
     <EmbeddedResource Include="CompradorVendedor.rdlc" />
     <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
     <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
+    <EmbeddedResource Include="RecaudacionCajero.rdlc" />
     <EmbeddedResource Include="ReportesPeajePrincipal.resx">
       <DependentUpon>ReportesPeajePrincipal.cs</DependentUpon>
     </EmbeddedResource>
