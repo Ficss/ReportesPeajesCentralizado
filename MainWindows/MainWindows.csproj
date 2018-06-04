@@ -57,6 +57,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ByteSize, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ByteSize.1.3.0\lib\net45\ByteSize.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Design">
       <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
@@ -138,10 +142,19 @@
     <Compile Include="Padre.Designer.cs">
       <DependentUpon>Padre.cs</DependentUpon>
     </Compile>
+    <Compile Include="PB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PB.Designer.cs">
+      <DependentUpon>PB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Padre.resx">
       <DependentUpon>Padre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PB.resx">
+      <DependentUpon>PB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

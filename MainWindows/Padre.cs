@@ -7,7 +7,7 @@ using ReportesPeajes;
 using ReportesPrincipal;
 using ReportesBriceno;
 using Squirrel;
-
+using ByteSizeLib;
 namespace MainWindows
 {
     public partial class Padre : KryptonForm
@@ -17,6 +17,7 @@ namespace MainWindows
         ReportesPeajePrincipal pp;
         ReportesPeajeBriceno pb;
         AboutBox1 ab;
+        PB pbform;
         #endregion
         #region Constructor por defecto
         public Padre()
@@ -81,47 +82,49 @@ namespace MainWindows
             {
                 using (var mgr = await UpdateManager.GitHubUpdateManager("https://github.com/Ficss/ReportesPeajesCentralizado"))
                 {
-                    //this.logger.Info("Checking for updates");
                     try
                     {
                         var updateInfo = await mgr.CheckForUpdate();
-
                         if (updateInfo.ReleasesToApply.Any())
                         {
                             var versionCount = updateInfo.ReleasesToApply.Count;
                             MessageBox.Show($"{versionCount} actualización encontrada");
-                            //this.logger.Info($"{versionCount} update(s) found.");
-                            var versionWord = versionCount > 1 ? "versions" : "version";
+                            var versionWord = versionCount > 1 ? "versiones" : "version";
                             var message = new StringBuilder().AppendLine($"La aplicación está {versionCount} {versionWord} detrás.").
                                                               AppendLine("Si elige actualizar, los cambios no tomarán efectos hasta que la aplicación no sea reiniciada.").
                                                               AppendLine("¿Desea descargar e instalar la actualización?").
                                                               AppendLine("Ante cualquier duda llamar al anexo 219 o 220").
                                                               ToString();
-
                             var result = MessageBox.Show(message, "¿Actualizar Aplicación?", MessageBoxButtons.YesNo);
-                            //var result = MessageBox.Show(message, "App Update", MessageBoxButton.YesNo);
                             if (result != DialogResult.Yes)
                             {
                                 MessageBox.Show("Actualización rechazada por el usuario");
-                                //this.logger.Info("update declined by user.");
                                 return;
                             }
                             MessageBox.Show("Descargando actualización", "Actualización en curso");
-                            //this.logger.Info("Downloading updates");
+                            var updateSize = ByteSize.FromBytes(updateInfo.FutureReleaseEntry.Filesize);
+                            pbform = PB.Instance();
+                            pbform.StartPosition = FormStartPosition.CenterScreen;
+                            pbform.WindowState = FormWindowState.Normal;
+                            pbform.Show();
+                            pbform.Activate();
+                            pbform.pbUpdate.Maximum = (int)updateSize.KiloBytes;
+                            for (int i = 0; i <= (int)updateSize.KiloBytes; i++)
+                            {
+                                pbform.pbUpdate.Increment(i);
+                            }
+                            pbform.Dispose();
                             var updateResult = await mgr.UpdateApp();
+                            
                             MessageBox.Show($"Descarga completa. Versión {updateResult.Version} tomará efecto cuando la aplicación sea reiniciada.");
-                            //this.logger.Info($"Download complete. Version {updateResult.Version} will take effect when App is restarted.");
-
                         }
                         else
                         {
-                            //this.logger.Info("No updates detected.");
                             MessageBox.Show("No hay actualizaciones pendientes");
                         }
                     }
                     catch (Exception ex)
                     {
-                        //this.logger.Warn($"There was an issue during the update process! {ex.Message}");
                         MessageBox.Show($"¡Hubo un problema durante el proceso de actualización! {ex.Message}");
                     }
                 }
