@@ -57,10 +57,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ByteSize, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ByteSize.1.3.0\lib\net45\ByteSize.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="ComponentFactory.Krypton.Design">
       <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
@@ -136,25 +132,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteModificar.Designer.cs">
+      <DependentUpon>ClienteModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteRegistrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteRegistrar.Designer.cs">
+      <DependentUpon>ClienteRegistrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Padre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Padre.Designer.cs">
       <DependentUpon>Padre.cs</DependentUpon>
     </Compile>
-    <Compile Include="PB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PB.Designer.cs">
-      <DependentUpon>PB.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroClientes.Designer.cs">
+      <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClienteModificar.resx">
+      <DependentUpon>ClienteModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClienteRegistrar.resx">
+      <DependentUpon>ClienteRegistrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Padre.resx">
       <DependentUpon>Padre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PB.resx">
-      <DependentUpon>PB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -166,6 +177,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistroClientes.resx">
+      <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -196,6 +210,10 @@
     <None Include="Resources\icons8_Paint_Palette_16px.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{7d534ead-2fb4-4144-be48-5469bfb413c8}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportesBriceno\ReportesBriceno.csproj">
       <Project>{26e27d22-44b2-4393-a6f4-c1a04d03ca20}</Project>
       <Name>ReportesBriceno</Name>

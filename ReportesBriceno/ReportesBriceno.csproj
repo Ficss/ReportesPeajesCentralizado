@@ -122,9 +122,9 @@
       <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </None>
     <None Include="peajeMDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>peajeMDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="peajeMDataSet.xss">
       <DependentUpon>peajeMDataSet.xsd</DependentUpon>
@@ -140,7 +140,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">

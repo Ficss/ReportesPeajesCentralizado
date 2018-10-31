@@ -7,7 +7,6 @@ using ReportesPeajes;
 using ReportesPrincipal;
 using ReportesBriceno;
 using Squirrel;
-using ByteSizeLib;
 namespace MainWindows
 {
     public partial class Padre : KryptonForm
@@ -16,8 +15,10 @@ namespace MainWindows
         ReportesPeajeOrella po;
         ReportesPeajePrincipal pp;
         ReportesPeajeBriceno pb;
+        CodigosIngreso ci;
+        RegistroClientes rc;
         AboutBox1 ab;
-        PB pbform;
+        
         #endregion
         #region Constructor por defecto
         public Padre()
@@ -32,21 +33,18 @@ namespace MainWindows
         }
         #endregion
         #region Ordenar ventanas en cascada
-
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
         }
         #endregion
         #region Ordenar ventanas en vertical
-
         private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileVertical);
         }
         #endregion
         #region Ordenar ventanas en horizontal
-
         private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal);
@@ -102,18 +100,7 @@ namespace MainWindows
                                 return;
                             }
                             MessageBox.Show("Descargando actualización", "Actualización en curso");
-                            var updateSize = ByteSize.FromBytes(updateInfo.FutureReleaseEntry.Filesize);
-                            pbform = PB.Instance();
-                            pbform.StartPosition = FormStartPosition.CenterScreen;
-                            pbform.WindowState = FormWindowState.Normal;
-                            pbform.Show();
-                            pbform.Activate();
-                            pbform.pbUpdate.Maximum = (int)updateSize.KiloBytes;
-                            for (int i = 0; i <= (int)updateSize.KiloBytes; i++)
-                            {
-                                pbform.pbUpdate.Increment(i);
-                            }
-                            pbform.Dispose();
+                            //var updateSize = ByteSize.FromBytes(updateInfo.FutureReleaseEntry.Filesize);
                             var updateResult = await mgr.UpdateApp();
                             
                             MessageBox.Show($"Descarga completa. Versión {updateResult.Version} tomará efecto cuando la aplicación sea reiniciada.");
@@ -142,11 +129,15 @@ namespace MainWindows
         private void Padre_Load(object sender, EventArgs e)
         {
             CheckForUpdate();
+            string pc = Environment.MachineName;
+            if (pc.Equals("Not_Leonel") || pc.Equals("LSchalker-ntbk"))
+            {
+                lblCodigos.Visible = true;
+                lblClientes.Visible = true;
+            }
         }
-
         #endregion
         #region Abrir aboutbox
-
         private void acercaDeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ab = AboutBox1.Instance();
@@ -158,14 +149,12 @@ namespace MainWindows
         }
         #endregion
         #region Salir del sistema
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
         #endregion
         #region Abrir aboutbox
-
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ab = AboutBox1.Instance();
@@ -177,14 +166,12 @@ namespace MainWindows
         }
         #endregion
         #region Abrir índice (incompleto)
-
         private void indexToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
         #endregion
         #region Comprobar actualizaciones
-
         private void comprobarActualizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CheckForUpdate();
@@ -225,6 +212,30 @@ namespace MainWindows
             pb.WindowState = FormWindowState.Maximized;
             pb.Show();
             pb.Activate();
+        }
+        #endregion
+        #region Abrir formulario de registro códigos de ingreso
+        private void lblCodigos_LinkClicked(object sender, EventArgs e)
+        {
+            ci = CodigosIngreso.Instance();
+            ci.MdiParent = this;
+            ci.WindowState = FormWindowState.Normal;
+            ci.Show();
+            ci.WindowState = FormWindowState.Maximized;
+            ci.Show();
+            ci.Activate();
+        }
+        #endregion
+        #region Abrir formulario de registro clientes
+        private void lblClientes_LinkClicked(object sender, EventArgs e)
+        {
+            rc = RegistroClientes.Instance();
+            rc.MdiParent = this;
+            rc.WindowState = FormWindowState.Normal;
+            rc.Show();
+            rc.WindowState = FormWindowState.Maximized;
+            rc.Show();
+            rc.Activate();
         }
         #endregion
     }
