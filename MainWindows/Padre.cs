@@ -129,8 +129,9 @@ namespace MainWindows
         private void Padre_Load(object sender, EventArgs e)
         {
             CheckForUpdate();
+            this.Text = "Sistema Reportes Peaje Vega Monumental - " + Environment.MachineName;
             string pc = Environment.MachineName;
-            if (pc.Equals("Not_Leonel") || pc.Equals("LSchalker-ntbk"))
+            if (pc.Equals("NOT_LEONEL") || pc.Equals("LSCHALKER-NTBK"))
             {
                 lblCodigos.Visible = true;
                 lblClientes.Visible = true;

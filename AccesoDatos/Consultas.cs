@@ -11,7 +11,7 @@ namespace AccesoDatos
         #region Conexión a la BD Briceño
         public static SqlConnection conectarBriceno()
         {
-            SqlConnection miconexion = new SqlConnection("Data Source=Desarrollo-pc;Initial Catalog=peajeM; User ID=sa;Password=Vegam123");
+            SqlConnection miconexion = new SqlConnection("Data Source=PBRICEÑO-pc;Initial Catalog=peajeM; User ID=sa;Password=Vegam123");
             return miconexion;
         }
         #endregion

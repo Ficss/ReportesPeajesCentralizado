@@ -29,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonGroupBox1 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.chkSeleccionar = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
@@ -214,9 +214,9 @@
             // SELECCIONAR
             // 
             this.SELECCIONAR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.NullValue = false;
-            this.SELECCIONAR.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = false;
+            this.SELECCIONAR.DefaultCellStyle = dataGridViewCellStyle1;
             this.SELECCIONAR.FalseValue = "false";
             this.SELECCIONAR.HeaderText = "";
             this.SELECCIONAR.IndeterminateValue = null;
@@ -276,6 +276,11 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 22);
             this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // kryptonLabel3
             // 
