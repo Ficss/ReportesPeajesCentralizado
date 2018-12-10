@@ -1794,18 +1794,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="peajeMDataSet">
+    <DataSource Name="DataSet1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>14135efb-e863-4347-b4f4-2b67ad7ad086</rd:DataSourceID>
+      <rd:DataSourceID>9ab46eda-4399-4d51-b422-2ab94f133b5e</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>peajeMDataSet</DataSourceName>
+        <DataSourceName>DataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1847,8 +1847,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>peajeMDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Desarrollo\source\repos\ReportesPeajesCentralizado\ReportesBriceno\peajeMDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>DataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Desarrollo\source\repos\ReportesPeajesCentralizado\ReportesBriceno\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>inf_vehiculos_compara_mes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

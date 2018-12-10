@@ -59,7 +59,7 @@ namespace ReportesBriceno
                         cmd.ExecuteNonQuery();
                         con.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_al_dia' Puede moverla o quitarla según sea necesario.
-                        this.informe_al_diaTableAdapter.Fill(this.peajeMDataSet.informe_al_dia);
+                        this.informe_al_diaTableAdapter.Fill(this.DataSet1.informe_al_dia);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
@@ -91,7 +91,7 @@ namespace ReportesBriceno
                         cmd.ExecuteNonQuery();
                         con.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_diario' Puede moverla o quitarla según sea necesario.
-                        this.informe_diarioTableAdapter.Fill(this.peajeMDataSet.informe_diario);
+                        this.informe_diarioTableAdapter.Fill(this.DataSet1.informe_diario);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
@@ -128,7 +128,7 @@ namespace ReportesBriceno
                         cmd.ExecuteNonQuery();
                         con.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_recaudacion_mensual' Puede moverla o quitarla según sea necesario.
-                        this.informe_recaudacion_mensualTableAdapter.Fill(this.peajeMDataSet.informe_recaudacion_mensual);
+                        this.informe_recaudacion_mensualTableAdapter.Fill(this.DataSet1.informe_recaudacion_mensual);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
@@ -165,7 +165,7 @@ namespace ReportesBriceno
                         cmd.ExecuteNonQuery();
                         con.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_recaudacion_semanal' Puede moverla o quitarla según sea necesario.
-                        this.informe_recaudacion_semanalTableAdapter.Fill(this.peajeMDataSet.informe_recaudacion_semanal);
+                        this.informe_recaudacion_semanalTableAdapter.Fill(this.DataSet1.informe_recaudacion_semanal);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
@@ -202,8 +202,8 @@ namespace ReportesBriceno
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
-                        // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_recaudacion_mensual' Puede moverla o quitarla según sea necesario.
-                        this.informe_cajeroTableAdapter.Fill(this.peajeMDataSet.informe_cajero);
+                        // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_cajero' Puede moverla o quitarla según sea necesario.
+                        this.informe_cajeroTableAdapter.Fill(this.DataSet1.informe_cajero);
                     }
                     using (SqlCommand cmd = new SqlCommand("sp_informe_acumulado_cajero", con))
                     {
@@ -213,8 +213,8 @@ namespace ReportesBriceno
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
-                        // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_recaudacion_mensual' Puede moverla o quitarla según sea necesario.
-                        this.informe_acumuladoTableAdapter.Fill(this.peajeMDataSet.informe_acumulado);
+                        // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_acumulado' Puede moverla o quitarla según sea necesario.
+                        this.informe_acumuladoTableAdapter.Fill(this.DataSet1.informe_acumulado);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
@@ -260,7 +260,7 @@ namespace ReportesBriceno
                         cmd.ExecuteNonQuery();
                         con.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.inf_vehiculos_compara_mes' Puede moverla o quitarla según sea necesario.
-                        this.inf_vehiculos_compara_mesTableAdapter.Fill(this.peajeMDataSet.inf_vehiculos_compara_mes);
+                        this.inf_vehiculos_compara_mesTableAdapter.Fill(this.DataSet1.inf_vehiculos_compara_mes);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
@@ -309,8 +309,7 @@ namespace ReportesBriceno
                         cmd.ExecuteNonQuery();
                         con.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.inf_vehiculos_compara_mes' Puede moverla o quitarla según sea necesario.
-                        this.inf_vehiculos_compara_mesTableAdapter.Fill(this.peajeMDataSet.inf_vehiculos_compara_mes);
-
+                        this.inf_vehiculos_compara_mesTableAdapter.Fill(this.DataSet1.inf_vehiculos_compara_mes);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {

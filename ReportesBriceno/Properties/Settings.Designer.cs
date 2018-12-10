@@ -26,11 +26,11 @@ namespace ReportesBriceno.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESARROLLO-PC;Initial Catalog=peajeM;Persist Security Info=True;User " +
-            "ID=sa;Password=Vegam123")]
-        public string peajeMConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=pbriceño-pc;Initial Catalog=peajeM;Persist Security Info=True;User ID" +
+            "=sa;Password=Vegam123")]
+        public string peajeMConnectionString1 {
             get {
-                return ((string)(this["peajeMConnectionString"]));
+                return ((string)(this["peajeMConnectionString1"]));
             }
         }
     }
