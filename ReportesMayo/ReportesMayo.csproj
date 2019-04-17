@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{26E27D22-44B2-4393-A6F4-C1A04D03CA20}</ProjectGuid>
+    <ProjectGuid>{7930828B-E2A4-4CB1-9017-D7859E657F8A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReportesBriceno</RootNamespace>
-    <AssemblyName>ReportesBriceno</AssemblyName>
+    <RootNamespace>ReportesMayo</RootNamespace>
+    <AssemblyName>ReportesMayo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -74,6 +74,7 @@
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -87,19 +88,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet1.Designer.cs">
+    <Compile Include="peajeFDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>peajeFDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ReportesPeajeBriceno.cs">
+    <Compile Include="ReportesPeajeMayo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportesPeajeBriceno.Designer.cs">
-      <DependentUpon>ReportesPeajeBriceno.cs</DependentUpon>
+    <Compile Include="ReportesPeajeMayo.Designer.cs">
+      <DependentUpon>ReportesPeajeMayo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
+    <EmbeddedResource Include="RecaudacionDiaria.rdlc" />
+    <EmbeddedResource Include="RecaudacionMensual.rdlc" />
+    <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
+    <EmbeddedResource Include="RecaudacionCajero.rdlc" />
+    <EmbeddedResource Include="CompradorVendedor.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReportesPeajeMayo.resx">
+      <DependentUpon>ReportesPeajeMayo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -109,25 +120,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
-    <EmbeddedResource Include="RecaudacionDiaria.rdlc" />
-    <EmbeddedResource Include="RecaudacionMensual.rdlc" />
-    <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
-    <EmbeddedResource Include="CompradorVendedor.rdlc" />
-    <EmbeddedResource Include="RecaudacionCajero.rdlc" />
-    <EmbeddedResource Include="ReportesPeajeBriceno.resx">
-      <DependentUpon>ReportesPeajeBriceno.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="peajeFDataSet.xsc">
+      <DependentUpon>peajeFDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSet1.xsd">
+    <None Include="peajeFDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>peajeFDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="peajeFDataSet.xss">
+      <DependentUpon>peajeFDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

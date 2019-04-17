@@ -218,6 +218,14 @@
       <Project>{26e27d22-44b2-4393-a6f4-c1a04d03ca20}</Project>
       <Name>ReportesBriceno</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ReportesManga\ReportesManga.csproj">
+      <Project>{af97f5a7-99bc-4edd-be8c-fd8346cac252}</Project>
+      <Name>ReportesManga</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportesMayo\ReportesMayo.csproj">
+      <Project>{7930828b-e2a4-4cb1-9017-d7859e657f8a}</Project>
+      <Name>ReportesMayo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportesPeajes\ReportesPeajes.csproj">
       <Project>{5f754bdf-64c3-4dd7-bb0b-87e31190d344}</Project>
       <Name>ReportesPeajes</Name>

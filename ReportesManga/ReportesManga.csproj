@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{26E27D22-44B2-4393-A6F4-C1A04D03CA20}</ProjectGuid>
+    <ProjectGuid>{AF97F5A7-99BC-4EDD-BE8C-FD8346CAC252}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReportesBriceno</RootNamespace>
-    <AssemblyName>ReportesBriceno</AssemblyName>
+    <RootNamespace>ReportesManga</RootNamespace>
+    <AssemblyName>ReportesManga</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,26 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
@@ -87,16 +67,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet1.Designer.cs">
+    <Compile Include="peajeMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ReportesPeajeBriceno.cs">
+    <Compile Include="ReportesPeajeManga.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportesPeajeBriceno.Designer.cs">
-      <DependentUpon>ReportesPeajeBriceno.cs</DependentUpon>
+    <Compile Include="ReportesPeajeManga.Designer.cs">
+      <DependentUpon>ReportesPeajeManga.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,21 +93,21 @@
     <EmbeddedResource Include="RecaudacionDiaria.rdlc" />
     <EmbeddedResource Include="RecaudacionMensual.rdlc" />
     <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
-    <EmbeddedResource Include="CompradorVendedor.rdlc" />
     <EmbeddedResource Include="RecaudacionCajero.rdlc" />
-    <EmbeddedResource Include="ReportesPeajeBriceno.resx">
-      <DependentUpon>ReportesPeajeBriceno.cs</DependentUpon>
+    <EmbeddedResource Include="CompradorVendedor.rdlc" />
+    <EmbeddedResource Include="ReportesPeajeManga.resx">
+      <DependentUpon>ReportesPeajeManga.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="peajeMDataSet.xsc">
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
+    <None Include="peajeMDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>peajeMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="peajeMDataSet.xss">
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -140,9 +120,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

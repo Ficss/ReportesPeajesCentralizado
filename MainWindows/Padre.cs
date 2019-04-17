@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using ReportesPeajes;
 using ReportesPrincipal;
 using ReportesBriceno;
+using ReportesMayo;
+using ReportesManga;
 using Squirrel;
 namespace MainWindows
 {
@@ -15,10 +17,11 @@ namespace MainWindows
         ReportesPeajeOrella po;
         ReportesPeajePrincipal pp;
         ReportesPeajeBriceno pb;
+        ReportesPeajeMayo pm;
+        ReportesPeajeManga pma;
         CodigosIngreso ci;
         RegistroClientes rc;
         AboutBox1 ab;
-        
         #endregion
         #region Constructor por defecto
         public Padre()
@@ -136,6 +139,10 @@ namespace MainWindows
                 lblCodigos.Visible = true;
                 lblClientes.Visible = true;
             }
+            else {
+                lblCodigos.Visible = false;
+                lblClientes.Visible = false;
+            }
         }
         #endregion
         #region Abrir aboutbox
@@ -213,6 +220,30 @@ namespace MainWindows
             pb.WindowState = FormWindowState.Maximized;
             pb.Show();
             pb.Activate();
+        }
+        #endregion
+        #region Abrir reportes mayo
+        private void kryptonLinkLabel11_LinkClicked(object sender, EventArgs e)
+        {
+            pm = ReportesPeajeMayo.Instance();
+            pm.MdiParent = this;
+            pm.WindowState = FormWindowState.Normal;
+            pm.Show();
+            pm.WindowState = FormWindowState.Maximized;
+            pm.Show();
+            pm.Activate();
+        }
+        #endregion
+        #region Abrir reportes manga
+        private void kryptonLinkLabel5_LinkClicked(object sender, EventArgs e)
+        {
+            pma = ReportesPeajeManga.Instance();
+            pma.MdiParent = this;
+            pma.WindowState = FormWindowState.Normal;
+            pma.Show();
+            pma.WindowState = FormWindowState.Maximized;
+            pma.Show();
+            pma.Activate();
         }
         #endregion
         #region Abrir formulario de registro códigos de ingreso

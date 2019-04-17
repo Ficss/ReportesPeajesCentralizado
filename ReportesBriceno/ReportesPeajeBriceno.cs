@@ -1,10 +1,8 @@
-﻿using AccesoDatos;
-using ComponentFactory.Krypton.Toolkit;
+﻿using ComponentFactory.Krypton.Toolkit;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
-
 namespace ReportesBriceno
 {
     public partial class ReportesPeajeBriceno : KryptonForm
@@ -49,15 +47,16 @@ namespace ReportesBriceno
             {
                 DateTime fecha_elegida = DateTime.Now;
                 string fecha = fecha_elegida.ToString("dd-MM-yyyy");
-                using (SqlConnection con = Consultas.conectarBriceno())
+                string con = Properties.Settings.Default.peajeMConnectionString1;
+                using (SqlConnection connection = new SqlConnection(con))
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_informe_al_dia", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_al_dia", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_elegida);
-                        con.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        connection.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_al_dia' Puede moverla o quitarla según sea necesario.
                         this.informe_al_diaTableAdapter.Fill(this.DataSet1.informe_al_dia);
                     }
@@ -81,15 +80,16 @@ namespace ReportesBriceno
             {
                 DateTime fecha_elegida = kryptonDateTimePicker1.Value.Date;
                 string fecha = fecha_elegida.ToString("dd-MM-yyyy");
-                using (SqlConnection con = Consultas.conectarBriceno())
+                string con = Properties.Settings.Default.peajeMConnectionString1;
+                using (SqlConnection connection = new SqlConnection(con))
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_informe_diario", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_diario", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_elegida);
-                        con.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        connection.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_diario' Puede moverla o quitarla según sea necesario.
                         this.informe_diarioTableAdapter.Fill(this.DataSet1.informe_diario);
                     }
@@ -117,16 +117,17 @@ namespace ReportesBriceno
                 var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
                 var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
-                using (SqlConnection con = Consultas.conectarBriceno())
+                string con = Properties.Settings.Default.peajeMConnectionString1;
+                using (SqlConnection connection = new SqlConnection(con))
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_informe_recaudacion_mensual", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_recaudacion_mensual", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
                         cmd.Parameters.Add("@v_fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
-                        con.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        connection.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_recaudacion_mensual' Puede moverla o quitarla según sea necesario.
                         this.informe_recaudacion_mensualTableAdapter.Fill(this.DataSet1.informe_recaudacion_mensual);
                     }
@@ -154,16 +155,17 @@ namespace ReportesBriceno
                 DateTime fecha_final = dtpUltimaSemana.Value.Date;
                 string fecha_i = fecha_inicial.ToString("dd/MM/yyyy");
                 string fecha_f = fecha_final.ToString("dd/MM/yyyy");
-                using (SqlConnection con = Consultas.conectarBriceno())
+                string con = Properties.Settings.Default.peajeMConnectionString1;
+                using (SqlConnection connection = new SqlConnection(con))
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_informe_recaudacion_semanal", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_recaudacion_semanal", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_i);
                         cmd.Parameters.Add("@v_fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_f);
-                        con.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        connection.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_recaudacion_semanal' Puede moverla o quitarla según sea necesario.
                         this.informe_recaudacion_semanalTableAdapter.Fill(this.DataSet1.informe_recaudacion_semanal);
                     }
@@ -192,27 +194,28 @@ namespace ReportesBriceno
                 var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
                 var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
-                using (SqlConnection con = Consultas.conectarBriceno())
+                string con = Properties.Settings.Default.peajeMConnectionString1;
+                using (SqlConnection connection = new SqlConnection(con))
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_informe_mensual_cajeros_nuevo", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_mensual_cajeros_nuevo", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
                         cmd.Parameters.Add("@v_fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
-                        con.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        connection.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.informe_cajero' Puede moverla o quitarla según sea necesario.
                         this.informe_cajeroTableAdapter.Fill(this.DataSet1.informe_cajero);
                     }
-                    using (SqlCommand cmd = new SqlCommand("sp_informe_acumulado_cajero", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_acumulado_cajero", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
                         cmd.Parameters.Add("@v_fecha_final", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
-                        con.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        connection.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_acumulado' Puede moverla o quitarla según sea necesario.
                         this.informe_acumuladoTableAdapter.Fill(this.DataSet1.informe_acumulado);
                     }
@@ -247,18 +250,19 @@ namespace ReportesBriceno
                 var firstDayOfMonth2 = new DateTime(date2.Year, date2.Month, 1);
                 var lastDayOfMonth2 = firstDayOfMonth2.AddMonths(1).AddDays(-1);
 
-                using (SqlConnection con = Consultas.conectarBriceno())
+                string con = Properties.Settings.Default.peajeMConnectionString1;
+                using (SqlConnection connection = new SqlConnection(con))
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_inf_vehiculo_vendedor", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_inf_vehiculo_vendedor", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha_inicio1", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth1);
                         cmd.Parameters.Add("@v_fecha_final1", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth1);
                         cmd.Parameters.Add("@v_fecha_inicio2", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth2);
                         cmd.Parameters.Add("@v_fecha_final2", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth2);
-                        con.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        connection.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.inf_vehiculos_compara_mes' Puede moverla o quitarla según sea necesario.
                         this.inf_vehiculos_compara_mesTableAdapter.Fill(this.DataSet1.inf_vehiculos_compara_mes);
                     }
@@ -296,18 +300,19 @@ namespace ReportesBriceno
                 var firstDayOfMonth2 = new DateTime(date2.Year, date2.Month, 1);
                 var lastDayOfMonth2 = firstDayOfMonth2.AddMonths(1).AddDays(-1);
 
-                using (SqlConnection con = Consultas.conectarBriceno())
+                string con = Properties.Settings.Default.peajeMConnectionString1;
+                using (SqlConnection connection = new SqlConnection(con))
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_inf_vehiculo_comprador", con))
+                    using (SqlCommand cmd = new SqlCommand("sp_inf_vehiculo_comprador", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@v_fecha_inicio1", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth1);
                         cmd.Parameters.Add("@v_fecha_final1", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth1);
                         cmd.Parameters.Add("@v_fecha_inicio2", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth2);
                         cmd.Parameters.Add("@v_fecha_final2", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth2);
-                        con.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        connection.Close();
                         // TODO: esta línea de código carga datos en la tabla 'peajeDataSet.inf_vehiculos_compara_mes' Puede moverla o quitarla según sea necesario.
                         this.inf_vehiculos_compara_mesTableAdapter.Fill(this.DataSet1.inf_vehiculos_compara_mes);
                     }
@@ -319,7 +324,6 @@ namespace ReportesBriceno
                 new ReportParameter("hastaSegundoMes", lastDayOfMonth2.ToShortDateString()),
                 new ReportParameter("nombre", nombre )
                 };
-
                 reportViewer7.LocalReport.SetParameters(rparams);
                 this.reportViewer7.RefreshReport();
             }

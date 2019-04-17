@@ -7,15 +7,6 @@ namespace AccesoDatos
 {
     public class Consultas
     {
-        #region Métodos para Briceño
-        #region Conexión a la BD Briceño
-        public static SqlConnection conectarBriceno()
-        {
-            SqlConnection miconexion = new SqlConnection("Data Source=PBRICEÑO-PC;Initial Catalog=peajeM;Persist Security Info=True; User ID=sa;Password=Vegam123");
-            return miconexion;
-        }
-        #endregion
-        #endregion
         #region Métodos para Principal
         #region Conexión a la BD Principal
         public static SqlConnection conectarPrincipal()
@@ -44,15 +35,6 @@ namespace AccesoDatos
         //    miconexion.Close();
         //    return nombre;
         //}
-        #endregion
-        #endregion
-        #region Métodos para Orella
-        #region Conexión a la BD Orella
-        public static SqlConnection conectarOrella()
-        {
-            SqlConnection miconexion = new SqlConnection("Data Source=peajeorella-pc;Initial Catalog=peajeM;User ID=sa;Password=Vegam123");
-            return miconexion;
-        }
         #endregion
         #endregion
         #region Método para llenar gridview de clientes en Registro clientes
