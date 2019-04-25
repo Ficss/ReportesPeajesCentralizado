@@ -3,6 +3,8 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
+using System.Windows.Forms;
+
 namespace ReportesPrincipal
 {
     public partial class ReportesPeajePrincipal : KryptonForm
@@ -96,6 +98,7 @@ namespace ReportesPrincipal
                         this.informe_diarioTableAdapter.Fill(this.peajeMDataSet.informe_diario);
                     }
                 }
+                reportViewer1.LocalReport.EnableHyperlinks = true;
                 ReportParameter[] rparams = new ReportParameter[] {
                 new ReportParameter("fecha", fecha)
                 };
@@ -326,6 +329,51 @@ namespace ReportesPrincipal
             catch (Exception ex)
             {
                 KryptonMessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+        #region Abrir formulario para ver horas de entradas de los vehículos
+        private void reportViewer1_Hyperlink(object sender, HyperlinkEventArgs e)
+        {
+            Uri link = new Uri(e.Hyperlink);
+
+            if (link.Authority == "someaction")
+            {
+                e.Cancel = true;
+                char[] sep = new char[] { '=' };
+                var param = link.Query.Split(sep);
+                string rowId = param[1];
+
+                string id = rowId.Remove(rowId.Length - 1, 1);
+                string turno = rowId.Substring(rowId.Length - 1, 1);
+
+
+                int boletainicial = 0;
+                int boletafinal = 0;
+
+                string fecha_elegida = kryptonDateTimePicker1.Value.ToShortDateString();
+                SqlConnection miconexion = new SqlConnection();
+                miconexion.ConnectionString = Properties.Settings.Default.principalConnectionString;
+                miconexion.Open();
+                SqlCommand consulta = new SqlCommand("SELECT boleta_inicial, boleta_final From cierre_z WHERE fecha = @fecha", miconexion);
+                consulta.Parameters.Add(new SqlParameter("@fecha", fecha_elegida));
+                SqlDataReader reader = consulta.ExecuteReader();
+                if (reader.Read())
+                {
+                    boletainicial = reader.GetInt32(0);
+                    boletafinal = reader.GetInt32(1);
+                }
+
+                HorasVehiculos hv = null;
+                hv = HorasVehiculos.Instance();
+                hv.lblCodigo.Text = id;
+                hv.lblBoletaInicial.Text = Convert.ToString(boletainicial);
+                hv.lblBoletaFinal.Text = Convert.ToString(boletafinal);
+                hv.lblTurno.Text = turno;
+                hv.StartPosition = FormStartPosition.CenterScreen;
+                hv.Show();
+                hv.WindowState = FormWindowState.Normal;
+                hv.Activate();
             }
         }
         #endregion

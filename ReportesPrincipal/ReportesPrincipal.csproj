@@ -89,6 +89,7 @@
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -108,6 +109,12 @@
     <Compile Include="CodigosIngreso.Designer.cs">
       <DependentUpon>CodigosIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="HorasVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HorasVehiculos.Designer.cs">
+      <DependentUpon>HorasVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="peajeMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +130,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CodigosIngreso.resx">
       <DependentUpon>CodigosIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HorasVehiculos.resx">
+      <DependentUpon>HorasVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

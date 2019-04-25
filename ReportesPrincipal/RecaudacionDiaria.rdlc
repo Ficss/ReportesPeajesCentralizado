@@ -96,7 +96,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox42">
+                    <Textbox Name="Textbox44">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -951,6 +951,13 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cuenta1</rd:DefaultName>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Hyperlink>="http://someaction?rowid="+Trim(Str(Fields!cod_vehiculos.Value)) + "1"</Hyperlink>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1029,6 +1036,13 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cuenta2</rd:DefaultName>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Hyperlink>="http://someaction?rowid="+Trim(Str(Fields!cod_vehiculos.Value)) + "2"</Hyperlink>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1041,6 +1055,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1107,6 +1122,13 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cuenta3</rd:DefaultName>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Hyperlink>="http://someaction?rowid="+Trim(Str(Fields!cod_vehiculos.Value)) + "3"</Hyperlink>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1359,7 +1381,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

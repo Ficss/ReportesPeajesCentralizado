@@ -40,10 +40,6 @@
             this.CRESTANTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PERIODO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvClientes = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.CRUT = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.CRAZON = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.CLOCAL = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.SELECCIONAR = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn();
             this.kryptonGroupBox2 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.dtpAn = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpMes = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
@@ -53,6 +49,10 @@
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnRegistrar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lblSeleccionado = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.SELECCIONAR = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn();
+            this.CLOCAL = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.CRAZON = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.CRUT = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
@@ -187,44 +187,6 @@
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvClientes_MouseClick);
             // 
-            // CRUT
-            // 
-            this.CRUT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.CRUT.HeaderText = "Clientes RUT";
-            this.CRUT.Name = "CRUT";
-            this.CRUT.ReadOnly = true;
-            this.CRUT.Width = 103;
-            // 
-            // CRAZON
-            // 
-            this.CRAZON.HeaderText = "Clientes Razón";
-            this.CRAZON.Name = "CRAZON";
-            this.CRAZON.ReadOnly = true;
-            this.CRAZON.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CRAZON.Width = 177;
-            // 
-            // CLOCAL
-            // 
-            this.CLOCAL.HeaderText = "Número Local";
-            this.CLOCAL.Name = "CLOCAL";
-            this.CLOCAL.ReadOnly = true;
-            this.CLOCAL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CLOCAL.Width = 176;
-            // 
-            // SELECCIONAR
-            // 
-            this.SELECCIONAR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = false;
-            this.SELECCIONAR.DefaultCellStyle = dataGridViewCellStyle1;
-            this.SELECCIONAR.FalseValue = "false";
-            this.SELECCIONAR.HeaderText = "";
-            this.SELECCIONAR.IndeterminateValue = null;
-            this.SELECCIONAR.Name = "SELECCIONAR";
-            this.SELECCIONAR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SELECCIONAR.TrueValue = "true";
-            this.SELECCIONAR.Width = 7;
-            // 
             // kryptonGroupBox2
             // 
             this.kryptonGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -323,6 +285,44 @@
             this.lblSeleccionado.TabIndex = 0;
             this.lblSeleccionado.Values.Text = "";
             // 
+            // SELECCIONAR
+            // 
+            this.SELECCIONAR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = false;
+            this.SELECCIONAR.DefaultCellStyle = dataGridViewCellStyle1;
+            this.SELECCIONAR.FalseValue = "false";
+            this.SELECCIONAR.HeaderText = "";
+            this.SELECCIONAR.IndeterminateValue = null;
+            this.SELECCIONAR.Name = "SELECCIONAR";
+            this.SELECCIONAR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SELECCIONAR.TrueValue = "true";
+            this.SELECCIONAR.Width = 7;
+            // 
+            // CLOCAL
+            // 
+            this.CLOCAL.HeaderText = "Número Local";
+            this.CLOCAL.Name = "CLOCAL";
+            this.CLOCAL.ReadOnly = true;
+            this.CLOCAL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CLOCAL.Width = 176;
+            // 
+            // CRAZON
+            // 
+            this.CRAZON.HeaderText = "Clientes Razón";
+            this.CRAZON.Name = "CRAZON";
+            this.CRAZON.ReadOnly = true;
+            this.CRAZON.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CRAZON.Width = 177;
+            // 
+            // CRUT
+            // 
+            this.CRUT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.CRUT.HeaderText = "Clientes RUT";
+            this.CRUT.Name = "CRUT";
+            this.CRUT.ReadOnly = true;
+            this.CRUT.Width = 103;
+            // 
             // CodigosIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,10 +363,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CRESTANTES;
         private System.Windows.Forms.DataGridViewTextBoxColumn PERIODO;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvClientes;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn CRUT;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn CRAZON;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn CLOCAL;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn SELECCIONAR;
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpAn;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpMes;
@@ -376,5 +372,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnRegistrar;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lblSeleccionado;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn CRUT;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn CRAZON;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn CLOCAL;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn SELECCIONAR;
     }
 }
