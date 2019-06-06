@@ -11,7 +11,7 @@ namespace AccesoDatos
         #region Conexión a la BD Principal
         public static SqlConnection conectarPrincipal()
         {
-            SqlConnection miconexion = new SqlConnection("Data Source=principal-pc;Initial Catalog=peajePrueba; User ID=sa;Password=Vegam123");
+            SqlConnection miconexion = new SqlConnection("Data Source=principal-pc;Initial Catalog=peajeM; User ID=sa;Password=Vegam123");
             return miconexion;
         }
         #endregion
@@ -48,6 +48,7 @@ namespace AccesoDatos
                                             "FROM CLIENTES C, CLIENCAR I, LOCAL L " +
                                             "WHERE I.RUT = C.RUT " +
                                             "AND L.IDLOCAL = I.IDLOCAL " +
+                                            "AND C.COD_ESTADO = 1 " +
                                             "ORDER BY C.RAZON ASC, I.IDLOCAL ASC", miconexion);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
