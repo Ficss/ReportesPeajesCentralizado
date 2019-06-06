@@ -58,6 +58,8 @@ namespace ReportesPrincipal
         {
             try
             {
+                int rutcliente = 0;
+                int periodo = 0;
                 if (txtCodigo.Value >= 1)
                 {
                     if (dtpAn.Value.Year >= DateTime.Now.Year)
@@ -84,22 +86,23 @@ namespace ReportesPrincipal
 
                                     //Fragmento para crear Fecha inicial, final y entrega
                                     DateTime hoy = DateTime.Now;
-                                    var FechaInicial = new DateTime(hoy.Year, hoy.Month, 1);
+                                    var FechaInicial = new DateTime(dtpAn.Value.Year, dtpMes.Value.Month, 1);
                                     var FechaFinal = FechaInicial.AddMonths(1).AddDays(-1);
                                     string FechaActual = DateTime.Now.ToShortDateString();
                                     //Fragmento para crear periodo
-                                    int año = DateTime.Now.Year;
-                                    int mes = DateTime.Now.Month;
-                                    int periodo = año * 100 + mes;
+                                    int año = dtpAn.Value.Year;
+                                    int mes = dtpMes.Value.Month;
+                                    periodo = año * 100 + mes;
 
                                     int Item = 0;
                                     int codlocal = 0;
                                     int periodoobtenido = 0;
                                     SqlConnection miconexion = Consultas.conectarPrincipal();
                                     miconexion.Open();
-                                    SqlCommand consulta = new SqlCommand("SELECT periodo FROM codigo_ingreso WHERE periodo = @periodo AND cod_cliente = @rut;", miconexion);
+                                    SqlCommand consulta = new SqlCommand("SELECT periodo FROM codigo_ingreso WHERE periodo = @periodo AND cod_cliente = @rut AND num_local = @nlocal;", miconexion);
                                     consulta.Parameters.Add(new SqlParameter("@periodo", periodo));
                                     consulta.Parameters.Add(new SqlParameter("@rut", sindv));
+                                    consulta.Parameters.Add(new SqlParameter("@nlocal", nlocal));
                                     SqlDataReader reader = consulta.ExecuteReader();
                                     if (reader.Read())
                                     {
@@ -157,30 +160,32 @@ namespace ReportesPrincipal
                                     ci.codcliente = Convert.ToInt32(sindv);
                                     ci.codlocal = codlocal;
                                     ci.estado = 1;
-                                    ci.numlocal = nlocal;
+                                    ci.numlocal = nlocal.Trim();
                                     ci.periodo = periodo;
-                                    int rutcliente = Convert.ToInt32(sindv);
+                                    rutcliente = Convert.ToInt32(sindv);
                                     if (ci.CrearCodigo())
                                     {
-                                        DataTable dt = s.llenarTablaClientesResultado(rutcliente);
-                                        foreach (DataRow item in dt.Rows)
-                                        {
-                                            int n = dgvClientesResultado.Rows.Add();
-                                            dgvClientesResultado.Rows[n].Cells[0].Value = item["RAZON"].ToString();
-                                            dgvClientesResultado.Rows[n].Cells[1].Value = item["NLOCAL"].ToString();
-                                            dgvClientesResultado.Rows[n].Cells[2].Value = item["CCODIGOS"].ToString();
-                                            dgvClientesResultado.Rows[n].Cells[3].Value = item["CRESTANTES"].ToString();
-                                            dgvClientesResultado.Rows[n].Cells[4].Value = item["PERIODO"].ToString();
-                                        }
                                     }
                                     else
                                     {
                                         MessageBox.Show("Error al guardar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
+                                    
                                 }
                                 else
                                 {
                                 }
+                                
+                            }
+                            DataTable dt = s.llenarTablaClientesResultado(periodo);
+                            foreach (DataRow item in dt.Rows)
+                            {
+                                int n = dgvClientesResultado.Rows.Add();
+                                dgvClientesResultado.Rows[n].Cells[0].Value = item["RAZON"].ToString();
+                                dgvClientesResultado.Rows[n].Cells[1].Value = item["NLOCAL"].ToString();
+                                dgvClientesResultado.Rows[n].Cells[2].Value = item["CCODIGOS"].ToString();
+                                dgvClientesResultado.Rows[n].Cells[3].Value = item["CRESTANTES"].ToString();
+                                dgvClientesResultado.Rows[n].Cells[4].Value = item["PERIODO"].ToString();
                             }
                         }
                         else

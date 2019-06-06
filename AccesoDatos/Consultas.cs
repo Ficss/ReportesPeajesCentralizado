@@ -11,7 +11,7 @@ namespace AccesoDatos
         #region Conexión a la BD Principal
         public static SqlConnection conectarPrincipal()
         {
-            SqlConnection miconexion = new SqlConnection("Data Source=principal-pc;Initial Catalog=peajeM; User ID=sa;Password=Vegam123");
+            SqlConnection miconexion = new SqlConnection("Data Source=principal-pc;Initial Catalog=peajePrueba; User ID=sa;Password=Vegam123");
             return miconexion;
         }
         #endregion
@@ -147,7 +147,7 @@ namespace AccesoDatos
         #endregion
         #region Método para llenar gridview de codigos generados en registro cliente
         //Método para llenar gridview de codigos generados en registro cliente
-        public DataTable llenarTablaClientesResultado(int rut)
+        public DataTable llenarTablaClientesResultado(int periodo)
         {
             SqlConnection miconexion = conectarPrincipal();
             miconexion.Open();
@@ -155,8 +155,8 @@ namespace AccesoDatos
             SqlCommand cmd = new SqlCommand("SELECT rtrim( LTRIM(CL.RAZON)) AS RAZON, C.NUM_LOCAL AS NLOCAL, C.CANTIDAD AS CCODIGOS, C.SALDO AS CRESTANTES, C.PERIODO AS PERIODO " +
                                             "FROM CODIGO_INGRESO C, CLIENTES CL " +
                                             "WHERE CL.RUT = C.cod_cliente " +
-                                            "AND C.COD_CLIENTE = @rut", miconexion);
-            cmd.Parameters.Add(new SqlParameter("@rut", rut));
+                                            "AND C.PERIODO = @periodo", miconexion);
+            cmd.Parameters.Add(new SqlParameter("@periodo", periodo));
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
