@@ -1,35 +1,41 @@
-﻿using ComponentFactory.Krypton.Toolkit;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
-using System.Windows.Forms;
 
-namespace ReportesPrincipal
+namespace ReportesSitioCero
 {
-    public partial class ReportesPeajePrincipal : KryptonForm
+    public partial class ReportesPeajeSitioCero : KryptonForm
+
     {
         #region Singleton
-        private static ReportesPeajePrincipal frm = null;
-        public static ReportesPeajePrincipal Instance()
+        private static ReportesPeajeSitioCero frm = null;
+        public static ReportesPeajeSitioCero Instance()
         {
             if (frm == null)
             {
-                frm = new ReportesPeajePrincipal();
+                frm = new ReportesPeajeSitioCero();
             }
             return frm;
         }
         #endregion
         #region Constructor por defecto
-        public ReportesPeajePrincipal()
+        public ReportesPeajeSitioCero()
         {
             InitializeComponent();
         }
         #endregion
         #region Load
-        private void ReportesPeajePrincipal_Load(object sender, EventArgs e)
+        private void ReportesPeajeSitioCero_Load(object sender, EventArgs e)
         {
-
             kryptonDateTimePicker1.MaxDate = DateTime.Now.AddDays(-1);
 
             DateTime today = DateTime.Today;
@@ -40,7 +46,6 @@ namespace ReportesPrincipal
 
             dtpPrimeraSemana.MaxDate = nextSaturday;
             dtpUltimaSemana.MaxDate = nextSaturday;
- 
         }
         #endregion
         #region Cargar informe al día - Report 7
@@ -50,7 +55,7 @@ namespace ReportesPrincipal
             {
                 DateTime fecha_elegida = DateTime.Now;
                 string fecha = fecha_elegida.ToString("dd-MM-yyyy");
-                string con = Properties.Settings.Default.principalConnectionString;
+                string con = Properties.Settings.Default.SC;
                 using (SqlConnection connection = new SqlConnection(con))
                 {
                     using (SqlCommand cmd = new SqlCommand("sp_informe_al_dia", connection))
@@ -83,7 +88,7 @@ namespace ReportesPrincipal
             {
                 DateTime fecha_elegida = kryptonDateTimePicker1.Value.Date;
                 string fecha = fecha_elegida.ToString("dd-MM-yyyy");
-                string con = Properties.Settings.Default.principalConnectionString;
+                string con = Properties.Settings.Default.SC;
                 using (SqlConnection connection = new SqlConnection(con))
                 {
                     using (SqlCommand cmd = new SqlCommand("sp_informe_diario", connection))
@@ -119,7 +124,7 @@ namespace ReportesPrincipal
             var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
             var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
-            string con = Properties.Settings.Default.principalConnectionString;
+            string con = Properties.Settings.Default.SC;
             using (SqlConnection connection = new SqlConnection(con))
             {
                 using (SqlCommand cmd = new SqlCommand("sp_informe_recaudacion_mensual", connection))
@@ -152,7 +157,7 @@ namespace ReportesPrincipal
                 DateTime fecha_final = dtpUltimaSemana.Value.Date;
                 string fecha_i = fecha_inicial.ToString("dd/MM/yyyy");
                 string fecha_f = fecha_final.ToString("dd/MM/yyyy");
-                string con = Properties.Settings.Default.principalConnectionString;
+                string con = Properties.Settings.Default.SC;
                 using (SqlConnection connection = new SqlConnection(con))
                 {
                     using (SqlCommand cmd = new SqlCommand("sp_informe_recaudacion_semanal", connection))
@@ -191,7 +196,7 @@ namespace ReportesPrincipal
                 var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
                 var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
-                string con = Properties.Settings.Default.principalConnectionString;
+                string con = Properties.Settings.Default.SC;
                 using (SqlConnection connection = new SqlConnection(con))
                 {
                     using (SqlCommand cmd = new SqlCommand("sp_informe_mensual_cajeros_nuevo", connection))
@@ -247,7 +252,7 @@ namespace ReportesPrincipal
                 var firstDayOfMonth2 = new DateTime(date2.Year, date2.Month, 1);
                 var lastDayOfMonth2 = firstDayOfMonth2.AddMonths(1).AddDays(-1);
 
-                string con = Properties.Settings.Default.principalConnectionString;
+                string con = Properties.Settings.Default.SC;
                 using (SqlConnection connection = new SqlConnection(con))
                 {
                     using (SqlCommand cmd = new SqlCommand("sp_inf_vehiculo_vendedor", connection))
@@ -271,7 +276,7 @@ namespace ReportesPrincipal
                 new ReportParameter("hastaSegundoMes", lastDayOfMonth2.ToShortDateString()),
                 new ReportParameter("nombre", nombre )
                 };
-                
+
                 reportViewer5.LocalReport.SetParameters(rparams);
                 this.reportViewer5.RefreshReport();
             }
@@ -297,7 +302,7 @@ namespace ReportesPrincipal
                 var firstDayOfMonth2 = new DateTime(date2.Year, date2.Month, 1);
                 var lastDayOfMonth2 = firstDayOfMonth2.AddMonths(1).AddDays(-1);
 
-                string con = Properties.Settings.Default.principalConnectionString;
+                string con = Properties.Settings.Default.SC;
                 using (SqlConnection connection = new SqlConnection(con))
                 {
                     using (SqlCommand cmd = new SqlCommand("sp_inf_vehiculo_comprador", connection))
@@ -328,51 +333,6 @@ namespace ReportesPrincipal
             catch (Exception ex)
             {
                 KryptonMessageBox.Show(ex.Message);
-            }
-        }
-        #endregion
-        #region Abrir formulario para ver horas de entradas de los vehículos
-        private void reportViewer1_Hyperlink(object sender, HyperlinkEventArgs e)
-        {
-            Uri link = new Uri(e.Hyperlink);
-
-            if (link.Authority == "someaction")
-            {
-                e.Cancel = true;
-                char[] sep = new char[] { '=' };
-                var param = link.Query.Split(sep);
-                string rowId = param[1];
-
-                string id = rowId.Remove(rowId.Length - 1, 1);
-                string turno = rowId.Substring(rowId.Length - 1, 1);
-
-
-                int boletainicial = 0;
-                int boletafinal = 0;
-
-                string fecha_elegida = kryptonDateTimePicker1.Value.ToShortDateString();
-                SqlConnection miconexion = new SqlConnection();
-                miconexion.ConnectionString = Properties.Settings.Default.principalConnectionString;
-                miconexion.Open();
-                SqlCommand consulta = new SqlCommand("SELECT boleta_inicial, boleta_final From cierre_z WHERE fecha = @fecha", miconexion);
-                consulta.Parameters.Add(new SqlParameter("@fecha", fecha_elegida));
-                SqlDataReader reader = consulta.ExecuteReader();
-                if (reader.Read())
-                {
-                    boletainicial = reader.GetInt32(0);
-                    boletafinal = reader.GetInt32(1);
-                }
-
-                HorasVehiculos hv = null;
-                hv = HorasVehiculos.Instance();
-                hv.lblCodigo.Text = id;
-                hv.lblBoletaInicial.Text = Convert.ToString(boletainicial);
-                hv.lblBoletaFinal.Text = Convert.ToString(boletafinal);
-                hv.lblTurno.Text = turno;
-                hv.StartPosition = FormStartPosition.CenterScreen;
-                hv.Show();
-                hv.WindowState = FormWindowState.Normal;
-                hv.Activate();
             }
         }
         #endregion

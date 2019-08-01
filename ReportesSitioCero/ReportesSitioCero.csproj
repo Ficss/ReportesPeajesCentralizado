@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F754BDF-64C3-4DD7-BB0B-87E31190D344}</ProjectGuid>
+    <ProjectGuid>{A024337E-2E7E-4FAB-AF5F-D18174EDD108}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ReportesPeajes</RootNamespace>
-    <AssemblyName>ReportesPeajes</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReportesSitioCero</RootNamespace>
+    <AssemblyName>ReportesSitioCero</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -23,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,44 +32,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Design.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Design.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Workspace.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -86,19 +67,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="peajeOrellaDataSet.Designer.cs">
+    <Compile Include="peajeMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>peajeOrellaDataSet.xsd</DependentUpon>
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesPeajeSitioCero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesPeajeSitioCero.Designer.cs">
+      <DependentUpon>ReportesPeajeSitioCero.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportesPeajeOrella.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportesPeajeOrella.Designer.cs">
-      <DependentUpon>ReportesPeajeOrella.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -107,27 +88,26 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
     <EmbeddedResource Include="RecaudacionDiaria.rdlc" />
     <EmbeddedResource Include="RecaudacionMensual.rdlc" />
     <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
-    <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
     <EmbeddedResource Include="RecaudacionCajero.rdlc" />
-    <EmbeddedResource Include="VehiculoComprador.rdlc" />
-    <EmbeddedResource Include="ReportesPeajeOrella.resx">
-      <DependentUpon>ReportesPeajeOrella.cs</DependentUpon>
+    <EmbeddedResource Include="CompradorVendedor.rdlc" />
+    <EmbeddedResource Include="ReportesPeajeSitioCero.resx">
+      <DependentUpon>ReportesPeajeSitioCero.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="peajeOrellaDataSet.xsc">
-      <DependentUpon>peajeOrellaDataSet.xsd</DependentUpon>
+    <None Include="peajeMDataSet.xsc">
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </None>
-    <None Include="peajeOrellaDataSet.xsd">
-      <SubType>Designer</SubType>
+    <None Include="peajeMDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>peajeOrellaDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>peajeMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="peajeOrellaDataSet.xss">
-      <DependentUpon>peajeOrellaDataSet.xsd</DependentUpon>
+    <None Include="peajeMDataSet.xss">
+      <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,8 +122,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\VMCC IDCorp circulo.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

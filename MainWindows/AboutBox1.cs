@@ -1,5 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -8,9 +7,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ReportesPeajes
+namespace MainWindows
 {
-    public partial class AboutBox1 : Form
+    partial class AboutBox1 : Form
     {
         private static AboutBox1 frm = null;
         public static AboutBox1 Instance()
@@ -32,6 +31,8 @@ namespace ReportesPeajes
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = "Ante dudas y consultas llamar al anexo 219 o 220";
         }
+
+
 
         #region Descriptores de acceso de atributos de ensamblado
 
@@ -112,10 +113,5 @@ namespace ReportesPeajes
             }
         }
         #endregion
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

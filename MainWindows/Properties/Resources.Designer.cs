@@ -129,5 +129,15 @@ namespace MainWindows.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VMCC_IDCorp_circulo {
+            get {
+                object obj = ResourceManager.GetObject("VMCC IDCorp circulo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

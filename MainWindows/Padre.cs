@@ -8,6 +8,7 @@ using ReportesPrincipal;
 using ReportesBriceno;
 using ReportesMayo;
 using ReportesManga;
+using ReportesSitioCero;
 using Squirrel;
 namespace MainWindows
 {
@@ -19,6 +20,7 @@ namespace MainWindows
         ReportesPeajeBriceno pb;
         ReportesPeajeMayo pm;
         ReportesPeajeManga pma;
+        ReportesPeajeSitioCero sc;
         CodigosIngreso ci;
         RegistroClientes rc;
         AboutBox1 ab;
@@ -133,17 +135,17 @@ namespace MainWindows
         {
             CheckForUpdate();
             this.Text = "Sistema Reportes Peaje Vega Monumental - " + Environment.MachineName;
-            string pc = Environment.MachineName;
-            if (pc.Equals("NOT_LEONEL") || pc.Equals("LSCHALKER-NTBK"))
-            {
-                lblCodigos.Visible = true;
-                lblClientes.Visible = true;
-            }
-            else
-            {
-                lblCodigos.Visible = false;
-                lblClientes.Visible = false;
-            }
+            //string pc = Environment.MachineName;
+            //if (pc.Equals("NOT_LEONEL") || pc.Equals("LSCHALKER-NTBK"))
+            //{
+            //    lblCodigos.Visible = true;
+            //    lblClientes.Visible = true;
+            //}
+            //else
+            //{
+            //    lblCodigos.Visible = false;
+            //    lblClientes.Visible = false;
+            //}
         }
         #endregion
         #region Abrir aboutbox
@@ -245,6 +247,18 @@ namespace MainWindows
             pma.WindowState = FormWindowState.Maximized;
             pma.Show();
             pma.Activate();
+        }
+        #endregion
+        #region Abrir reportes sitio cero
+        private void kryptonLinkLabel2_LinkClicked(object sender, EventArgs e)
+        {
+            sc = ReportesPeajeSitioCero.Instance();
+            sc.MdiParent = this;
+            sc.WindowState = FormWindowState.Normal;
+            sc.Show();
+            sc.WindowState = FormWindowState.Maximized;
+            sc.Show();
+            sc.Activate();
         }
         #endregion
         #region Abrir formulario de registro códigos de ingreso
