@@ -135,17 +135,17 @@ namespace MainWindows
         {
             CheckForUpdate();
             this.Text = "Sistema Reportes Peaje Vega Monumental - " + Environment.MachineName;
-            //string pc = Environment.MachineName;
-            //if (pc.Equals("NOT_LEONEL") || pc.Equals("LSCHALKER-NTBK"))
-            //{
-            //    lblCodigos.Visible = true;
-            //    lblClientes.Visible = true;
-            //}
-            //else
-            //{
-            //    lblCodigos.Visible = false;
-            //    lblClientes.Visible = false;
-            //}
+            string pc = Environment.MachineName;
+            if (pc.Equals("NOT_LEONEL") || pc.Equals("LSCHALKER-NTBK"))
+            {
+                lblCodigos.Visible = true;
+                lblClientes.Visible = true;
+            }
+            else
+            {
+                lblCodigos.Visible = false;
+                lblClientes.Visible = false;
+            }
         }
         #endregion
         #region Abrir aboutbox
