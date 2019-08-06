@@ -522,6 +522,7 @@
             this.kryptonLinkLabel5.TabIndex = 0;
             this.kryptonLinkLabel5.Values.Image = global::MainWindows.Properties.Resources.icons8_Live_Folder_16px;
             this.kryptonLinkLabel5.Values.Text = "Reportes Peaje Manga";
+            this.kryptonLinkLabel5.LinkClicked += new System.EventHandler(this.kryptonLinkLabel5_LinkClicked);
             // 
             // kryptonPanel5
             // 
