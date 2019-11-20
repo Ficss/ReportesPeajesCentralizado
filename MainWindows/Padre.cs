@@ -29,6 +29,7 @@ namespace MainWindows
         public Padre()
         {
             InitializeComponent();
+            CheckForUpdate();
         }
         #endregion
         #region Cambiar Visibilidad barra de estado
@@ -133,7 +134,7 @@ namespace MainWindows
         #region Load
         private void Padre_Load(object sender, EventArgs e)
         {
-            CheckForUpdate();
+            
             this.Text = "Sistema Reportes Peaje Vega Monumental - " + Environment.MachineName;
             string pc = Environment.MachineName;
             if (pc.Equals("NOT_LEONEL") || pc.Equals("LSCHALKER-NTBK"))
