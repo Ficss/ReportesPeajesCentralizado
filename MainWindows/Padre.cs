@@ -102,18 +102,21 @@ namespace MainWindows
                             var result = MessageBox.Show(message, "¿Actualizar Aplicación?", MessageBoxButtons.YesNo);
                             if (result != DialogResult.Yes)
                             {
-                                MessageBox.Show("Actualización rechazada por el usuario");
+                                notificacion("Actualización rechazada por el usuario");
                                 return;
                             }
-                            MessageBox.Show("Descargando actualización", "Actualización en curso");
+                            notificacion("Descargando actualización");
                             //var updateSize = ByteSize.FromBytes(updateInfo.FutureReleaseEntry.Filesize);
                             var updateResult = await mgr.UpdateApp();
-                            
-                            MessageBox.Show($"Descarga completa. Versión {updateResult.Version} tomará efecto cuando la aplicación sea reiniciada.");
+
+                            notificacion($"Descarga completa. Versión {updateResult.Version} tomará efecto cuando la aplicación sea reiniciada.");
                         }
                         else
                         {
-                            MessageBox.Show("No hay actualizaciones pendientes");
+                            notificacionInicio.BalloonTipIcon = ToolTipIcon.Info;
+                            notificacionInicio.BalloonTipTitle = "Sistema Reportes Peajes";
+                            notificacionInicio.BalloonTipText = "No hay actualizaciones pendientes";
+                            notificacionInicio.ShowBalloonTip(5000);
                         }
                     }
                     catch (Exception ex)
@@ -284,6 +287,15 @@ namespace MainWindows
             rc.WindowState = FormWindowState.Maximized;
             rc.Show();
             rc.Activate();
+        }
+        #endregion
+        #region Inicialización de notificación
+        public void notificacion(string mensaje)
+        {
+            notificacionInicio.BalloonTipIcon = ToolTipIcon.Info;
+            notificacionInicio.BalloonTipTitle = "Actualización Disponible";
+            notificacionInicio.BalloonTipText = mensaje;
+            notificacionInicio.ShowBalloonTip(5000);
         }
         #endregion
     }
