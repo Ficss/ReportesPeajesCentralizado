@@ -11,7 +11,7 @@ namespace AccesoDatos
         #region Conexión a la BD Principal
         public static SqlConnection conectarPrincipal()
         {
-            SqlConnection miconexion = new SqlConnection("Data Source=principal-pc;Initial Catalog=peajeM; User ID=sa;Password=Vegam123");
+            SqlConnection miconexion = new SqlConnection("Data Source=peajeprincipal-pc;Initial Catalog=peajeM; User ID=sa;Password=Vegam123");
             return miconexion;
         }
         #endregion

@@ -26,8 +26,8 @@ namespace ReportesPrincipal.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=principal-pc;Initial Catalog=peajeM;Persist Security Info=True;User I" +
-            "D=sa;Password=Vegam123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=peajeprincipal-pc;Initial Catalog=peajeM;Persist Security Info=True;U" +
+            "ser ID=sa;Password=Vegam123")]
         public string principalConnectionString {
             get {
                 return ((string)(this["principalConnectionString"]));

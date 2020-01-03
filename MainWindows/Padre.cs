@@ -134,10 +134,10 @@ namespace MainWindows
         #region Load
         private void Padre_Load(object sender, EventArgs e)
         {
-            
+
             this.Text = "Sistema Reportes Peaje Vega Monumental - " + Environment.MachineName;
-            string pc = Environment.MachineName;
-            if (pc.Equals("NOT_LEONEL") || pc.Equals("LSCHALKER-NTBK"))
+            string pc = Environment.MachineName.ToUpper();
+            if (pc.Equals("LSCHALKER-NTBK2"))
             {
                 lblCodigos.Visible = true;
                 lblClientes.Visible = true;
