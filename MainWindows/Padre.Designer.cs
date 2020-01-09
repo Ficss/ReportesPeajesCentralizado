@@ -85,6 +85,7 @@
             this.kryptonLinkLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonHeaderGroup3 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
+            this.kryptonLinkLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -391,23 +392,22 @@
             // kryptonTextBox2
             // 
             this.kryptonTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonTextBox2.Location = new System.Drawing.Point(0, 636);
+            this.kryptonTextBox2.Location = new System.Drawing.Point(0, 668);
             this.kryptonTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonTextBox2.Multiline = true;
             this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(324, 150);
+            this.kryptonTextBox2.Size = new System.Drawing.Size(324, 118);
             this.kryptonTextBox2.StateCommon.Border.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.False;
             this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonTextBox2.TabIndex = 51;
-            this.kryptonTextBox2.Text = "Bienvenido al Sistema de reportes.\r\n\r\nUse los botones de flecha para expandir y c" +
-    "ontraer las secciones superiores.";
+            this.kryptonTextBox2.Text = "Bienvenido al Sistema de reportes.";
             // 
             // kryptonPanel9
             // 
             this.kryptonPanel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel9.Location = new System.Drawing.Point(0, 624);
+            this.kryptonPanel9.Location = new System.Drawing.Point(0, 656);
             this.kryptonPanel9.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel9.Name = "kryptonPanel9";
             this.kryptonPanel9.Size = new System.Drawing.Size(324, 12);
@@ -420,7 +420,7 @@
             this.buttonSpecHeaderGroup4});
             this.kryptonHeaderGroup2.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup2.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(0, 550);
+            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(0, 582);
             this.kryptonHeaderGroup2.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup2.Name = "kryptonHeaderGroup2";
             // 
@@ -453,7 +453,7 @@
             // kryptonPanel6
             // 
             this.kryptonPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel6.Location = new System.Drawing.Point(0, 538);
+            this.kryptonPanel6.Location = new System.Drawing.Point(0, 570);
             this.kryptonPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel6.Name = "kryptonPanel6";
             this.kryptonPanel6.Size = new System.Drawing.Size(324, 12);
@@ -464,7 +464,7 @@
             this.kryptonHeaderGroup6.AutoSize = true;
             this.kryptonHeaderGroup6.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup6.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup6.Location = new System.Drawing.Point(0, 469);
+            this.kryptonHeaderGroup6.Location = new System.Drawing.Point(0, 501);
             this.kryptonHeaderGroup6.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup6.Name = "kryptonHeaderGroup6";
             // 
@@ -490,7 +490,7 @@
             // kryptonPanel7
             // 
             this.kryptonPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel7.Location = new System.Drawing.Point(0, 457);
+            this.kryptonPanel7.Location = new System.Drawing.Point(0, 489);
             this.kryptonPanel7.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel7.Name = "kryptonPanel7";
             this.kryptonPanel7.Size = new System.Drawing.Size(324, 12);
@@ -501,7 +501,7 @@
             this.kryptonHeaderGroup7.AutoSize = true;
             this.kryptonHeaderGroup7.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup7.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup7.Location = new System.Drawing.Point(0, 388);
+            this.kryptonHeaderGroup7.Location = new System.Drawing.Point(0, 420);
             this.kryptonHeaderGroup7.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup7.Name = "kryptonHeaderGroup7";
             // 
@@ -527,7 +527,7 @@
             // kryptonPanel5
             // 
             this.kryptonPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel5.Location = new System.Drawing.Point(0, 376);
+            this.kryptonPanel5.Location = new System.Drawing.Point(0, 408);
             this.kryptonPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel5.Name = "kryptonPanel5";
             this.kryptonPanel5.Size = new System.Drawing.Size(324, 12);
@@ -540,7 +540,7 @@
             this.buttonSpecHeaderGroup7});
             this.kryptonHeaderGroup5.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup5.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup5.Location = new System.Drawing.Point(0, 307);
+            this.kryptonHeaderGroup5.Location = new System.Drawing.Point(0, 339);
             this.kryptonHeaderGroup5.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup5.Name = "kryptonHeaderGroup5";
             // 
@@ -573,7 +573,7 @@
             // kryptonPanel4
             // 
             this.kryptonPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel4.Location = new System.Drawing.Point(0, 295);
+            this.kryptonPanel4.Location = new System.Drawing.Point(0, 327);
             this.kryptonPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel4.Name = "kryptonPanel4";
             this.kryptonPanel4.Size = new System.Drawing.Size(324, 12);
@@ -586,7 +586,7 @@
             this.buttonSpecHeaderGroup6});
             this.kryptonHeaderGroup4.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup4.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup4.Location = new System.Drawing.Point(0, 226);
+            this.kryptonHeaderGroup4.Location = new System.Drawing.Point(0, 258);
             this.kryptonHeaderGroup4.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup4.Name = "kryptonHeaderGroup4";
             // 
@@ -619,7 +619,7 @@
             // kryptonPanel3
             // 
             this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 214);
+            this.kryptonPanel3.Location = new System.Drawing.Point(0, 246);
             this.kryptonPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel3.Name = "kryptonPanel3";
             this.kryptonPanel3.Size = new System.Drawing.Size(324, 12);
@@ -632,7 +632,7 @@
             this.buttonSpecHeaderGroup3});
             this.kryptonHeaderGroup1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup1.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(0, 145);
+            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(0, 177);
             this.kryptonHeaderGroup1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
             // 
@@ -666,7 +666,7 @@
             // kryptonPanel2
             // 
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel2.Location = new System.Drawing.Point(0, 133);
+            this.kryptonPanel2.Location = new System.Drawing.Point(0, 165);
             this.kryptonPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel2.Name = "kryptonPanel2";
             this.kryptonPanel2.Size = new System.Drawing.Size(324, 12);
@@ -686,12 +686,24 @@
             // kryptonHeaderGroup3.Panel
             // 
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.lblCodigos);
+            this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonLinkLabel3);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.lblClientes);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonLinkLabel7);
-            this.kryptonHeaderGroup3.Size = new System.Drawing.Size(324, 133);
+            this.kryptonHeaderGroup3.Size = new System.Drawing.Size(324, 165);
             this.kryptonHeaderGroup3.TabIndex = 33;
             this.kryptonHeaderGroup3.ValuesPrimary.Heading = "Peaje Principal";
             this.kryptonHeaderGroup3.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_Paid_Parking_16px;
+            // 
+            // kryptonLinkLabel3
+            // 
+            this.kryptonLinkLabel3.Location = new System.Drawing.Point(15, 100);
+            this.kryptonLinkLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLinkLabel3.Name = "kryptonLinkLabel3";
+            this.kryptonLinkLabel3.Size = new System.Drawing.Size(134, 24);
+            this.kryptonLinkLabel3.TabIndex = 1;
+            this.kryptonLinkLabel3.Values.Text = "Rendición de Caja";
+            this.kryptonLinkLabel3.Visible = false;
+            this.kryptonLinkLabel3.LinkClicked += new System.EventHandler(this.kryptonLinkLabel3_LinkClicked);
             // 
             // Padre
             // 
@@ -820,6 +832,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel kryptonLinkLabel4;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel9;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel kryptonLinkLabel3;
     }
 }
 

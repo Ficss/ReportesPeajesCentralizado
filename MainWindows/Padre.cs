@@ -298,5 +298,11 @@ namespace MainWindows
             notificacionInicio.ShowBalloonTip(5000);
         }
         #endregion
+        #region Abrir formulario de rendicion de caja
+        private void kryptonLinkLabel3_LinkClicked(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
