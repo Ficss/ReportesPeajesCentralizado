@@ -17,6 +17,7 @@ namespace ReportesPrincipal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ReportesPeajePrincipal());
+            //Application.Run(new RendicionCaja());
         }
     }
 }

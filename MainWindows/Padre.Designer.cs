@@ -334,7 +334,7 @@
             // 
             // lblClientes
             // 
-            this.lblClientes.Location = new System.Drawing.Point(15, 68);
+            this.lblClientes.Location = new System.Drawing.Point(15, 100);
             this.lblClientes.Margin = new System.Windows.Forms.Padding(4);
             this.lblClientes.Name = "lblClientes";
             this.lblClientes.Size = new System.Drawing.Size(205, 24);
@@ -356,7 +356,7 @@
             // 
             // lblCodigos
             // 
-            this.lblCodigos.Location = new System.Drawing.Point(15, 36);
+            this.lblCodigos.Location = new System.Drawing.Point(15, 68);
             this.lblCodigos.Margin = new System.Windows.Forms.Padding(4);
             this.lblCodigos.Name = "lblCodigos";
             this.lblCodigos.Size = new System.Drawing.Size(202, 24);
@@ -696,7 +696,7 @@
             // 
             // kryptonLinkLabel3
             // 
-            this.kryptonLinkLabel3.Location = new System.Drawing.Point(15, 100);
+            this.kryptonLinkLabel3.Location = new System.Drawing.Point(15, 36);
             this.kryptonLinkLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonLinkLabel3.Name = "kryptonLinkLabel3";
             this.kryptonLinkLabel3.Size = new System.Drawing.Size(134, 24);

@@ -23,6 +23,7 @@ namespace MainWindows
         ReportesPeajeSitioCero sc;
         CodigosIngreso ci;
         RegistroClientes rc;
+        RendicionCaja rendicioncaja;
         AboutBox1 ab;
         #endregion
         #region Constructor por defecto
@@ -137,10 +138,9 @@ namespace MainWindows
         #region Load
         private void Padre_Load(object sender, EventArgs e)
         {
-
             this.Text = "Sistema Reportes Peaje Vega Monumental - " + Environment.MachineName;
             string pc = Environment.MachineName.ToUpper();
-            if (pc.Equals("LSCHALKER-NTBK2"))
+            if (pc.Equals("LSCHALKER-NTBK"))
             {
                 lblCodigos.Visible = true;
                 lblClientes.Visible = true;
@@ -301,7 +301,13 @@ namespace MainWindows
         #region Abrir formulario de rendicion de caja
         private void kryptonLinkLabel3_LinkClicked(object sender, EventArgs e)
         {
-
+            rendicioncaja = RendicionCaja.Instance();
+            rendicioncaja.MdiParent = this;
+            rendicioncaja.WindowState = FormWindowState.Normal;
+            rendicioncaja.Show();
+            rendicioncaja.WindowState = FormWindowState.Maximized;
+            rendicioncaja.Show();
+            rendicioncaja.Activate();
         }
         #endregion
     }
