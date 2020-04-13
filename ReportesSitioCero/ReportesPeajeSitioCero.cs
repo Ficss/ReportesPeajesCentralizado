@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace ReportesSitioCero
 {
     public partial class ReportesPeajeSitioCero : KryptonForm
@@ -31,11 +31,6 @@ namespace ReportesSitioCero
         public ReportesPeajeSitioCero()
         {
             InitializeComponent();
-        }
-        #endregion
-        #region Load
-        private void ReportesPeajeSitioCero_Load(object sender, EventArgs e)
-        {
             kryptonDateTimePicker1.MaxDate = DateTime.Now.AddDays(-1);
 
             DateTime today = DateTime.Today;
@@ -46,6 +41,47 @@ namespace ReportesSitioCero
 
             dtpPrimeraSemana.MaxDate = nextSaturday;
             dtpUltimaSemana.MaxDate = nextSaturday;
+
+            //Cell
+            dgvCierresZ.BorderStyle = BorderStyle.None;
+            dgvCierresZ.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dgvCierresZ.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCierresZ.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dgvCierresZ.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dgvCierresZ.DefaultCellStyle.Font = new System.Drawing.Font("Cambria", 10);
+            dgvCierresZ.BackgroundColor = Color.White;
+
+            //Header
+            dgvCierresZ.EnableHeadersVisualStyles = false;
+            dgvCierresZ.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft San Seriff", 12);
+        }
+        #endregion
+        #region Load
+        private void ReportesPeajeSitioCero_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(Properties.Settings.Default.SC))
+                {
+                    
+                    connection.Open();
+                    var query = "select 1";
+                    var command = new SqlCommand(query, connection);
+                    command.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
+                                "Las causas pueden ser:  \n " +
+                                "-No está conectado a la red Vega Monumental. Comunicarse con Esteban Castellanos \n" +
+                                "-Peaje está cerrado.", ex.Message);
+                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                this.BeginInvoke(new MethodInvoker(this.Close));
+            }
         }
         #endregion
         #region Cargar informe al día - Report 7
@@ -336,5 +372,93 @@ namespace ReportesSitioCero
             }
         }
         #endregion
+
+        #region Cargar grilla con los datos de los cierres Z
+        private void btnCierresZ_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string formated = dtpMesCierreZ.Value.Month.ToString() + '/' + dtpAnCierreZ.Value.Year.ToString();
+                DateTime date = Convert.ToDateTime(formated);
+                var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+                DataTable dt = new DataTable();
+                string con = Properties.Settings.Default.SC;
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    connection.Open();
+                    SqlCommand myCmd = new SqlCommand("sp_Cargar_CierreZ", connection);
+                    myCmd.CommandType = CommandType.StoredProcedure;
+                    myCmd.Parameters.Add("@finicial", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
+                    myCmd.Parameters.Add("@ffinal", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
+                    SqlDataAdapter da = new SqlDataAdapter(myCmd);
+                    da.Fill(dt);
+                    dgvCierresZ.DataSource = dt;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            //dgvCierresZ.DataBind();
+        }
+        #endregion
+
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            var dia = new SaveFileDialog();
+            dia.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dia.Filter = "Excel Worksheets (*.xlsx)|*.xlsx|xls file (*.xls)|*.xls|All files (*.*)|*.*";
+            if (dia.ShowDialog(this) == DialogResult.OK)
+            {
+                Excel._Application xlApp = new Excel.Application();
+                Excel._Workbook xlWorkBook = xlApp.Workbooks.Add(Type.Missing);
+                Excel._Worksheet xlWorkSheet = null;
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                xlWorkSheet = xlWorkBook.ActiveSheet;
+                xlWorkSheet.Name = "Principal";
+
+                for (int x = 1; x < dgvCierresZ.Columns.Count + 1; x++)
+                {
+                    xlWorkSheet.Cells[1, x] = dgvCierresZ.Columns[x - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dgvCierresZ.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvCierresZ.Columns.Count; j++)
+                    {
+                        //xlWorkSheet.Cells[i + 2, j + 1] = dgvCierresZ.Rows[i].Cells[j].Value.ToString();
+                        xlWorkSheet.Cells[i + 2, j + 1] = dgvCierresZ.Rows[i].Cells[j].Value;
+                    }
+                }
+
+                xlWorkBook.SaveAs(dia.FileName, Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+                xlWorkBook.Close(true, Type.Missing, Type.Missing);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+                MessageBox.Show($"Datos exportados exitósamente en: {dia.InitialDirectory}");
+            }
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
     }
 }

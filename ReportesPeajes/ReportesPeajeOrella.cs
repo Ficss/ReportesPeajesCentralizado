@@ -3,6 +3,9 @@ using Microsoft.Reporting.WinForms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 namespace ReportesPeajes
 {
     public partial class ReportesPeajeOrella : KryptonForm
@@ -23,11 +26,6 @@ namespace ReportesPeajes
         public ReportesPeajeOrella()
         {
             InitializeComponent();
-        }
-        #endregion
-        #region Load
-        private void ReportesPeajeOrella_Load(object sender, EventArgs e)
-        {
             //Se setea campos de fecha con la fecha desde que salio a producción el sistema
             kryptonDateTimePicker1.MaxDate = DateTime.Now.AddDays(-1);
             DateTime today = DateTime.Today;
@@ -38,6 +36,47 @@ namespace ReportesPeajes
 
             dtpPrimeraSemana.MaxDate = nextSaturday;
             dtpUltimaSemana.MaxDate = nextSaturday;
+
+            //Cell
+            dgvCierresZ.BorderStyle = BorderStyle.None;
+            dgvCierresZ.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dgvCierresZ.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCierresZ.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dgvCierresZ.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dgvCierresZ.DefaultCellStyle.Font = new System.Drawing.Font("Cambria", 10);
+            dgvCierresZ.BackgroundColor = Color.White;
+
+            //Header
+            dgvCierresZ.EnableHeadersVisualStyles = false;
+            dgvCierresZ.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft San Seriff", 12);
+
+        }
+        #endregion
+        #region Load
+        private void ReportesPeajeOrella_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(Properties.Settings.Default.peajeMConnectionString))
+                {
+                    var query = "select 1";
+                    var command = new SqlCommand(query, connection);
+                    connection.Open();
+                    command.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
+                                "Las causas pueden ser:  \n " +
+                                "-No está conectado a la red Vega Monumental. Comunicarse con Esteban Castellanos \n" +
+                                "-Peaje está cerrado.", ex.Message);
+                this.DialogResult = DialogResult.Cancel;
+                this.BeginInvoke(new MethodInvoker(this.Close));
+            }
         }
         #endregion
         #region Cargar Informe Al Día - Report 1
@@ -53,19 +92,19 @@ namespace ReportesPeajes
                     using (SqlCommand cmd = new SqlCommand("sp_informe_al_dia", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@v_fecha", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_elegida);
+                        cmd.Parameters.Add("@v_fecha", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_elegida).AddDays(-1);
                         connection.Open();
                         cmd.ExecuteNonQuery();
                         connection.Close();
-                        // TODO: esta línea de código carga datos en la tabla 'peajeOrellaDataSet.informe_al_dia' Puede moverla o quitarla según sea necesario.
+                        // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_al_dia' Puede moverla o quitarla según sea necesario.
                         this.informe_al_diaTableAdapter.Fill(this.peajeOrellaDataSet.informe_al_dia);
                     }
                 }
                 ReportParameter[] rparams = new ReportParameter[] {
                 new ReportParameter("fecha", fecha)
                 };
-                reportViewer1.LocalReport.SetParameters(rparams);
-                this.reportViewer1.RefreshReport();
+                reportViewer7.LocalReport.SetParameters(rparams);
+                this.reportViewer7.RefreshReport();
             }
             catch (Exception ex)
             {
@@ -336,5 +375,92 @@ namespace ReportesPeajes
             }
         }
         #endregion
+        #region Cargar grilla con los datos de los cierres Z
+        private void btnCierresZ_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string formated = dtpMesCierreZ.Value.Month.ToString() + '/' + dtpAnCierreZ.Value.Year.ToString();
+                DateTime date = Convert.ToDateTime(formated);
+                var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+                DataTable dt = new DataTable();
+                string con = Properties.Settings.Default.peajeMConnectionString;
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    connection.Open();
+                    SqlCommand myCmd = new SqlCommand("sp_Cargar_CierreZ", connection);
+                    myCmd.CommandType = CommandType.StoredProcedure;
+                    myCmd.Parameters.Add("@finicial", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
+                    myCmd.Parameters.Add("@ffinal", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
+                    SqlDataAdapter da = new SqlDataAdapter(myCmd);
+                    da.Fill(dt);
+                    dgvCierresZ.DataSource = dt;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            //dgvCierresZ.DataBind();
+        }
+        #endregion
+
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            var dia = new SaveFileDialog();
+            dia.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dia.Filter = "Excel Worksheets (*.xlsx)|*.xlsx|xls file (*.xls)|*.xls|All files (*.*)|*.*";
+            if (dia.ShowDialog(this) == DialogResult.OK)
+            {
+                Excel._Application xlApp = new Excel.Application();
+                Excel._Workbook xlWorkBook = xlApp.Workbooks.Add(Type.Missing);
+                Excel._Worksheet xlWorkSheet = null;
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                xlWorkSheet = xlWorkBook.ActiveSheet;
+                xlWorkSheet.Name = "Principal";
+
+                for (int x = 1; x < dgvCierresZ.Columns.Count + 1; x++)
+                {
+                    xlWorkSheet.Cells[1, x] = dgvCierresZ.Columns[x - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dgvCierresZ.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvCierresZ.Columns.Count; j++)
+                    {
+                        //xlWorkSheet.Cells[i + 2, j + 1] = dgvCierresZ.Rows[i].Cells[j].Value.ToString();
+                        xlWorkSheet.Cells[i + 2, j + 1] = dgvCierresZ.Rows[i].Cells[j].Value;
+                    }
+                }
+
+                xlWorkBook.SaveAs(dia.FileName, Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+                xlWorkBook.Close(true, Type.Missing, Type.Missing);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+                MessageBox.Show($"Datos exportados exitósamente en: {dia.InitialDirectory}");
+            }
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
     }
 }

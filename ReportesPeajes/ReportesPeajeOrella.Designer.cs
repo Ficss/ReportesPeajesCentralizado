@@ -49,8 +49,6 @@
             this.inf_vehiculos_compara_mesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
-            this.btnBuscarDiario = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -102,6 +100,15 @@
             this.btnVehiculosComprador = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel11 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonPage8 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.dgvCierresZ = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.kryptonHeaderGroup9 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
+            this.btnExportarExcel = new System.Windows.Forms.Button();
+            this.dtpMesCierreZ = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dtpAnCierreZ = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.btnCierresZ = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel16 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel17 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.informe_al_diaTableAdapter = new ReportesPeajes.peajeOrellaDataSetTableAdapters.informe_al_diaTableAdapter();
             this.informe_diarioTableAdapter = new ReportesPeajes.peajeOrellaDataSetTableAdapters.informe_diarioTableAdapter();
             this.informe_recaudacion_mensualTableAdapter = new ReportesPeajes.peajeOrellaDataSetTableAdapters.informe_recaudacion_mensualTableAdapter();
@@ -109,6 +116,8 @@
             this.inf_vehiculos_compara_mesTableAdapter = new ReportesPeajes.peajeOrellaDataSetTableAdapters.inf_vehiculos_compara_mesTableAdapter();
             this.informe_cajeroTableAdapter = new ReportesPeajes.peajeOrellaDataSetTableAdapters.informe_cajeroTableAdapter();
             this.informe_acumuladoTableAdapter = new ReportesPeajes.peajeOrellaDataSetTableAdapters.informe_acumuladoTableAdapter();
+            this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
+            this.btnBuscarDiario = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.informe_al_diaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peajeOrellaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_diarioBindingSource)).BeginInit();
@@ -121,39 +130,53 @@
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).BeginInit();
             this.kryptonPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
-            this.kryptonHeaderGroup1.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
             this.kryptonPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup7.Panel)).BeginInit();
             this.kryptonHeaderGroup7.Panel.SuspendLayout();
+            this.kryptonHeaderGroup7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).BeginInit();
             this.kryptonPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2.Panel)).BeginInit();
             this.kryptonHeaderGroup2.Panel.SuspendLayout();
+            this.kryptonHeaderGroup2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).BeginInit();
             this.kryptonPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3.Panel)).BeginInit();
             this.kryptonHeaderGroup3.Panel.SuspendLayout();
+            this.kryptonHeaderGroup3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
             this.kryptonPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).BeginInit();
             this.kryptonHeaderGroup4.Panel.SuspendLayout();
+            this.kryptonHeaderGroup4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).BeginInit();
             this.kryptonPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup5.Panel)).BeginInit();
             this.kryptonHeaderGroup5.Panel.SuspendLayout();
+            this.kryptonHeaderGroup5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage6)).BeginInit();
             this.kryptonPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6.Panel)).BeginInit();
             this.kryptonHeaderGroup6.Panel.SuspendLayout();
+            this.kryptonHeaderGroup6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage8)).BeginInit();
+            this.kryptonPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCierresZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup9.Panel)).BeginInit();
+            this.kryptonHeaderGroup9.Panel.SuspendLayout();
+            this.kryptonHeaderGroup9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
+            this.kryptonHeaderGroup1.Panel.SuspendLayout();
+            this.kryptonHeaderGroup1.SuspendLayout();
             this.SuspendLayout();
             // 
             // informe_al_diaBindingSource
@@ -198,23 +221,10 @@
             // 
             // kryptonNavigator1
             // 
-            this.kryptonNavigator1.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
-            this.kryptonNavigator1.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.kryptonNavigator1.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
             this.kryptonNavigator1.Bar.CheckButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.LowProfile;
             this.kryptonNavigator1.Bar.ItemOrientation = ComponentFactory.Krypton.Toolkit.ButtonOrientation.FixedTop;
-            this.kryptonNavigator1.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
-            this.kryptonNavigator1.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.kryptonNavigator1.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.kryptonNavigator1.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.kryptonNavigator1.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.SelectPage;
-            this.kryptonNavigator1.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.kryptonNavigator1.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.kryptonNavigator1.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
-            this.kryptonNavigator1.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.kryptonNavigator1.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.kryptonNavigator1.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.kryptonNavigator1.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.kryptonNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonNavigator1.Location = new System.Drawing.Point(0, 0);
             this.kryptonNavigator1.Margin = new System.Windows.Forms.Padding(4);
@@ -227,7 +237,8 @@
             this.kryptonPage3,
             this.kryptonPage4,
             this.kryptonPage5,
-            this.kryptonPage6});
+            this.kryptonPage6,
+            this.kryptonPage8});
             this.kryptonNavigator1.SelectedIndex = 0;
             this.kryptonNavigator1.Size = new System.Drawing.Size(1344, 692);
             this.kryptonNavigator1.TabIndex = 2;
@@ -248,31 +259,6 @@
             this.kryptonPage7.ToolTipTitle = "Page ToolTip";
             this.kryptonPage7.UniqueName = "95F08F195F4443A7ECB208DE5F514E95";
             // 
-            // kryptonHeaderGroup1
-            // 
-            this.kryptonHeaderGroup1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonHeaderGroup1.HeaderPositionSecondary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Top;
-            this.kryptonHeaderGroup1.HeaderVisiblePrimary = false;
-            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonHeaderGroup1.Margin = new System.Windows.Forms.Padding(4);
-            this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
-            // 
-            // 
-            // 
-            this.kryptonHeaderGroup1.Panel.Controls.Add(this.btnBuscarDiario);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(1342, 105);
-            this.kryptonHeaderGroup1.TabIndex = 13;
-            // 
-            // btnBuscarDiario
-            // 
-            this.btnBuscarDiario.Location = new System.Drawing.Point(595, 14);
-            this.btnBuscarDiario.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarDiario.Name = "btnBuscarDiario";
-            this.btnBuscarDiario.Size = new System.Drawing.Size(149, 49);
-            this.btnBuscarDiario.TabIndex = 0;
-            this.btnBuscarDiario.Values.Text = "Recuperar Datos";
-            this.btnBuscarDiario.Click += new System.EventHandler(this.btnBuscarDiario_Click);
-            // 
             // reportViewer1
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -285,7 +271,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 105);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1342, 554);
+            this.reportViewer1.Size = new System.Drawing.Size(1343, 554);
             this.reportViewer1.TabIndex = 12;
             // 
             // kryptonPage1
@@ -298,7 +284,7 @@
             this.kryptonPage1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(67, 62);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(1341, 656);
+            this.kryptonPage1.Size = new System.Drawing.Size(1342, 659);
             this.kryptonPage1.Text = "Ventas Diarias";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "3E316D6E78DF4AE22CA2B8520F6E8ED7";
@@ -315,7 +301,7 @@
             this.reportViewer2.Location = new System.Drawing.Point(0, 105);
             this.reportViewer2.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.Size = new System.Drawing.Size(1341, 551);
+            this.reportViewer2.Size = new System.Drawing.Size(1342, 554);
             this.reportViewer2.TabIndex = 11;
             // 
             // kryptonHeaderGroup7
@@ -327,12 +313,12 @@
             this.kryptonHeaderGroup7.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup7.Name = "kryptonHeaderGroup7";
             // 
-            // 
+            // kryptonHeaderGroup7.Panel
             // 
             this.kryptonHeaderGroup7.Panel.Controls.Add(this.btnBuscar);
             this.kryptonHeaderGroup7.Panel.Controls.Add(this.kryptonDateTimePicker1);
             this.kryptonHeaderGroup7.Panel.Controls.Add(this.kryptonLabel1);
-            this.kryptonHeaderGroup7.Size = new System.Drawing.Size(1341, 105);
+            this.kryptonHeaderGroup7.Size = new System.Drawing.Size(1342, 105);
             this.kryptonHeaderGroup7.TabIndex = 10;
             // 
             // btnBuscar
@@ -341,7 +327,7 @@
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(149, 49);
-            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.TabIndex = 8;
             this.btnBuscar.Values.Text = "Recuperar Datos";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -352,19 +338,16 @@
             this.kryptonDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.kryptonDateTimePicker1.Location = new System.Drawing.Point(164, 26);
             this.kryptonDateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.kryptonDateTimePicker1.MinDate = new System.DateTime(2017, 12, 7, 0, 0, 0, 0);
+            this.kryptonDateTimePicker1.MinDate = new System.DateTime(2018, 5, 4, 0, 0, 0, 0);
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            this.kryptonDateTimePicker1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.kryptonDateTimePicker1.Size = new System.Drawing.Size(177, 25);
             this.kryptonDateTimePicker1.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDateTimePicker1.StateActive.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonDateTimePicker1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonDateTimePicker1.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonDateTimePicker1.TabIndex = 1;
+            this.kryptonDateTimePicker1.TabIndex = 7;
             // 
             // kryptonLabel1
             // 
@@ -372,7 +355,7 @@
             this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(132, 24);
-            this.kryptonLabel1.TabIndex = 0;
+            this.kryptonLabel1.TabIndex = 6;
             this.kryptonLabel1.Values.Text = "Seleccionar Fecha";
             // 
             // kryptonPage2
@@ -385,7 +368,7 @@
             this.kryptonPage2.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPage2.MinimumSize = new System.Drawing.Size(67, 62);
             this.kryptonPage2.Name = "kryptonPage2";
-            this.kryptonPage2.Size = new System.Drawing.Size(1341, 656);
+            this.kryptonPage2.Size = new System.Drawing.Size(1342, 659);
             this.kryptonPage2.Text = "Recaudación Mensual";
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "FD730F9695CD44F4BE9F939537751F33";
@@ -402,7 +385,7 @@
             this.reportViewer3.Location = new System.Drawing.Point(0, 105);
             this.reportViewer3.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer3.Name = "reportViewer3";
-            this.reportViewer3.Size = new System.Drawing.Size(1341, 551);
+            this.reportViewer3.Size = new System.Drawing.Size(1342, 554);
             this.reportViewer3.TabIndex = 6;
             // 
             // kryptonHeaderGroup2
@@ -414,14 +397,14 @@
             this.kryptonHeaderGroup2.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup2.Name = "kryptonHeaderGroup2";
             // 
-            // 
+            // kryptonHeaderGroup2.Panel
             // 
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.dtpMes);
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.dtpAn);
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.btnRecaudacionMensual);
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.kryptonLabel3);
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.kryptonLabel2);
-            this.kryptonHeaderGroup2.Size = new System.Drawing.Size(1341, 105);
+            this.kryptonHeaderGroup2.Size = new System.Drawing.Size(1342, 105);
             this.kryptonHeaderGroup2.TabIndex = 5;
             // 
             // dtpMes
@@ -432,7 +415,6 @@
             this.dtpMes.Location = new System.Drawing.Point(152, 26);
             this.dtpMes.Margin = new System.Windows.Forms.Padding(4);
             this.dtpMes.Name = "dtpMes";
-            this.dtpMes.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpMes.ShowUpDown = true;
             this.dtpMes.Size = new System.Drawing.Size(175, 25);
             this.dtpMes.TabIndex = 3;
@@ -446,7 +428,6 @@
             this.dtpAn.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAn.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.dtpAn.Name = "dtpAn";
-            this.dtpAn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpAn.ShowUpDown = true;
             this.dtpAn.Size = new System.Drawing.Size(175, 25);
             this.dtpAn.TabIndex = 2;
@@ -489,7 +470,7 @@
             this.kryptonPage3.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPage3.MinimumSize = new System.Drawing.Size(67, 62);
             this.kryptonPage3.Name = "kryptonPage3";
-            this.kryptonPage3.Size = new System.Drawing.Size(1341, 656);
+            this.kryptonPage3.Size = new System.Drawing.Size(1342, 659);
             this.kryptonPage3.Text = "Informe Semanal";
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "BCE5946F59EC435E76A4763EEAEE0AAB";
@@ -506,7 +487,7 @@
             this.reportViewer4.Location = new System.Drawing.Point(0, 105);
             this.reportViewer4.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer4.Name = "reportViewer4";
-            this.reportViewer4.Size = new System.Drawing.Size(1341, 551);
+            this.reportViewer4.Size = new System.Drawing.Size(1342, 554);
             this.reportViewer4.TabIndex = 5;
             // 
             // kryptonHeaderGroup3
@@ -518,14 +499,14 @@
             this.kryptonHeaderGroup3.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup3.Name = "kryptonHeaderGroup3";
             // 
-            // 
+            // kryptonHeaderGroup3.Panel
             // 
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.dtpUltimaSemana);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.dtpPrimeraSemana);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.btnInformeSemanal);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonLabel4);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonLabel5);
-            this.kryptonHeaderGroup3.Size = new System.Drawing.Size(1341, 105);
+            this.kryptonHeaderGroup3.Size = new System.Drawing.Size(1342, 105);
             this.kryptonHeaderGroup3.TabIndex = 4;
             // 
             // dtpUltimaSemana
@@ -537,7 +518,6 @@
             this.dtpUltimaSemana.Margin = new System.Windows.Forms.Padding(4);
             this.dtpUltimaSemana.MinDate = new System.DateTime(2017, 12, 8, 0, 0, 0, 0);
             this.dtpUltimaSemana.Name = "dtpUltimaSemana";
-            this.dtpUltimaSemana.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpUltimaSemana.Size = new System.Drawing.Size(175, 25);
             this.dtpUltimaSemana.TabIndex = 2;
             // 
@@ -551,7 +531,6 @@
             this.dtpPrimeraSemana.Margin = new System.Windows.Forms.Padding(4);
             this.dtpPrimeraSemana.MinDate = new System.DateTime(2017, 12, 8, 0, 0, 0, 0);
             this.dtpPrimeraSemana.Name = "dtpPrimeraSemana";
-            this.dtpPrimeraSemana.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpPrimeraSemana.Size = new System.Drawing.Size(175, 25);
             this.dtpPrimeraSemana.TabIndex = 2;
             // 
@@ -613,7 +592,7 @@
             this.reportViewer5.Location = new System.Drawing.Point(0, 105);
             this.reportViewer5.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer5.Name = "reportViewer5";
-            this.reportViewer5.Size = new System.Drawing.Size(1342, 554);
+            this.reportViewer5.Size = new System.Drawing.Size(1343, 554);
             this.reportViewer5.TabIndex = 5;
             // 
             // kryptonHeaderGroup4
@@ -625,7 +604,7 @@
             this.kryptonHeaderGroup4.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup4.Name = "kryptonHeaderGroup4";
             // 
-            // 
+            // kryptonHeaderGroup4.Panel
             // 
             this.kryptonHeaderGroup4.Panel.Controls.Add(this.dtpMesCajero);
             this.kryptonHeaderGroup4.Panel.Controls.Add(this.dtpAnCajero);
@@ -643,7 +622,6 @@
             this.dtpMesCajero.Location = new System.Drawing.Point(152, 26);
             this.dtpMesCajero.Margin = new System.Windows.Forms.Padding(4);
             this.dtpMesCajero.Name = "dtpMesCajero";
-            this.dtpMesCajero.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpMesCajero.ShowUpDown = true;
             this.dtpMesCajero.Size = new System.Drawing.Size(175, 25);
             this.dtpMesCajero.TabIndex = 3;
@@ -657,7 +635,6 @@
             this.dtpAnCajero.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAnCajero.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.dtpAnCajero.Name = "dtpAnCajero";
-            this.dtpAnCajero.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpAnCajero.ShowUpDown = true;
             this.dtpAnCajero.Size = new System.Drawing.Size(175, 25);
             this.dtpAnCajero.TabIndex = 2;
@@ -717,7 +694,7 @@
             this.reportViewer6.Location = new System.Drawing.Point(0, 105);
             this.reportViewer6.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer6.Name = "reportViewer6";
-            this.reportViewer6.Size = new System.Drawing.Size(1342, 554);
+            this.reportViewer6.Size = new System.Drawing.Size(1343, 554);
             this.reportViewer6.TabIndex = 6;
             // 
             // kryptonHeaderGroup5
@@ -729,7 +706,7 @@
             this.kryptonHeaderGroup5.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup5.Name = "kryptonHeaderGroup5";
             // 
-            // 
+            // kryptonHeaderGroup5.Panel
             // 
             this.kryptonHeaderGroup5.Panel.Controls.Add(this.dtpMesVendedorFinal);
             this.kryptonHeaderGroup5.Panel.Controls.Add(this.dtpMesVendedorInicial);
@@ -749,7 +726,6 @@
             this.dtpMesVendedorFinal.Location = new System.Drawing.Point(812, 26);
             this.dtpMesVendedorFinal.Margin = new System.Windows.Forms.Padding(4);
             this.dtpMesVendedorFinal.Name = "dtpMesVendedorFinal";
-            this.dtpMesVendedorFinal.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpMesVendedorFinal.ShowUpDown = true;
             this.dtpMesVendedorFinal.Size = new System.Drawing.Size(175, 25);
             this.dtpMesVendedorFinal.TabIndex = 3;
@@ -762,7 +738,6 @@
             this.dtpMesVendedorInicial.Location = new System.Drawing.Point(211, 26);
             this.dtpMesVendedorInicial.Margin = new System.Windows.Forms.Padding(4);
             this.dtpMesVendedorInicial.Name = "dtpMesVendedorInicial";
-            this.dtpMesVendedorInicial.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpMesVendedorInicial.ShowUpDown = true;
             this.dtpMesVendedorInicial.Size = new System.Drawing.Size(175, 25);
             this.dtpMesVendedorInicial.TabIndex = 3;
@@ -772,11 +747,10 @@
             this.dtpAnVendedorFinal.CalendarTodayDate = new System.DateTime(2017, 9, 4, 0, 0, 0, 0);
             this.dtpAnVendedorFinal.CustomFormat = "yyyy";
             this.dtpAnVendedorFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAnVendedorFinal.Location = new System.Drawing.Point(994, 26);
+            this.dtpAnVendedorFinal.Location = new System.Drawing.Point(995, 26);
             this.dtpAnVendedorFinal.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAnVendedorFinal.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.dtpAnVendedorFinal.Name = "dtpAnVendedorFinal";
-            this.dtpAnVendedorFinal.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpAnVendedorFinal.ShowUpDown = true;
             this.dtpAnVendedorFinal.Size = new System.Drawing.Size(175, 25);
             this.dtpAnVendedorFinal.TabIndex = 2;
@@ -790,7 +764,6 @@
             this.dtpAnVendedorInicial.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAnVendedorInicial.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.dtpAnVendedorInicial.Name = "dtpAnVendedorInicial";
-            this.dtpAnVendedorInicial.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpAnVendedorInicial.ShowUpDown = true;
             this.dtpAnVendedorInicial.Size = new System.Drawing.Size(175, 25);
             this.dtpAnVendedorInicial.TabIndex = 2;
@@ -851,7 +824,7 @@
             this.reportViewer7.Location = new System.Drawing.Point(0, 105);
             this.reportViewer7.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer7.Name = "reportViewer7";
-            this.reportViewer7.Size = new System.Drawing.Size(1342, 554);
+            this.reportViewer7.Size = new System.Drawing.Size(1343, 554);
             this.reportViewer7.TabIndex = 7;
             // 
             // kryptonHeaderGroup6
@@ -863,7 +836,7 @@
             this.kryptonHeaderGroup6.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup6.Name = "kryptonHeaderGroup6";
             // 
-            // 
+            // kryptonHeaderGroup6.Panel
             // 
             this.kryptonHeaderGroup6.Panel.Controls.Add(this.dtpMesCompradorFinal);
             this.kryptonHeaderGroup6.Panel.Controls.Add(this.dtpMesCompradorInicial);
@@ -883,7 +856,6 @@
             this.dtpMesCompradorFinal.Location = new System.Drawing.Point(812, 26);
             this.dtpMesCompradorFinal.Margin = new System.Windows.Forms.Padding(4);
             this.dtpMesCompradorFinal.Name = "dtpMesCompradorFinal";
-            this.dtpMesCompradorFinal.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpMesCompradorFinal.ShowUpDown = true;
             this.dtpMesCompradorFinal.Size = new System.Drawing.Size(175, 25);
             this.dtpMesCompradorFinal.TabIndex = 3;
@@ -896,7 +868,6 @@
             this.dtpMesCompradorInicial.Location = new System.Drawing.Point(211, 26);
             this.dtpMesCompradorInicial.Margin = new System.Windows.Forms.Padding(4);
             this.dtpMesCompradorInicial.Name = "dtpMesCompradorInicial";
-            this.dtpMesCompradorInicial.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpMesCompradorInicial.ShowUpDown = true;
             this.dtpMesCompradorInicial.Size = new System.Drawing.Size(175, 25);
             this.dtpMesCompradorInicial.TabIndex = 3;
@@ -906,11 +877,10 @@
             this.dtpAnCompradorFinal.CalendarTodayDate = new System.DateTime(2017, 9, 4, 0, 0, 0, 0);
             this.dtpAnCompradorFinal.CustomFormat = "yyyy";
             this.dtpAnCompradorFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAnCompradorFinal.Location = new System.Drawing.Point(994, 26);
+            this.dtpAnCompradorFinal.Location = new System.Drawing.Point(995, 26);
             this.dtpAnCompradorFinal.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAnCompradorFinal.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.dtpAnCompradorFinal.Name = "dtpAnCompradorFinal";
-            this.dtpAnCompradorFinal.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpAnCompradorFinal.ShowUpDown = true;
             this.dtpAnCompradorFinal.Size = new System.Drawing.Size(175, 25);
             this.dtpAnCompradorFinal.TabIndex = 2;
@@ -920,11 +890,10 @@
             this.dtpAnCompradorInicial.CalendarTodayDate = new System.DateTime(2017, 9, 4, 0, 0, 0, 0);
             this.dtpAnCompradorInicial.CustomFormat = "yyyy";
             this.dtpAnCompradorInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAnCompradorInicial.Location = new System.Drawing.Point(393, 26);
+            this.dtpAnCompradorInicial.Location = new System.Drawing.Point(399, 26);
             this.dtpAnCompradorInicial.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAnCompradorInicial.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.dtpAnCompradorInicial.Name = "dtpAnCompradorInicial";
-            this.dtpAnCompradorInicial.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpAnCompradorInicial.ShowUpDown = true;
             this.dtpAnCompradorInicial.Size = new System.Drawing.Size(175, 25);
             this.dtpAnCompradorInicial.TabIndex = 2;
@@ -957,6 +926,127 @@
             this.kryptonLabel11.TabIndex = 0;
             this.kryptonLabel11.Values.Text = "Seleccionar Fecha Inicial";
             // 
+            // kryptonPage8
+            // 
+            this.kryptonPage8.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage8.Controls.Add(this.dgvCierresZ);
+            this.kryptonPage8.Controls.Add(this.kryptonHeaderGroup9);
+            this.kryptonPage8.Flags = 65534;
+            this.kryptonPage8.LastVisibleSet = true;
+            this.kryptonPage8.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kryptonPage8.Name = "kryptonPage8";
+            this.kryptonPage8.Size = new System.Drawing.Size(1342, 659);
+            this.kryptonPage8.Text = "Cierres Z";
+            this.kryptonPage8.ToolTipTitle = "Page ToolTip";
+            this.kryptonPage8.UniqueName = "C8160CAB9AEB40FC97B79C78126CD6B9";
+            // 
+            // dgvCierresZ
+            // 
+            this.dgvCierresZ.AllowUserToAddRows = false;
+            this.dgvCierresZ.AllowUserToDeleteRows = false;
+            this.dgvCierresZ.AllowUserToResizeColumns = false;
+            this.dgvCierresZ.AllowUserToResizeRows = false;
+            this.dgvCierresZ.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCierresZ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCierresZ.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCierresZ.Location = new System.Drawing.Point(0, 105);
+            this.dgvCierresZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvCierresZ.Name = "dgvCierresZ";
+            this.dgvCierresZ.ReadOnly = true;
+            this.dgvCierresZ.RowHeadersVisible = false;
+            this.dgvCierresZ.RowTemplate.Height = 24;
+            this.dgvCierresZ.Size = new System.Drawing.Size(1342, 554);
+            this.dgvCierresZ.TabIndex = 7;
+            // 
+            // kryptonHeaderGroup9
+            // 
+            this.kryptonHeaderGroup9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonHeaderGroup9.HeaderPositionSecondary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Top;
+            this.kryptonHeaderGroup9.HeaderVisiblePrimary = false;
+            this.kryptonHeaderGroup9.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeaderGroup9.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonHeaderGroup9.Name = "kryptonHeaderGroup9";
+            // 
+            // kryptonHeaderGroup9.Panel
+            // 
+            this.kryptonHeaderGroup9.Panel.Controls.Add(this.btnExportarExcel);
+            this.kryptonHeaderGroup9.Panel.Controls.Add(this.dtpMesCierreZ);
+            this.kryptonHeaderGroup9.Panel.Controls.Add(this.dtpAnCierreZ);
+            this.kryptonHeaderGroup9.Panel.Controls.Add(this.btnCierresZ);
+            this.kryptonHeaderGroup9.Panel.Controls.Add(this.kryptonLabel16);
+            this.kryptonHeaderGroup9.Panel.Controls.Add(this.kryptonLabel17);
+            this.kryptonHeaderGroup9.Size = new System.Drawing.Size(1342, 105);
+            this.kryptonHeaderGroup9.TabIndex = 6;
+            this.kryptonHeaderGroup9.ValuesSecondary.Heading = "Selección de fecha";
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.BackColor = System.Drawing.SystemColors.Window;
+            this.btnExportarExcel.BackgroundImage = global::ReportesPeajes.Properties.Resources.icons8_Microsoft_Excel_48px;
+            this.btnExportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExportarExcel.FlatAppearance.BorderSize = 0;
+            this.btnExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportarExcel.Location = new System.Drawing.Point(861, 15);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(52, 52);
+            this.btnExportarExcel.TabIndex = 4;
+            this.btnExportarExcel.UseVisualStyleBackColor = false;
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
+            // 
+            // dtpMesCierreZ
+            // 
+            this.dtpMesCierreZ.CalendarTodayDate = new System.DateTime(2017, 9, 4, 0, 0, 0, 0);
+            this.dtpMesCierreZ.CustomFormat = "MM: MMMM";
+            this.dtpMesCierreZ.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpMesCierreZ.Location = new System.Drawing.Point(152, 26);
+            this.dtpMesCierreZ.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpMesCierreZ.Name = "dtpMesCierreZ";
+            this.dtpMesCierreZ.ShowUpDown = true;
+            this.dtpMesCierreZ.Size = new System.Drawing.Size(175, 25);
+            this.dtpMesCierreZ.TabIndex = 3;
+            // 
+            // dtpAnCierreZ
+            // 
+            this.dtpAnCierreZ.CalendarTodayDate = new System.DateTime(2017, 9, 4, 0, 0, 0, 0);
+            this.dtpAnCierreZ.CustomFormat = "yyyy";
+            this.dtpAnCierreZ.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpAnCierreZ.Location = new System.Drawing.Point(473, 26);
+            this.dtpAnCierreZ.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpAnCierreZ.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.dtpAnCierreZ.Name = "dtpAnCierreZ";
+            this.dtpAnCierreZ.ShowUpDown = true;
+            this.dtpAnCierreZ.Size = new System.Drawing.Size(175, 25);
+            this.dtpAnCierreZ.TabIndex = 2;
+            // 
+            // btnCierresZ
+            // 
+            this.btnCierresZ.Location = new System.Drawing.Point(656, 14);
+            this.btnCierresZ.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCierresZ.Name = "btnCierresZ";
+            this.btnCierresZ.Size = new System.Drawing.Size(149, 48);
+            this.btnCierresZ.TabIndex = 1;
+            this.btnCierresZ.Values.Text = "Recuperar Datos";
+            this.btnCierresZ.Click += new System.EventHandler(this.btnCierresZ_Click);
+            // 
+            // kryptonLabel16
+            // 
+            this.kryptonLabel16.Location = new System.Drawing.Point(335, 26);
+            this.kryptonLabel16.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel16.Name = "kryptonLabel16";
+            this.kryptonLabel16.Size = new System.Drawing.Size(121, 24);
+            this.kryptonLabel16.TabIndex = 0;
+            this.kryptonLabel16.Values.Text = "Seleccionar Año";
+            // 
+            // kryptonLabel17
+            // 
+            this.kryptonLabel17.Location = new System.Drawing.Point(13, 26);
+            this.kryptonLabel17.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel17.Name = "kryptonLabel17";
+            this.kryptonLabel17.Size = new System.Drawing.Size(121, 24);
+            this.kryptonLabel17.TabIndex = 0;
+            this.kryptonLabel17.Values.Text = "Seleccionar Mes";
+            // 
             // informe_al_diaTableAdapter
             // 
             this.informe_al_diaTableAdapter.ClearBeforeFill = true;
@@ -985,6 +1075,32 @@
             // 
             this.informe_acumuladoTableAdapter.ClearBeforeFill = true;
             // 
+            // kryptonHeaderGroup1
+            // 
+            this.kryptonHeaderGroup1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonHeaderGroup1.HeaderPositionSecondary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Top;
+            this.kryptonHeaderGroup1.HeaderVisiblePrimary = false;
+            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonHeaderGroup1.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
+            // 
+            // kryptonHeaderGroup1.Panel
+            // 
+            this.kryptonHeaderGroup1.Panel.Controls.Add(this.btnBuscarDiario);
+            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(1342, 105);
+            this.kryptonHeaderGroup1.TabIndex = 15;
+            this.kryptonHeaderGroup1.ValuesSecondary.Heading = "Selección de fecha";
+            // 
+            // btnBuscarDiario
+            // 
+            this.btnBuscarDiario.Location = new System.Drawing.Point(596, 15);
+            this.btnBuscarDiario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarDiario.Name = "btnBuscarDiario";
+            this.btnBuscarDiario.Size = new System.Drawing.Size(149, 49);
+            this.btnBuscarDiario.TabIndex = 2;
+            this.btnBuscarDiario.Values.Text = "Recuperar Datos";
+            this.btnBuscarDiario.Click += new System.EventHandler(this.btnBuscarDiario_Click);
+            // 
             // ReportesPeajeOrella
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1010,45 +1126,60 @@
             this.kryptonNavigator1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).EndInit();
             this.kryptonPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
-            this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
             this.kryptonPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup7.Panel)).EndInit();
             this.kryptonHeaderGroup7.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup7.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup7)).EndInit();
+            this.kryptonHeaderGroup7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
             this.kryptonPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2.Panel)).EndInit();
             this.kryptonHeaderGroup2.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup2.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2)).EndInit();
+            this.kryptonHeaderGroup2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
             this.kryptonPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3.Panel)).EndInit();
             this.kryptonHeaderGroup3.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup3.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3)).EndInit();
+            this.kryptonHeaderGroup3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
             this.kryptonPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).EndInit();
             this.kryptonHeaderGroup4.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup4.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).EndInit();
+            this.kryptonHeaderGroup4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).EndInit();
             this.kryptonPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup5.Panel)).EndInit();
             this.kryptonHeaderGroup5.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup5.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup5)).EndInit();
+            this.kryptonHeaderGroup5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage6)).EndInit();
             this.kryptonPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6.Panel)).EndInit();
             this.kryptonHeaderGroup6.Panel.ResumeLayout(false);
             this.kryptonHeaderGroup6.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6)).EndInit();
+            this.kryptonHeaderGroup6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage8)).EndInit();
+            this.kryptonPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCierresZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup9.Panel)).EndInit();
+            this.kryptonHeaderGroup9.Panel.ResumeLayout(false);
+            this.kryptonHeaderGroup9.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup9)).EndInit();
+            this.kryptonHeaderGroup9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
+            this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
+            this.kryptonHeaderGroup1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1066,9 +1197,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup7;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnBuscar;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup2;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpMes;
@@ -1118,12 +1246,24 @@
         private peajeOrellaDataSetTableAdapters.informe_recaudacion_semanalTableAdapter informe_recaudacion_semanalTableAdapter;
         private System.Windows.Forms.BindingSource inf_vehiculos_compara_mesBindingSource;
         private peajeOrellaDataSetTableAdapters.inf_vehiculos_compara_mesTableAdapter inf_vehiculos_compara_mesTableAdapter;
-        private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnBuscarDiario;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer5;
         private System.Windows.Forms.BindingSource informe_cajeroBindingSource;
         private peajeOrellaDataSetTableAdapters.informe_cajeroTableAdapter informe_cajeroTableAdapter;
         private System.Windows.Forms.BindingSource informe_acumuladoBindingSource;
         private peajeOrellaDataSetTableAdapters.informe_acumuladoTableAdapter informe_acumuladoTableAdapter;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage8;
+        private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup9;
+        private System.Windows.Forms.Button btnExportarExcel;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpMesCierreZ;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpAnCierreZ;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCierresZ;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel16;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel17;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvCierresZ;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnBuscar;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnBuscarDiario;
     }
 }

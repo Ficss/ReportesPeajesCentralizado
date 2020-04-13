@@ -86,6 +86,11 @@
     <Reference Include="ComponentFactory.Krypton.Workspace">
       <HintPath>..\..\..\..\Desktop\Krypton DLLS\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -120,12 +125,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RendicionCaja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RendicionCaja.Designer.cs">
-      <DependentUpon>RendicionCaja.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReportesPeajePrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +136,7 @@
     <EmbeddedResource Include="CodigosIngreso.resx">
       <DependentUpon>CodigosIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetallePeaje.rdlc" />
     <EmbeddedResource Include="HorasVehiculos.resx">
       <DependentUpon>HorasVehiculos.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +148,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RecaudacionDiaria.rdlc" />
     <EmbeddedResource Include="RecaudacionMensual.rdlc" />
@@ -155,19 +156,17 @@
     <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
     <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
     <EmbeddedResource Include="RecaudacionCajero.rdlc" />
-    <EmbeddedResource Include="RendicionCaja.resx">
-      <DependentUpon>RendicionCaja.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReportesPeajePrincipal.resx">
       <DependentUpon>ReportesPeajePrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="peajeMDataSet.xsc">
       <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </None>
     <None Include="peajeMDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>peajeMDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="peajeMDataSet.xss">
       <DependentUpon>peajeMDataSet.xsd</DependentUpon>
@@ -204,6 +203,9 @@
       <Project>{7d534ead-2fb4-4144-be48-5469bfb413c8}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Microsoft_Excel_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

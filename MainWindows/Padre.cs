@@ -9,7 +9,15 @@ using ReportesBriceno;
 using ReportesMayo;
 using ReportesManga;
 using ReportesSitioCero;
+using RendicionCaja;
 using Squirrel;
+using System.Net;
+using AccesoDatos;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Threading;
+using System.Configuration;
+
 namespace MainWindows
 {
     public partial class Padre : KryptonForm
@@ -23,12 +31,13 @@ namespace MainWindows
         ReportesPeajeSitioCero sc;
         CodigosIngreso ci;
         RegistroClientes rc;
-        RendicionCaja rendicioncaja;
+        FormularioRendicion rendicioncaja;
         AboutBox1 ab;
         #endregion
         #region Constructor por defecto
         public Padre()
         {
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             InitializeComponent();
             CheckForUpdate();
         }
@@ -138,18 +147,11 @@ namespace MainWindows
         #region Load
         private void Padre_Load(object sender, EventArgs e)
         {
-            this.Text = "Sistema Reportes Peaje Vega Monumental - " + Environment.MachineName;
-            string pc = Environment.MachineName.ToUpper();
-            if (pc.Equals("LSCHALKER-NTBK"))
-            {
-                lblCodigos.Visible = true;
-                lblClientes.Visible = true;
-            }
-            else
-            {
-                lblCodigos.Visible = false;
-                lblClientes.Visible = false;
-            }
+            Principal();
+            Orella();
+            Briceno();
+            Mayo();
+            Sitiocero();
         }
         #endregion
         #region Abrir aboutbox
@@ -301,7 +303,7 @@ namespace MainWindows
         #region Abrir formulario de rendicion de caja
         private void kryptonLinkLabel3_LinkClicked(object sender, EventArgs e)
         {
-            rendicioncaja = RendicionCaja.Instance();
+            rendicioncaja = FormularioRendicion.Instance();
             rendicioncaja.MdiParent = this;
             rendicioncaja.WindowState = FormWindowState.Normal;
             rendicioncaja.Show();
@@ -310,5 +312,90 @@ namespace MainWindows
             rendicioncaja.Activate();
         }
         #endregion
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Principal();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Orella();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Briceno();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Mayo();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Sitiocero();
+        }
+
+        private void Principal() {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PP"].ConnectionString);
+            pbPrincipal.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+        }
+        private void Orella() {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PO"].ConnectionString);
+            pbOrella.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+        }
+
+        private void Briceno() {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PB"].ConnectionString);
+            pbBriceno.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+        }
+
+        private void Mayo() {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PM"].ConnectionString);
+            pbMayo.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+        }
+        private void Sitiocero()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SC"].ConnectionString);
+            pbSC.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+        }
+    }
+    public static class Prueba
+    {
+        public static bool QuickOpen(this SqlConnection conn, int timeout)
+        {
+            // We'll use a Stopwatch here for simplicity. A comparison to a stored DateTime.Now value could also be used
+            Stopwatch sw = new Stopwatch();
+            bool connectSuccess = false;
+
+            // Try to open the connection, if anything goes wrong, make sure we set connectSuccess = false
+            Thread t = new Thread(delegate ()
+            {
+                try
+                {
+                    sw.Start();
+                    conn.Open();
+                    connectSuccess = true;
+                }
+                catch { }
+            });
+
+            // Make sure it's marked as a background thread so it'll get cleaned up automatically
+            t.IsBackground = true;
+            t.Start();
+
+            // Keep trying to join the thread until we either succeed or the timeout value has been exceeded
+            while (timeout > sw.ElapsedMilliseconds)
+                if (t.Join(1))
+                    break;
+
+            // If we didn't connect successfully, throw an exception
+            if (!connectSuccess)
+                connectSuccess = false;
+
+            return connectSuccess;
+        }
     }
 }

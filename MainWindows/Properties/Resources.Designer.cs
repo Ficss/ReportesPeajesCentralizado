@@ -113,6 +113,36 @@ namespace MainWindows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_monitor {
+            get {
+                object obj = ResourceManager.GetObject("icons8_monitor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_no_network {
+            get {
+                object obj = ResourceManager.GetObject("icons8_no_network", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_paid_parking {
+            get {
+                object obj = ResourceManager.GetObject("icons8_paid_parking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Paid_Parking_16px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Paid_Parking_16px", resourceCulture);
@@ -126,6 +156,26 @@ namespace MainWindows.Properties {
         internal static System.Drawing.Bitmap icons8_Paint_Palette_16px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Paint_Palette_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_replay_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_replay_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_system_information {
+            get {
+                object obj = ResourceManager.GetObject("icons8_system_information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

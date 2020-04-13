@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
+using Squirrel;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
@@ -32,5 +32,6 @@ using System.Runtime.InteropServices;
 // Puede especificar todos los valores o usar los valores predeterminados de número de compilación y de revisión 
 // mediante el carácter '*', como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.20")]
-[assembly: AssemblyFileVersion("2.0.20")]
+[assembly: AssemblyVersion("2.0.21")]
+[assembly: AssemblyFileVersion("2.0.21")]
+[assembly: AssemblyMetadata("SquirrelAwareVersion", "1")]

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace AccesoDatos
@@ -11,7 +13,7 @@ namespace AccesoDatos
         #region Conexión a la BD Principal
         public static SqlConnection conectarPrincipal()
         {
-            SqlConnection miconexion = new SqlConnection("Data Source=peajeprincipal-pc;Initial Catalog=peajeM; User ID=sa;Password=Vegam123");
+            SqlConnection miconexion = new SqlConnection("Data Source=192.168.1.211;Initial Catalog=peajeM; User ID=sa;Password=Vegam123");
             return miconexion;
         }
         #endregion
@@ -36,6 +38,7 @@ namespace AccesoDatos
         //    return nombre;
         //}
         #endregion
+
         #endregion
         #region Método para llenar gridview de clientes en Registro clientes
         //Método para llenar gridview de clientes en Registro clientes
@@ -225,5 +228,6 @@ namespace AccesoDatos
             }
         }
         #endregion
+
     }
 }

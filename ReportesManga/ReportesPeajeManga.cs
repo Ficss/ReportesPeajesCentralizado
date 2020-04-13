@@ -1,8 +1,11 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using Microsoft.Reporting.WinForms;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 namespace ReportesManga
 {
     public partial class ReportesPeajeManga : KryptonForm
@@ -22,11 +25,6 @@ namespace ReportesManga
         public ReportesPeajeManga()
         {
             InitializeComponent();
-        }
-        #endregion
-        #region Load
-        private void ReportesPeajeManga_Load(object sender, EventArgs e)
-        {
             //Se setea campos de fecha con la fecha desde que salio a producción el sistema
             kryptonDateTimePicker1.MaxDate = DateTime.Now.AddDays(-1);
             DateTime today = DateTime.Today;
@@ -37,6 +35,30 @@ namespace ReportesManga
 
             dtpPrimeraSemana.MaxDate = nextSaturday;
             dtpUltimaSemana.MaxDate = nextSaturday;
+        }
+        #endregion
+        #region Load
+        private void ReportesPeajeManga_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(Properties.Settings.Default.peajeMangaConnectionString))
+                {
+                    var query = "select 1";
+                    var command = new SqlCommand(query, connection);
+                    connection.Open();
+                    command.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
+                                "Las causas pueden ser:  \n " +
+                                "-No está conectado a la red Vega Monumental. Comunicarse con Esteban Castellanos \n" +
+                                "-Peaje está cerrado.", ex.Message);
+                this.DialogResult = DialogResult.Cancel;
+                this.BeginInvoke(new MethodInvoker(this.Close));
+            }
         }
         #endregion
         #region Cargar Informe Al Día - Report 1

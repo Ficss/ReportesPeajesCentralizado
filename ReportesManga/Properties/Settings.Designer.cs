@@ -26,7 +26,8 @@ namespace ReportesManga.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.0.146;Initial Catalog=peajeM;User ID=sa;Password=Vegam123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.0.146;Initial Catalog=peajeM;User ID=sa;Password=Vegam123;Con" +
+            "nect Timeout=1")]
         public string peajeMangaConnectionString {
             get {
                 return ((string)(this["peajeMangaConnectionString"]));

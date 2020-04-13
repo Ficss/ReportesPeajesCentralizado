@@ -70,6 +70,11 @@
     <Reference Include="ComponentFactory.Krypton.Workspace">
       <HintPath>..\..\SistemaPeajeVegaOrella\SistemaPeaje\bin\Debug\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -118,6 +123,7 @@
     <EmbeddedResource Include="ReportesPeajeOrella.resx">
       <DependentUpon>ReportesPeajeOrella.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="peajeOrellaDataSet.xsc">
       <DependentUpon>peajeOrellaDataSet.xsd</DependentUpon>
     </None>
@@ -144,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\VMCC IDCorp circulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Microsoft_Excel_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -64,7 +64,21 @@
             this.kryptonPanel9 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonHeaderGroup2 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.buttonSpecHeaderGroup4 = new ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup();
-            this.kryptonLinkLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pbPrincipal = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbOrella = new System.Windows.Forms.PictureBox();
+            this.pbBriceno = new System.Windows.Forms.PictureBox();
+            this.pbMayo = new System.Windows.Forms.PictureBox();
+            this.pbSC = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.kryptonPanel6 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonHeaderGroup6 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.kryptonLinkLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
@@ -96,6 +110,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2.Panel)).BeginInit();
             this.kryptonHeaderGroup2.Panel.SuspendLayout();
             this.kryptonHeaderGroup2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPrincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrella)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBriceno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMayo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6.Panel)).BeginInit();
@@ -146,26 +165,26 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(237, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 70);
             // 
             // acercaDeToolStripMenuItem1
             // 
             this.acercaDeToolStripMenuItem1.Name = "acercaDeToolStripMenuItem1";
-            this.acercaDeToolStripMenuItem1.Size = new System.Drawing.Size(236, 24);
+            this.acercaDeToolStripMenuItem1.Size = new System.Drawing.Size(195, 22);
             this.acercaDeToolStripMenuItem1.Text = "Acerca de...";
             this.acercaDeToolStripMenuItem1.Click += new System.EventHandler(this.acercaDeToolStripMenuItem1_Click);
             // 
             // comprobarActualizacionesToolStripMenuItem
             // 
             this.comprobarActualizacionesToolStripMenuItem.Name = "comprobarActualizacionesToolStripMenuItem";
-            this.comprobarActualizacionesToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
+            this.comprobarActualizacionesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.comprobarActualizacionesToolStripMenuItem.Text = "Comprobar Actualizaciones";
             this.comprobarActualizacionesToolStripMenuItem.Click += new System.EventHandler(this.comprobarActualizacionesToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -192,17 +211,16 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 814);
+            this.statusStrip.Location = new System.Drawing.Point(0, 750);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1685, 25);
+            this.statusStrip.Size = new System.Drawing.Size(1155, 22);
             this.statusStrip.TabIndex = 8;
             this.statusStrip.Text = "StatusStrip";
             // 
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(40, 20);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(32, 17);
             this.toolStripStatusLabel.Text = "Listo";
             // 
             // menuStrip
@@ -216,8 +234,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1685, 28);
+            this.menuStrip.Size = new System.Drawing.Size(1155, 24);
             this.menuStrip.TabIndex = 9;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -226,7 +243,7 @@
             this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusBarToolStripMenuItem});
             this.viewMenu.Name = "viewMenu";
-            this.viewMenu.Size = new System.Drawing.Size(42, 24);
+            this.viewMenu.Size = new System.Drawing.Size(35, 20);
             this.viewMenu.Text = "&Ver";
             // 
             // statusBarToolStripMenuItem
@@ -235,7 +252,7 @@
             this.statusBarToolStripMenuItem.CheckOnClick = true;
             this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.statusBarToolStripMenuItem.Text = "&Barra de estado";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
             // 
@@ -248,41 +265,41 @@
             this.closeAllToolStripMenuItem,
             this.arrangeIconsToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(80, 24);
+            this.windowsMenu.Size = new System.Drawing.Size(66, 20);
             this.windowsMenu.Text = "&Ventanas";
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.cascadeToolStripMenuItem.Text = "&Cascada";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.tileVerticalToolStripMenuItem.Text = "Mosaico &vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Mosaico &horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.closeAllToolStripMenuItem.Text = "C&errar todo";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.arrangeIconsToolStripMenuItem.Text = "&Organizar iconos";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
@@ -293,7 +310,7 @@
             this.toolStripSeparator8,
             this.aboutToolStripMenuItem});
             this.helpMenu.Name = "helpMenu";
-            this.helpMenu.Size = new System.Drawing.Size(63, 24);
+            this.helpMenu.Size = new System.Drawing.Size(53, 20);
             this.helpMenu.Text = "Ay&uda";
             // 
             // indexToolStripMenuItem
@@ -301,7 +318,7 @@
             this.indexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("indexToolStripMenuItem.Image")));
             this.indexToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.indexToolStripMenuItem.Text = "Ay&uda de Sistema Reportes";
             this.indexToolStripMenuItem.Visible = false;
             this.indexToolStripMenuItem.Click += new System.EventHandler(this.indexToolStripMenuItem_Click);
@@ -309,12 +326,12 @@
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(218, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.aboutToolStripMenuItem.Text = "&Acerca de...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -334,10 +351,9 @@
             // 
             // lblClientes
             // 
-            this.lblClientes.Location = new System.Drawing.Point(15, 100);
-            this.lblClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.lblClientes.Location = new System.Drawing.Point(11, 81);
             this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(205, 24);
+            this.lblClientes.Size = new System.Drawing.Size(169, 20);
             this.lblClientes.TabIndex = 1;
             this.lblClientes.Values.Image = global::MainWindows.Properties.Resources.Add_User_Male_16px;
             this.lblClientes.Values.Text = "Registro Clientes Principal";
@@ -345,10 +361,9 @@
             // 
             // kryptonLinkLabel7
             // 
-            this.kryptonLinkLabel7.Location = new System.Drawing.Point(15, 4);
-            this.kryptonLinkLabel7.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLinkLabel7.Location = new System.Drawing.Point(11, 3);
             this.kryptonLinkLabel7.Name = "kryptonLinkLabel7";
-            this.kryptonLinkLabel7.Size = new System.Drawing.Size(192, 24);
+            this.kryptonLinkLabel7.Size = new System.Drawing.Size(158, 20);
             this.kryptonLinkLabel7.TabIndex = 0;
             this.kryptonLinkLabel7.Values.Image = global::MainWindows.Properties.Resources.icons8_Live_Folder_16px;
             this.kryptonLinkLabel7.Values.Text = "Reportes Peaje Principal";
@@ -356,10 +371,9 @@
             // 
             // lblCodigos
             // 
-            this.lblCodigos.Location = new System.Drawing.Point(15, 68);
-            this.lblCodigos.Margin = new System.Windows.Forms.Padding(4);
+            this.lblCodigos.Location = new System.Drawing.Point(11, 55);
             this.lblCodigos.Name = "lblCodigos";
-            this.lblCodigos.Size = new System.Drawing.Size(202, 24);
+            this.lblCodigos.Size = new System.Drawing.Size(166, 20);
             this.lblCodigos.TabIndex = 2;
             this.lblCodigos.Values.Image = global::MainWindows.Properties.Resources.Create_16px;
             this.lblCodigos.Values.Text = "Códigos Ingreso Principal";
@@ -383,20 +397,18 @@
             this.kryptonPanel1.Controls.Add(this.kryptonPanel2);
             this.kryptonPanel1.Controls.Add(this.kryptonHeaderGroup3);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.kryptonPanel1.Location = new System.Drawing.Point(0, 28);
-            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 24);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(324, 786);
+            this.kryptonPanel1.Size = new System.Drawing.Size(243, 726);
             this.kryptonPanel1.TabIndex = 32;
             // 
             // kryptonTextBox2
             // 
             this.kryptonTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonTextBox2.Location = new System.Drawing.Point(0, 668);
-            this.kryptonTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonTextBox2.Location = new System.Drawing.Point(0, 685);
             this.kryptonTextBox2.Multiline = true;
             this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(324, 118);
+            this.kryptonTextBox2.Size = new System.Drawing.Size(243, 41);
             this.kryptonTextBox2.StateCommon.Border.Draw = ComponentFactory.Krypton.Toolkit.InheritBool.False;
             this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -407,10 +419,9 @@
             // kryptonPanel9
             // 
             this.kryptonPanel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel9.Location = new System.Drawing.Point(0, 656);
-            this.kryptonPanel9.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel9.Location = new System.Drawing.Point(0, 675);
             this.kryptonPanel9.Name = "kryptonPanel9";
-            this.kryptonPanel9.Size = new System.Drawing.Size(324, 12);
+            this.kryptonPanel9.Size = new System.Drawing.Size(243, 10);
             this.kryptonPanel9.TabIndex = 54;
             // 
             // kryptonHeaderGroup2
@@ -420,18 +431,30 @@
             this.buttonSpecHeaderGroup4});
             this.kryptonHeaderGroup2.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup2.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(0, 582);
-            this.kryptonHeaderGroup2.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(0, 485);
             this.kryptonHeaderGroup2.Name = "kryptonHeaderGroup2";
             // 
             // kryptonHeaderGroup2.Panel
             // 
-            this.kryptonHeaderGroup2.Panel.Controls.Add(this.kryptonLinkLabel4);
-            this.kryptonHeaderGroup2.Size = new System.Drawing.Size(324, 74);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.button2);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.button5);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.button4);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.button3);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.button1);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.pbPrincipal);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.label2);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.pbOrella);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.pbBriceno);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.pbMayo);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.pbSC);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.label5);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.label4);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.label3);
+            this.kryptonHeaderGroup2.Panel.Controls.Add(this.label1);
+            this.kryptonHeaderGroup2.Size = new System.Drawing.Size(243, 190);
             this.kryptonHeaderGroup2.TabIndex = 53;
-            this.kryptonHeaderGroup2.ValuesPrimary.Heading = "Personalizar";
-            this.kryptonHeaderGroup2.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_Paint_Palette_16px;
-            this.kryptonHeaderGroup2.Visible = false;
+            this.kryptonHeaderGroup2.ValuesPrimary.Heading = "Estado";
+            this.kryptonHeaderGroup2.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_monitor;
             // 
             // buttonSpecHeaderGroup4
             // 
@@ -440,48 +463,231 @@
             this.buttonSpecHeaderGroup4.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp;
             this.buttonSpecHeaderGroup4.UniqueName = "68A2D9E64DDB487B78B47F03D2851820";
             // 
-            // kryptonLinkLabel4
+            // button2
             // 
-            this.kryptonLinkLabel4.Location = new System.Drawing.Point(15, 9);
-            this.kryptonLinkLabel4.Margin = new System.Windows.Forms.Padding(4);
-            this.kryptonLinkLabel4.Name = "kryptonLinkLabel4";
-            this.kryptonLinkLabel4.Size = new System.Drawing.Size(127, 24);
-            this.kryptonLinkLabel4.TabIndex = 2;
-            this.kryptonLinkLabel4.Values.Image = global::MainWindows.Properties.Resources.icons8_Color_Wheel_16px;
-            this.kryptonLinkLabel4.Values.Text = "Cambiar Tema";
+            this.button2.BackColor = System.Drawing.SystemColors.Window;
+            this.button2.BackgroundImage = global::MainWindows.Properties.Resources.icons8_replay_32px;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(181, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 26);
+            this.button2.TabIndex = 56;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.Window;
+            this.button5.BackgroundImage = global::MainWindows.Properties.Resources.icons8_replay_32px;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(181, 126);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(24, 26);
+            this.button5.TabIndex = 56;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Window;
+            this.button4.BackgroundImage = global::MainWindows.Properties.Resources.icons8_replay_32px;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(181, 95);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(24, 26);
+            this.button4.TabIndex = 56;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Window;
+            this.button3.BackgroundImage = global::MainWindows.Properties.Resources.icons8_replay_32px;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(181, 64);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(24, 26);
+            this.button3.TabIndex = 56;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.BackgroundImage = global::MainWindows.Properties.Resources.icons8_replay_32px;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(181, 33);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 26);
+            this.button1.TabIndex = 56;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pbPrincipal
+            // 
+            this.pbPrincipal.BackColor = System.Drawing.SystemColors.Window;
+            this.pbPrincipal.Image = global::MainWindows.Properties.Resources.icons8_system_information;
+            this.pbPrincipal.Location = new System.Drawing.Point(152, 2);
+            this.pbPrincipal.Margin = new System.Windows.Forms.Padding(2);
+            this.pbPrincipal.Name = "pbPrincipal";
+            this.pbPrincipal.Size = new System.Drawing.Size(24, 26);
+            this.pbPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPrincipal.TabIndex = 34;
+            this.pbPrincipal.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 8);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Peaje principal";
+            // 
+            // pbOrella
+            // 
+            this.pbOrella.BackColor = System.Drawing.SystemColors.Window;
+            this.pbOrella.Image = global::MainWindows.Properties.Resources.icons8_system_information;
+            this.pbOrella.Location = new System.Drawing.Point(152, 33);
+            this.pbOrella.Margin = new System.Windows.Forms.Padding(2);
+            this.pbOrella.Name = "pbOrella";
+            this.pbOrella.Size = new System.Drawing.Size(24, 26);
+            this.pbOrella.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbOrella.TabIndex = 34;
+            this.pbOrella.TabStop = false;
+            // 
+            // pbBriceno
+            // 
+            this.pbBriceno.BackColor = System.Drawing.SystemColors.Window;
+            this.pbBriceno.Image = global::MainWindows.Properties.Resources.icons8_system_information;
+            this.pbBriceno.Location = new System.Drawing.Point(152, 64);
+            this.pbBriceno.Margin = new System.Windows.Forms.Padding(2);
+            this.pbBriceno.Name = "pbBriceno";
+            this.pbBriceno.Size = new System.Drawing.Size(24, 26);
+            this.pbBriceno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBriceno.TabIndex = 34;
+            this.pbBriceno.TabStop = false;
+            // 
+            // pbMayo
+            // 
+            this.pbMayo.BackColor = System.Drawing.SystemColors.Window;
+            this.pbMayo.Image = global::MainWindows.Properties.Resources.icons8_system_information;
+            this.pbMayo.Location = new System.Drawing.Point(152, 95);
+            this.pbMayo.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMayo.Name = "pbMayo";
+            this.pbMayo.Size = new System.Drawing.Size(24, 26);
+            this.pbMayo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMayo.TabIndex = 34;
+            this.pbMayo.TabStop = false;
+            // 
+            // pbSC
+            // 
+            this.pbSC.BackColor = System.Drawing.SystemColors.Window;
+            this.pbSC.Image = global::MainWindows.Properties.Resources.icons8_system_information;
+            this.pbSC.Location = new System.Drawing.Point(152, 126);
+            this.pbSC.Margin = new System.Windows.Forms.Padding(2);
+            this.pbSC.Name = "pbSC";
+            this.pbSC.Size = new System.Drawing.Size(24, 26);
+            this.pbSC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSC.TabIndex = 34;
+            this.pbSC.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Window;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(17, 132);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 15);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "Peaje sitio cero";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Window;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 101);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 15);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "Peaje 21 de mayo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Window;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 70);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 15);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Peaje briceño";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Peaje Orella";
             // 
             // kryptonPanel6
             // 
             this.kryptonPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel6.Location = new System.Drawing.Point(0, 570);
-            this.kryptonPanel6.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel6.Location = new System.Drawing.Point(0, 475);
             this.kryptonPanel6.Name = "kryptonPanel6";
-            this.kryptonPanel6.Size = new System.Drawing.Size(324, 12);
+            this.kryptonPanel6.Size = new System.Drawing.Size(243, 10);
             this.kryptonPanel6.TabIndex = 53;
+            this.kryptonPanel6.Visible = false;
             // 
             // kryptonHeaderGroup6
             // 
             this.kryptonHeaderGroup6.AutoSize = true;
             this.kryptonHeaderGroup6.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup6.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup6.Location = new System.Drawing.Point(0, 501);
-            this.kryptonHeaderGroup6.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonHeaderGroup6.Location = new System.Drawing.Point(0, 418);
             this.kryptonHeaderGroup6.Name = "kryptonHeaderGroup6";
             // 
             // kryptonHeaderGroup6.Panel
             // 
             this.kryptonHeaderGroup6.Panel.Controls.Add(this.kryptonLinkLabel2);
-            this.kryptonHeaderGroup6.Size = new System.Drawing.Size(324, 69);
+            this.kryptonHeaderGroup6.Size = new System.Drawing.Size(243, 57);
             this.kryptonHeaderGroup6.TabIndex = 53;
             this.kryptonHeaderGroup6.ValuesPrimary.Heading = "Peaje Sitio Cero";
             this.kryptonHeaderGroup6.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_Paid_Parking_16px;
             // 
             // kryptonLinkLabel2
             // 
-            this.kryptonLinkLabel2.Location = new System.Drawing.Point(15, 4);
-            this.kryptonLinkLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLinkLabel2.Location = new System.Drawing.Point(11, 3);
             this.kryptonLinkLabel2.Name = "kryptonLinkLabel2";
-            this.kryptonLinkLabel2.Size = new System.Drawing.Size(200, 24);
+            this.kryptonLinkLabel2.Size = new System.Drawing.Size(165, 20);
             this.kryptonLinkLabel2.TabIndex = 0;
             this.kryptonLinkLabel2.Values.Image = global::MainWindows.Properties.Resources.icons8_Live_Folder_16px;
             this.kryptonLinkLabel2.Values.Text = "Reportes Peaje Sitio Cero";
@@ -490,10 +696,9 @@
             // kryptonPanel7
             // 
             this.kryptonPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel7.Location = new System.Drawing.Point(0, 489);
-            this.kryptonPanel7.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel7.Location = new System.Drawing.Point(0, 408);
             this.kryptonPanel7.Name = "kryptonPanel7";
-            this.kryptonPanel7.Size = new System.Drawing.Size(324, 12);
+            this.kryptonPanel7.Size = new System.Drawing.Size(243, 10);
             this.kryptonPanel7.TabIndex = 52;
             // 
             // kryptonHeaderGroup7
@@ -501,24 +706,23 @@
             this.kryptonHeaderGroup7.AutoSize = true;
             this.kryptonHeaderGroup7.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup7.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup7.Location = new System.Drawing.Point(0, 420);
-            this.kryptonHeaderGroup7.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonHeaderGroup7.Location = new System.Drawing.Point(0, 351);
             this.kryptonHeaderGroup7.Name = "kryptonHeaderGroup7";
             // 
             // kryptonHeaderGroup7.Panel
             // 
             this.kryptonHeaderGroup7.Panel.Controls.Add(this.kryptonLinkLabel5);
-            this.kryptonHeaderGroup7.Size = new System.Drawing.Size(324, 69);
+            this.kryptonHeaderGroup7.Size = new System.Drawing.Size(243, 57);
             this.kryptonHeaderGroup7.TabIndex = 52;
             this.kryptonHeaderGroup7.ValuesPrimary.Heading = "Peaje Manga";
             this.kryptonHeaderGroup7.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_Paid_Parking_16px;
+            this.kryptonHeaderGroup7.Visible = false;
             // 
             // kryptonLinkLabel5
             // 
-            this.kryptonLinkLabel5.Location = new System.Drawing.Point(15, 4);
-            this.kryptonLinkLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLinkLabel5.Location = new System.Drawing.Point(11, 3);
             this.kryptonLinkLabel5.Name = "kryptonLinkLabel5";
-            this.kryptonLinkLabel5.Size = new System.Drawing.Size(182, 24);
+            this.kryptonLinkLabel5.Size = new System.Drawing.Size(150, 20);
             this.kryptonLinkLabel5.TabIndex = 0;
             this.kryptonLinkLabel5.Values.Image = global::MainWindows.Properties.Resources.icons8_Live_Folder_16px;
             this.kryptonLinkLabel5.Values.Text = "Reportes Peaje Manga";
@@ -527,11 +731,11 @@
             // kryptonPanel5
             // 
             this.kryptonPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel5.Location = new System.Drawing.Point(0, 408);
-            this.kryptonPanel5.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel5.Location = new System.Drawing.Point(0, 341);
             this.kryptonPanel5.Name = "kryptonPanel5";
-            this.kryptonPanel5.Size = new System.Drawing.Size(324, 12);
+            this.kryptonPanel5.Size = new System.Drawing.Size(243, 10);
             this.kryptonPanel5.TabIndex = 41;
+            this.kryptonPanel5.Visible = false;
             // 
             // kryptonHeaderGroup5
             // 
@@ -540,14 +744,13 @@
             this.buttonSpecHeaderGroup7});
             this.kryptonHeaderGroup5.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup5.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup5.Location = new System.Drawing.Point(0, 339);
-            this.kryptonHeaderGroup5.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonHeaderGroup5.Location = new System.Drawing.Point(0, 284);
             this.kryptonHeaderGroup5.Name = "kryptonHeaderGroup5";
             // 
             // kryptonHeaderGroup5.Panel
             // 
             this.kryptonHeaderGroup5.Panel.Controls.Add(this.kryptonLinkLabel11);
-            this.kryptonHeaderGroup5.Size = new System.Drawing.Size(324, 69);
+            this.kryptonHeaderGroup5.Size = new System.Drawing.Size(243, 57);
             this.kryptonHeaderGroup5.TabIndex = 42;
             this.kryptonHeaderGroup5.ValuesPrimary.Heading = "Peaje av. 21 de mayo";
             this.kryptonHeaderGroup5.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_Paid_Parking_16px;
@@ -561,10 +764,9 @@
             // 
             // kryptonLinkLabel11
             // 
-            this.kryptonLinkLabel11.Location = new System.Drawing.Point(15, 4);
-            this.kryptonLinkLabel11.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLinkLabel11.Location = new System.Drawing.Point(11, 3);
             this.kryptonLinkLabel11.Name = "kryptonLinkLabel11";
-            this.kryptonLinkLabel11.Size = new System.Drawing.Size(237, 24);
+            this.kryptonLinkLabel11.Size = new System.Drawing.Size(194, 20);
             this.kryptonLinkLabel11.TabIndex = 0;
             this.kryptonLinkLabel11.Values.Image = global::MainWindows.Properties.Resources.icons8_Live_Folder_16px;
             this.kryptonLinkLabel11.Values.Text = "Reportes Peaje av. 21 de mayo";
@@ -573,10 +775,9 @@
             // kryptonPanel4
             // 
             this.kryptonPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel4.Location = new System.Drawing.Point(0, 327);
-            this.kryptonPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel4.Location = new System.Drawing.Point(0, 274);
             this.kryptonPanel4.Name = "kryptonPanel4";
-            this.kryptonPanel4.Size = new System.Drawing.Size(324, 12);
+            this.kryptonPanel4.Size = new System.Drawing.Size(243, 10);
             this.kryptonPanel4.TabIndex = 39;
             // 
             // kryptonHeaderGroup4
@@ -586,14 +787,13 @@
             this.buttonSpecHeaderGroup6});
             this.kryptonHeaderGroup4.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup4.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup4.Location = new System.Drawing.Point(0, 258);
-            this.kryptonHeaderGroup4.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonHeaderGroup4.Location = new System.Drawing.Point(0, 217);
             this.kryptonHeaderGroup4.Name = "kryptonHeaderGroup4";
             // 
             // kryptonHeaderGroup4.Panel
             // 
             this.kryptonHeaderGroup4.Panel.Controls.Add(this.kryptonLinkLabel10);
-            this.kryptonHeaderGroup4.Size = new System.Drawing.Size(324, 69);
+            this.kryptonHeaderGroup4.Size = new System.Drawing.Size(243, 57);
             this.kryptonHeaderGroup4.TabIndex = 37;
             this.kryptonHeaderGroup4.ValuesPrimary.Heading = "Peaje Briceño";
             this.kryptonHeaderGroup4.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_Paid_Parking_16px;
@@ -607,10 +807,9 @@
             // 
             // kryptonLinkLabel10
             // 
-            this.kryptonLinkLabel10.Location = new System.Drawing.Point(15, 4);
-            this.kryptonLinkLabel10.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLinkLabel10.Location = new System.Drawing.Point(11, 3);
             this.kryptonLinkLabel10.Name = "kryptonLinkLabel10";
-            this.kryptonLinkLabel10.Size = new System.Drawing.Size(185, 24);
+            this.kryptonLinkLabel10.Size = new System.Drawing.Size(153, 20);
             this.kryptonLinkLabel10.TabIndex = 0;
             this.kryptonLinkLabel10.Values.Image = global::MainWindows.Properties.Resources.icons8_Live_Folder_16px;
             this.kryptonLinkLabel10.Values.Text = "Reportes Peaje Briceño";
@@ -619,10 +818,9 @@
             // kryptonPanel3
             // 
             this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel3.Location = new System.Drawing.Point(0, 246);
-            this.kryptonPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel3.Location = new System.Drawing.Point(0, 207);
             this.kryptonPanel3.Name = "kryptonPanel3";
-            this.kryptonPanel3.Size = new System.Drawing.Size(324, 12);
+            this.kryptonPanel3.Size = new System.Drawing.Size(243, 10);
             this.kryptonPanel3.TabIndex = 36;
             // 
             // kryptonHeaderGroup1
@@ -632,14 +830,13 @@
             this.buttonSpecHeaderGroup3});
             this.kryptonHeaderGroup1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup1.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(0, 177);
-            this.kryptonHeaderGroup1.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(0, 150);
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
             // 
             // kryptonHeaderGroup1.Panel
             // 
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.kryptonLinkLabel1);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(324, 69);
+            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(243, 57);
             this.kryptonHeaderGroup1.TabIndex = 35;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Peaje Orella";
             this.kryptonHeaderGroup1.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_Paid_Parking_16px;
@@ -653,10 +850,9 @@
             // 
             // kryptonLinkLabel1
             // 
-            this.kryptonLinkLabel1.Location = new System.Drawing.Point(15, 4);
-            this.kryptonLinkLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLinkLabel1.Location = new System.Drawing.Point(11, 3);
             this.kryptonLinkLabel1.Name = "kryptonLinkLabel1";
-            this.kryptonLinkLabel1.Size = new System.Drawing.Size(175, 24);
+            this.kryptonLinkLabel1.Size = new System.Drawing.Size(144, 20);
             this.kryptonLinkLabel1.TabIndex = 0;
             this.kryptonLinkLabel1.Values.Image = global::MainWindows.Properties.Resources.icons8_Live_Folder_16px;
             this.kryptonLinkLabel1.Values.Text = "Reportes Peaje Orella";
@@ -666,10 +862,9 @@
             // kryptonPanel2
             // 
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel2.Location = new System.Drawing.Point(0, 165);
-            this.kryptonPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel2.Location = new System.Drawing.Point(0, 140);
             this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.Size = new System.Drawing.Size(324, 12);
+            this.kryptonPanel2.Size = new System.Drawing.Size(243, 10);
             this.kryptonPanel2.TabIndex = 34;
             // 
             // kryptonHeaderGroup3
@@ -680,7 +875,6 @@
             this.kryptonHeaderGroup3.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonHeaderGroup3.HeaderVisibleSecondary = false;
             this.kryptonHeaderGroup3.Location = new System.Drawing.Point(0, 0);
-            this.kryptonHeaderGroup3.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonHeaderGroup3.Name = "kryptonHeaderGroup3";
             // 
             // kryptonHeaderGroup3.Panel
@@ -689,35 +883,32 @@
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonLinkLabel3);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.lblClientes);
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonLinkLabel7);
-            this.kryptonHeaderGroup3.Size = new System.Drawing.Size(324, 165);
+            this.kryptonHeaderGroup3.Size = new System.Drawing.Size(243, 140);
             this.kryptonHeaderGroup3.TabIndex = 33;
-            this.kryptonHeaderGroup3.ValuesPrimary.Heading = "Peaje Principal";
-            this.kryptonHeaderGroup3.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_Paid_Parking_16px;
+            this.kryptonHeaderGroup3.ValuesPrimary.Heading = "Peaje principal";
+            this.kryptonHeaderGroup3.ValuesPrimary.Image = global::MainWindows.Properties.Resources.icons8_paid_parking;
             // 
             // kryptonLinkLabel3
             // 
-            this.kryptonLinkLabel3.Location = new System.Drawing.Point(15, 36);
-            this.kryptonLinkLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLinkLabel3.Location = new System.Drawing.Point(11, 29);
             this.kryptonLinkLabel3.Name = "kryptonLinkLabel3";
-            this.kryptonLinkLabel3.Size = new System.Drawing.Size(134, 24);
+            this.kryptonLinkLabel3.Size = new System.Drawing.Size(108, 20);
             this.kryptonLinkLabel3.TabIndex = 1;
             this.kryptonLinkLabel3.Values.Text = "Rendición de Caja";
-            this.kryptonLinkLabel3.Visible = false;
             this.kryptonLinkLabel3.LinkClicked += new System.EventHandler(this.kryptonLinkLabel3_LinkClicked);
             // 
             // Padre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 839);
+            this.ClientSize = new System.Drawing.Size(1155, 772);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.statusStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1701, 875);
+            this.MinimumSize = new System.Drawing.Size(1154, 682);
             this.Name = "Padre";
             this.Text = "Sistema Reportes Peaje Vega Monumental";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -736,6 +927,11 @@
             this.kryptonHeaderGroup2.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2)).EndInit();
             this.kryptonHeaderGroup2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPrincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrella)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBriceno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMayo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup6.Panel)).EndInit();
             this.kryptonHeaderGroup6.Panel.ResumeLayout(false);
@@ -829,10 +1025,24 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel6;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup2;
         private ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup buttonSpecHeaderGroup4;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel kryptonLinkLabel4;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel9;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel kryptonLinkLabel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbSC;
+        private System.Windows.Forms.PictureBox pbPrincipal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbOrella;
+        private System.Windows.Forms.PictureBox pbBriceno;
+        private System.Windows.Forms.PictureBox pbMayo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
     }
 }
 

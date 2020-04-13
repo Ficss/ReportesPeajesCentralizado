@@ -107,8 +107,8 @@
       <HintPath>..\packages\squirrel.windows.1.9.0\lib\Net45\NuGet.Squirrel.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SharpCompress, Version=0.24.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpCompress.0.24.0\lib\net45\SharpCompress.dll</HintPath>
+    <Reference Include="SharpCompress, Version=0.20.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.20.0\lib\net45\SharpCompress.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -120,6 +120,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -223,6 +224,10 @@
       <Project>{7d534ead-2fb4-4144-be48-5469bfb413c8}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RendicionCaja\RendicionCaja.csproj">
+      <Project>{bf836808-0aec-4977-a565-5feea47c82f9}</Project>
+      <Name>RendicionCaja</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportesBriceno\ReportesBriceno.csproj">
       <Project>{26e27d22-44b2-4393-a6f4-c1a04d03ca20}</Project>
       <Name>ReportesBriceno</Name>
@@ -256,6 +261,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\VMCC IDCorp circulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_monitor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_no_network.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_system_information.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_paid_parking.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_replay_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

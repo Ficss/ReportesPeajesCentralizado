@@ -26,8 +26,8 @@ namespace ReportesPeajes.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.0.121;Initial Catalog=peajeM;Persist Security Info=True;User " +
-            "ID=sa;Password=Vegam123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.213;Initial Catalog=peajeM;Persist Security Info=True;User " +
+            "ID=sa;Password=Vegam123;Connect Timeout=1")]
         public string peajeMConnectionString {
             get {
                 return ((string)(this["peajeMConnectionString"]));
