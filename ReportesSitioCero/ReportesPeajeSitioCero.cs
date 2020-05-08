@@ -66,7 +66,7 @@ namespace ReportesSitioCero
             {
                 using (var connection = new SqlConnection(Properties.Settings.Default.SC))
                 {
-                    
+
                     connection.Open();
                     var query = "select 1";
                     var command = new SqlCommand(query, connection);
@@ -77,7 +77,7 @@ namespace ReportesSitioCero
             {
                 MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
                                 "Las causas pueden ser:  \n " +
-                                "-No está conectado a la red Vega Monumental. Comunicarse con Esteban Castellanos \n" +
+                                "-No está conectado a la red Vega Monumental. \n" +
                                 "-Peaje está cerrado.", ex.Message);
                 this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
                 this.BeginInvoke(new MethodInvoker(this.Close));

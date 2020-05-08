@@ -32,6 +32,6 @@ using Squirrel;
 // Puede especificar todos los valores o usar los valores predeterminados de número de compilación y de revisión 
 // mediante el carácter '*', como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.21")]
-[assembly: AssemblyFileVersion("2.0.21")]
+[assembly: AssemblyVersion("2.0.22")]
+[assembly: AssemblyFileVersion("2.0.22")]
 [assembly: AssemblyMetadata("SquirrelAwareVersion", "1")]

@@ -52,6 +52,7 @@ namespace AccesoDatos
                                             "WHERE I.RUT = C.RUT " +
                                             "AND L.IDLOCAL = I.IDLOCAL " +
                                             "AND C.COD_ESTADO = 1 " +
+                                            "AND I.ESTADO = 1" +
                                             "ORDER BY C.RAZON ASC, I.IDLOCAL ASC", miconexion);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)

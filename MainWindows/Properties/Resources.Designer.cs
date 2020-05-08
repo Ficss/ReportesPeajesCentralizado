@@ -123,6 +123,16 @@ namespace MainWindows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_new_document {
+            get {
+                object obj = ResourceManager.GetObject("icons8_new_document", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_no_network {
             get {
                 object obj = ResourceManager.GetObject("icons8_no_network", resourceCulture);
@@ -156,6 +166,16 @@ namespace MainWindows.Properties {
         internal static System.Drawing.Bitmap icons8_Paint_Palette_16px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Paint_Palette_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_parking_ticket {
+            get {
+                object obj = ResourceManager.GetObject("icons8_parking_ticket", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

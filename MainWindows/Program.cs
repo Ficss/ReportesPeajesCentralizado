@@ -16,16 +16,16 @@ namespace MainWindows
         [STAThread]
         static void Main()
         {
-            using (var mgr = new UpdateManager("https://github.com/Ficss/ReportesPeajesCentralizado"))
-            {
-                // Note, in most of these scenarios, the app exits after this method
-                // completes!
-                SquirrelAwareApp.HandleEvents(
-                  onInitialInstall: v => mgr.CreateShortcutForThisExe(),
-                  onAppUpdate: v => mgr.CreateShortcutForThisExe(),
-                  onAppUninstall: v => mgr.RemoveShortcutForThisExe(),
-                  onFirstRun: () => ShowTheWelcomeWizard = true);
-            }
+            //using (var mgr = new UpdateManager("https://github.com/Ficss/ReportesPeajesCentralizado"))
+            //{
+            //    // Note, in most of these scenarios, the app exits after this method
+            //    // completes!
+            //    SquirrelAwareApp.HandleEvents(
+            //      onInitialInstall: v => mgr.CreateShortcutForThisExe(),
+            //      onAppUpdate: v => mgr.CreateShortcutForThisExe(),
+            //      onAppUninstall: v => mgr.RemoveShortcutForThisExe(),
+            //      onFirstRun: () => ShowTheWelcomeWizard = true);
+            //}
 
             string guid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(GuidAttribute), false).GetValue(0)).Value.ToString();
             using (Mutex mutex = new Mutex(false, "Global\\" + guid))

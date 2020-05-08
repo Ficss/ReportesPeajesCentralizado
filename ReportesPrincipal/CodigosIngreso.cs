@@ -1,4 +1,4 @@
-﻿using AccesoDatos;
+﻿    using AccesoDatos;
 using ComponentFactory.Krypton.Toolkit;
 using System;
 using System.Data;
@@ -99,7 +99,7 @@ namespace ReportesPrincipal
                                     int periodoobtenido = 0;
                                     SqlConnection miconexion = Consultas.conectarPrincipal();
                                     miconexion.Open();
-                                    SqlCommand consulta = new SqlCommand("SELECT periodo FROM codigo_ingreso WHERE periodo = @periodo AND cod_cliente = @rut AND num_local = @nlocal;", miconexion);
+                                    SqlCommand consulta = new SqlCommand("SELECT periodo FROM codigo_ingreso WHERE periodo = @periodo AND cod_cliente = @rut AND num_local = @nlocal", miconexion);
                                     consulta.Parameters.Add(new SqlParameter("@periodo", periodo));
                                     consulta.Parameters.Add(new SqlParameter("@rut", sindv));
                                     consulta.Parameters.Add(new SqlParameter("@nlocal", nlocal));
@@ -114,18 +114,28 @@ namespace ReportesPrincipal
                                         //Si no hay datos en el periodo actual se inserta los datos del cliente y código
                                         SqlConnection miconexion2 = Consultas.conectarPrincipal();
                                         miconexion2.Open();
-                                        SqlCommand consulta2 = new SqlCommand("SELECT MAX(COD_CODIGO_INGRESO) FROM CODIGO_INGRESO; ", miconexion2);
+                                        SqlCommand consulta2 = new SqlCommand("SELECT MAX(COD_CODIGO_INGRESO) FROM CODIGO_INGRESO ", miconexion2);
                                         SqlDataReader reader2 = consulta2.ExecuteReader();
                                         if (reader2.Read())
                                         {
-                                            if (!reader2.HasRows)
+                                            //if (!reader2.HasRows)
+                                            //{
+                                            //    Item = 1;
+                                            //    miconexion2.Close();
+                                            //}
+                                            //else
+                                            //{
+                                            //    Item = 1 + reader2.GetInt32(0);
+                                            //    miconexion2.Close();
+                                            //}
+                                            Item = reader2.GetInt32(0);
+                                            if (Item == 0)
                                             {
                                                 Item = 1;
                                                 miconexion2.Close();
                                             }
-                                            else
-                                            {
-                                                Item = 1 + reader2.GetInt32(0);
+                                            else {
+                                                Item++;
                                                 miconexion2.Close();
                                             }
                                         }
@@ -138,8 +148,9 @@ namespace ReportesPrincipal
                                     //Si no hay datos en el periodo actual se inserta los datos del cliente y código
                                     SqlConnection miconexion3 = Consultas.conectarPrincipal();
                                     miconexion3.Open();
-                                    SqlCommand consulta3 = new SqlCommand("SELECT idlocal FROM cliencar WHERE rut = @rut ", miconexion3);
+                                    SqlCommand consulta3 = new SqlCommand("SELECT c.idlocal FROM cliencar c INNER JOIN local l ON c.idlocal = l.idlocal WHERE c.rut = @rut and l.numero = @num ", miconexion3);
                                     consulta3.Parameters.Add(new SqlParameter("@rut", sindv));
+                                    consulta3.Parameters.Add(new SqlParameter("@num", nlocal.Trim()));
                                     SqlDataReader reader3 = consulta3.ExecuteReader();
                                     if (reader3.Read())
                                     {

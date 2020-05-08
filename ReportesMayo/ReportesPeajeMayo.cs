@@ -53,7 +53,7 @@ namespace ReportesMayo
             {
                 MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
                                 "Las causas pueden ser:  \n " +
-                                "-No está conectado a la red Vega Monumental. Comunicarse con Esteban Castellanos \n" +
+                                "-No está conectado a la red Vega Monumental.\n" +
                                 "-Peaje está cerrado.", ex.Message);
                 this.DialogResult = DialogResult.Cancel;
                 this.BeginInvoke(new MethodInvoker(this.Close));

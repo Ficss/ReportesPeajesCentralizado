@@ -40,6 +40,25 @@ namespace MainWindows
             System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             InitializeComponent();
             CheckForUpdate();
+            string pc = Environment.MachineName;
+            if (pc.Equals("LSCHALKER-NTBK"))
+            {
+                kryptonLinkLabel3.Visible = false;
+                lblClientes.Visible = true;
+                lblCodigos.Visible = true;
+            }
+            else if (pc.Equals("DESARROLLO-NTBK"))
+            {
+                kryptonLinkLabel3.Visible = true;
+                lblClientes.Visible = true;
+                lblCodigos.Visible = true;
+            }
+            else
+            {
+                kryptonLinkLabel3.Visible = true;
+                lblClientes.Visible = false;
+                lblCodigos.Visible = false;
+            }
         }
         #endregion
         #region Cambiar Visibilidad barra de estado
@@ -338,28 +357,77 @@ namespace MainWindows
             Sitiocero();
         }
 
-        private void Principal() {
+        private void Principal()
+        {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PP"].ConnectionString);
-            pbPrincipal.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+            if (Prueba.QuickOpen(con, 600) == true)
+            {
+                pbPrincipal.Image = Properties.Resources.icons8_system_information;
+                kryptonLinkLabel7.Enabled = true;
+            }
+            else
+            {
+                pbPrincipal.Image = Properties.Resources.icons8_no_network;
+                kryptonLinkLabel7.Enabled = false;
+            }
         }
-        private void Orella() {
+        private void Orella()
+        {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PO"].ConnectionString);
-            pbOrella.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+            if (Prueba.QuickOpen(con, 600) == true)
+            {
+                pbOrella.Image = Properties.Resources.icons8_system_information;
+                kryptonLinkLabel1.Enabled = true;
+            }
+            else
+            {
+                pbOrella.Image = Properties.Resources.icons8_no_network;
+                kryptonLinkLabel1.Enabled = false;
+            }
         }
 
-        private void Briceno() {
+        private void Briceno()
+        {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PB"].ConnectionString);
-            pbBriceno.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+            if (Prueba.QuickOpen(con, 1000) == true)
+            {
+                pbBriceno.Image = Properties.Resources.icons8_system_information;
+                kryptonLinkLabel10.Enabled = true;
+            }
+            else
+            {
+                pbBriceno.Image = Properties.Resources.icons8_no_network;
+                kryptonLinkLabel10.Enabled = false;
+            }
         }
 
-        private void Mayo() {
+        private void Mayo()
+        {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PM"].ConnectionString);
-            pbMayo.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+            if (Prueba.QuickOpen(con, 600) == true)
+            {
+                pbMayo.Image = Properties.Resources.icons8_system_information;
+                kryptonLinkLabel11.Enabled = true;
+            }
+            else
+            {
+                pbMayo.Image = Properties.Resources.icons8_no_network;
+                kryptonLinkLabel11.Enabled = false;
+            }
         }
         private void Sitiocero()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SC"].ConnectionString);
-            pbSC.Image = (Prueba.QuickOpen(con, 500) == true) ? Properties.Resources.icons8_system_information : Properties.Resources.icons8_no_network;
+            if (Prueba.QuickOpen(con, 1000) == true)
+            {
+                pbSC.Image = Properties.Resources.icons8_system_information;
+                kryptonLinkLabel2.Enabled = true;
+            }
+            else
+            {
+                pbSC.Image = Properties.Resources.icons8_no_network;
+                kryptonLinkLabel2.Enabled = false;
+            }
         }
     }
     public static class Prueba
@@ -369,7 +437,7 @@ namespace MainWindows
             // We'll use a Stopwatch here for simplicity. A comparison to a stored DateTime.Now value could also be used
             Stopwatch sw = new Stopwatch();
             bool connectSuccess = false;
-
+            Cursor.Current = Cursors.WaitCursor;
             // Try to open the connection, if anything goes wrong, make sure we set connectSuccess = false
             Thread t = new Thread(delegate ()
             {
@@ -395,6 +463,7 @@ namespace MainWindows
             if (!connectSuccess)
                 connectSuccess = false;
 
+            Cursor.Current = Cursors.Default;
             return connectSuccess;
         }
     }
