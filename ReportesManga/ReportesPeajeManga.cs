@@ -53,9 +53,10 @@ namespace ReportesManga
             catch (Exception ex)
             {
                 MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
-                                "Las causas pueden ser:  \n " +
-                                "-No está conectado a la red Vega Monumental. Comunicarse con Esteban Castellanos \n" +
-                                "-Peaje está cerrado.", ex.Message);
+                                "Las causas pueden ser:\n " +
+                                "-No está conectado a la red Vega Monumental.\n" +
+                                " -Peaje está cerrado.\n" +
+                                " -El cable de red está desconectado de su computador", "Peaje Manga");
                 this.DialogResult = DialogResult.Cancel;
                 this.BeginInvoke(new MethodInvoker(this.Close));
             }

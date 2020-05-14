@@ -1,9 +1,12 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using AccesoDatos;
+using ComponentFactory.Krypton.Toolkit;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 namespace ReportesPeajes
@@ -58,23 +61,15 @@ namespace ReportesPeajes
         #region Load
         private void ReportesPeajeOrella_Load(object sender, EventArgs e)
         {
-            try
-            {
-                using (var connection = new SqlConnection(Properties.Settings.Default.peajeMConnectionString))
-                {
-                    var query = "select 1";
-                    var command = new SqlCommand(query, connection);
-                    connection.Open();
-                    command.ExecuteScalar();
-                }
-            }
-            catch (Exception ex)
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.peajeMConnectionString);
+            if (Prueba.QuickOpen(con, 1000) == false)
             {
                 MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
-                                "Las causas pueden ser:  \n " +
-                                "-No está conectado a la red Vega Monumental. \n" +
-                                "-Peaje está cerrado.", ex.Message);
-                this.DialogResult = DialogResult.Cancel;
+                                "Las causas pueden ser:\n " +
+                                "-No está conectado a la red Vega Monumental.\n" +
+                                " -Peaje está cerrado.\n" +
+                                " -El cable de red está desconectado de su computador", "Peaje Orella");
+                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
                 this.BeginInvoke(new MethodInvoker(this.Close));
             }
         }

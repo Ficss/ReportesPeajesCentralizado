@@ -33,6 +33,7 @@ namespace RendicionCaja
             txtDesde.Maximum = Decimal.MaxValue;
             txtHasta.Maximum = Decimal.MaxValue;
             cbTurno.SelectedIndex = -1;
+            dtpFecha.MaxDate = DateTime.Today;
         }
         #endregion
 
@@ -59,7 +60,7 @@ namespace RendicionCaja
                 }
                 else if (!valor.Equals(totalmonto))
                 {
-                    MessageBox.Show(" ingresados no coinciden, verifique");
+                    MessageBox.Show("Montos ingresados no coinciden, verifique");
                 }
                 else if (!emitidas.Equals(totalemitidas))
                 {
@@ -123,9 +124,7 @@ namespace RendicionCaja
                             }
                         }
                     }
-
-
-
+                    
                     ReporteRendicion rep = ReporteRendicion.Instance();
                     List<Datos> lst = new List<Datos>();
                     lst.Clear();
@@ -299,30 +298,39 @@ namespace RendicionCaja
             try
             {
                 string cod = cbTurno.SelectedItem.ToString();
-                string hoy = DateTime.Now.ToShortDateString();
+                string fecha = dtpFecha.Value.ToShortDateString();
                 var con = ConfigurationManager.ConnectionStrings["PP"].ConnectionString;
                 using (SqlConnection connection = new SqlConnection(con))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT RTRIM(nombre) + ' ' + RTRIM(ap_paterno) + ' ' + RTRIM(ap_materno), cod_usuario " +
-                                                           "FROM usuario " +
-                                                           "WHERE cod_usuario = ( " +
-                                                           "SELECT DISTINCT b.cod_usuario " +
-                                                           "FROM boleta b " +
-                                                           "INNER JOIN turnos t ON b.cod_turno = t.cod_turno " +
-                                                           "WHERE nombre_turno LIKE  @cod + '%'" +
-                                                           "AND fecha = @hoy)", connection))
+                    using (SqlCommand cmd = new SqlCommand("BuscaNombreCajero",connection))
                     {
-                        cmd.Parameters.AddWithValue("@cod", cod);
-                        cmd.Parameters.AddWithValue("@hoy", hoy);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = fecha;
+                        cmd.Parameters.Add("@turno", SqlDbType.VarChar).Value = cod;
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    using (SqlCommand cmd = new SqlCommand("SELECT NombreCajero, CodUsuario FROM NombreCajeroUsuario", connection))
+                    {
                         connection.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.Read())
                         {
-                            string nombre = reader.GetString(0);
-                            string codTurno = Convert.ToString(reader.GetByte(1));
-                            txtNombreCajero.Text = nombre.Trim();
-                            lblCodUsuario.Text = codTurno;
+                            if (reader.IsDBNull(0) == true)
+                            {
+                                txtNombreCajero.Text = string.Empty;
+                                lblCodUsuario.Text = "0";
+                            }
+                            else
+                            {
+                                string nombre = reader.GetString(0);
+                                string codTurno = Convert.ToString(reader.GetInt32(1));
+                                txtNombreCajero.Text = nombre.Trim();
+                                lblCodUsuario.Text = codTurno;
+                            }
+                            
                         }
                         else
                         {

@@ -9,7 +9,6 @@ using ReportesBriceno;
 using ReportesMayo;
 using ReportesManga;
 using ReportesSitioCero;
-using RendicionCaja;
 using Squirrel;
 using System.Net;
 using AccesoDatos;
@@ -31,7 +30,6 @@ namespace MainWindows
         ReportesPeajeSitioCero sc;
         CodigosIngreso ci;
         RegistroClientes rc;
-        FormularioRendicion rendicioncaja;
         AboutBox1 ab;
         #endregion
         #region Constructor por defecto
@@ -43,19 +41,16 @@ namespace MainWindows
             string pc = Environment.MachineName;
             if (pc.Equals("LSCHALKER-NTBK"))
             {
-                kryptonLinkLabel3.Visible = false;
                 lblClientes.Visible = true;
                 lblCodigos.Visible = true;
             }
             else if (pc.Equals("DESARROLLO-NTBK"))
             {
-                kryptonLinkLabel3.Visible = true;
                 lblClientes.Visible = true;
                 lblCodigos.Visible = true;
             }
             else
             {
-                kryptonLinkLabel3.Visible = true;
                 lblClientes.Visible = false;
                 lblCodigos.Visible = false;
             }
@@ -319,18 +314,6 @@ namespace MainWindows
             notificacionInicio.ShowBalloonTip(5000);
         }
         #endregion
-        #region Abrir formulario de rendicion de caja
-        private void kryptonLinkLabel3_LinkClicked(object sender, EventArgs e)
-        {
-            rendicioncaja = FormularioRendicion.Instance();
-            rendicioncaja.MdiParent = this;
-            rendicioncaja.WindowState = FormWindowState.Normal;
-            rendicioncaja.Show();
-            rendicioncaja.WindowState = FormWindowState.Maximized;
-            rendicioncaja.Show();
-            rendicioncaja.Activate();
-        }
-        #endregion
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -356,115 +339,85 @@ namespace MainWindows
         {
             Sitiocero();
         }
-
+        #region Métodos para comprobar conexion y actualizar label - Peaje principal
         private void Principal()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PP"].ConnectionString);
             if (Prueba.QuickOpen(con, 600) == true)
             {
                 pbPrincipal.Image = Properties.Resources.icons8_system_information;
-                kryptonLinkLabel7.Enabled = true;
+                kryptonLinkLabel7.Text = "Reportes peaje principal";
             }
             else
             {
                 pbPrincipal.Image = Properties.Resources.icons8_no_network;
-                kryptonLinkLabel7.Enabled = false;
+                kryptonLinkLabel7.Text = "Reportes peaje principal - [No conectado]";
             }
         }
+        #endregion
+        #region Métodos para comprobar conexion y actualizar label - Peaje orella
         private void Orella()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PO"].ConnectionString);
             if (Prueba.QuickOpen(con, 600) == true)
             {
                 pbOrella.Image = Properties.Resources.icons8_system_information;
-                kryptonLinkLabel1.Enabled = true;
+                kryptonLinkLabel1.Text = "Reportes peaje orella";
             }
             else
             {
                 pbOrella.Image = Properties.Resources.icons8_no_network;
-                kryptonLinkLabel1.Enabled = false;
+                kryptonLinkLabel1.Text = "Reportes peaje orella - [No conectado]";
             }
         }
-
+        #endregion
+        #region Métodos para comprobar conexion y actualizar label - Peaje briceño
         private void Briceno()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PB"].ConnectionString);
             if (Prueba.QuickOpen(con, 1000) == true)
             {
                 pbBriceno.Image = Properties.Resources.icons8_system_information;
-                kryptonLinkLabel10.Enabled = true;
+                kryptonLinkLabel10.Text = "Reportes peaje briceño";
             }
             else
             {
                 pbBriceno.Image = Properties.Resources.icons8_no_network;
-                kryptonLinkLabel10.Enabled = false;
+                kryptonLinkLabel10.Text = "Reportes peaje briceño - [No conectado]";
             }
         }
-
+        #endregion
+        #region Métodos para comprobar conexion y actualizar label - Peaje mayo
         private void Mayo()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PM"].ConnectionString);
             if (Prueba.QuickOpen(con, 600) == true)
             {
                 pbMayo.Image = Properties.Resources.icons8_system_information;
-                kryptonLinkLabel11.Enabled = true;
+                kryptonLinkLabel11.Text = "Reportes peaje 21 de mayo ";
             }
             else
             {
                 pbMayo.Image = Properties.Resources.icons8_no_network;
-                kryptonLinkLabel11.Enabled = false;
+                kryptonLinkLabel11.Text = "Reportes peaje 21 de mayo - [No conectado]";
             }
         }
+        #endregion
+        #region Métodos para comprobar conexion y actualizar label - Peaje sitio cero
         private void Sitiocero()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SC"].ConnectionString);
             if (Prueba.QuickOpen(con, 1000) == true)
             {
                 pbSC.Image = Properties.Resources.icons8_system_information;
-                kryptonLinkLabel2.Enabled = true;
+                kryptonLinkLabel2.Text = "Reporteas peaje sitio cero";
             }
             else
             {
                 pbSC.Image = Properties.Resources.icons8_no_network;
-                kryptonLinkLabel2.Enabled = false;
+                kryptonLinkLabel2.Text = "Reportes peaje sitio cero - [No conectado]";
             }
         }
-    }
-    public static class Prueba
-    {
-        public static bool QuickOpen(this SqlConnection conn, int timeout)
-        {
-            // We'll use a Stopwatch here for simplicity. A comparison to a stored DateTime.Now value could also be used
-            Stopwatch sw = new Stopwatch();
-            bool connectSuccess = false;
-            Cursor.Current = Cursors.WaitCursor;
-            // Try to open the connection, if anything goes wrong, make sure we set connectSuccess = false
-            Thread t = new Thread(delegate ()
-            {
-                try
-                {
-                    sw.Start();
-                    conn.Open();
-                    connectSuccess = true;
-                }
-                catch { }
-            });
-
-            // Make sure it's marked as a background thread so it'll get cleaned up automatically
-            t.IsBackground = true;
-            t.Start();
-
-            // Keep trying to join the thread until we either succeed or the timeout value has been exceeded
-            while (timeout > sw.ElapsedMilliseconds)
-                if (t.Join(1))
-                    break;
-
-            // If we didn't connect successfully, throw an exception
-            if (!connectSuccess)
-                connectSuccess = false;
-
-            Cursor.Current = Cursors.Default;
-            return connectSuccess;
-        }
+        #endregion
     }
 }

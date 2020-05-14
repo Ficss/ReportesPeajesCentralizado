@@ -174,5 +174,11 @@
   <ItemGroup>
     <None Include="Resources\icons8_Microsoft_Excel_48px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{7d534ead-2fb4-4144-be48-5469bfb413c8}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

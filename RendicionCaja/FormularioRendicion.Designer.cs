@@ -29,10 +29,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonLabel11 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -75,6 +75,7 @@
             this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFecha = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.kryptonLabel15 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3.Panel)).BeginInit();
             this.kryptonGroupBox3.Panel.SuspendLayout();
@@ -476,36 +477,36 @@
             // 
             // VEHICULO
             // 
-            dataGridViewCellStyle1.Format = "C0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.VEHICULO.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Format = "C0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.VEHICULO.DefaultCellStyle = dataGridViewCellStyle9;
             this.VEHICULO.HeaderText = "VEHÍCULO";
             this.VEHICULO.Name = "VEHICULO";
             this.VEHICULO.ReadOnly = true;
             // 
             // CANTIDAD
             // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.CANTIDAD.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Format = "N0";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.CANTIDAD.DefaultCellStyle = dataGridViewCellStyle10;
             this.CANTIDAD.HeaderText = "CANTIDAD";
             this.CANTIDAD.Name = "CANTIDAD";
             this.CANTIDAD.ReadOnly = true;
             // 
             // VALOR
             // 
-            dataGridViewCellStyle3.Format = "C0";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.VALOR.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Format = "C0";
+            dataGridViewCellStyle11.NullValue = "0";
+            this.VALOR.DefaultCellStyle = dataGridViewCellStyle11;
             this.VALOR.HeaderText = "VALOR UNITARIO";
             this.VALOR.Name = "VALOR";
             this.VALOR.ReadOnly = true;
             // 
             // TOTAL
             // 
-            dataGridViewCellStyle4.Format = "C0";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.TOTAL.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Format = "C0";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.TOTAL.DefaultCellStyle = dataGridViewCellStyle12;
             this.TOTAL.HeaderText = "TOTAL";
             this.TOTAL.Name = "TOTAL";
             this.TOTAL.ReadOnly = true;
@@ -514,10 +515,19 @@
             // 
             this.dtpFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(943, 65);
+            this.dtpFecha.Location = new System.Drawing.Point(1012, 66);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(201, 25);
             this.dtpFecha.TabIndex = 49;
+            // 
+            // kryptonLabel15
+            // 
+            this.kryptonLabel15.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.kryptonLabel15.Location = new System.Drawing.Point(888, 66);
+            this.kryptonLabel15.Name = "kryptonLabel15";
+            this.kryptonLabel15.Size = new System.Drawing.Size(108, 24);
+            this.kryptonLabel15.TabIndex = 48;
+            this.kryptonLabel15.Values.Text = "Fecha a rendir";
             // 
             // FormularioRendicion
             // 
@@ -531,6 +541,7 @@
             this.Controls.Add(this.lblCodUsuario);
             this.Controls.Add(this.kryptonLabel12);
             this.Controls.Add(this.kryptonGroupBox1);
+            this.Controls.Add(this.kryptonLabel15);
             this.Controls.Add(this.kryptonLabel17);
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.txtNombreCajero);
@@ -603,6 +614,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VALOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpFecha;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel15;
     }
 }
 

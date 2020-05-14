@@ -11,6 +11,9 @@ using ComponentFactory.Krypton.Toolkit;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Diagnostics;
+using System.Threading;
+
 namespace ReportesSitioCero
 {
     public partial class ReportesPeajeSitioCero : KryptonForm
@@ -62,23 +65,14 @@ namespace ReportesSitioCero
         #region Load
         private void ReportesPeajeSitioCero_Load(object sender, EventArgs e)
         {
-            try
-            {
-                using (var connection = new SqlConnection(Properties.Settings.Default.SC))
-                {
-
-                    connection.Open();
-                    var query = "select 1";
-                    var command = new SqlCommand(query, connection);
-                    command.ExecuteScalar();
-                }
-            }
-            catch (Exception ex)
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.SC);
+            if (Prueba.QuickOpen(con, 1000) == false)
             {
                 MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
-                                "Las causas pueden ser:  \n " +
-                                "-No está conectado a la red Vega Monumental. \n" +
-                                "-Peaje está cerrado.", ex.Message);
+                                "Las causas pueden ser:\n " +
+                                "-No está conectado a la red Vega Monumental.\n" +
+                                " -Peaje está cerrado.\n" +
+                                " -El cable de red está desconectado de su computador", "Peaje Sitio Cero");
                 this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
                 this.BeginInvoke(new MethodInvoker(this.Close));
             }

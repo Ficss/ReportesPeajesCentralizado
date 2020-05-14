@@ -244,10 +244,6 @@
       <Project>{7d534ead-2fb4-4144-be48-5469bfb413c8}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RendicionCaja\RendicionCaja.csproj">
-      <Project>{bf836808-0aec-4977-a565-5feea47c82f9}</Project>
-      <Name>RendicionCaja</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ReportesBriceno\ReportesBriceno.csproj">
       <Project>{26e27d22-44b2-4393-a6f4-c1a04d03ca20}</Project>
       <Name>ReportesBriceno</Name>

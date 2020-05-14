@@ -1,9 +1,12 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using AccesoDatos;
+using ComponentFactory.Krypton.Toolkit;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 namespace ReportesBriceno
@@ -56,24 +59,16 @@ namespace ReportesBriceno
         #endregion
         #region Load
         private void ReportesPeajeBriceno_Load(object sender, EventArgs e)
-        {        
-            try
-            {
-                using (var connection = new SqlConnection(Properties.Settings.Default.peajeMConnectionString1))
-                {
-                    var query = "select 1";
-                    var command = new SqlCommand(query, connection);
-                    connection.Open();
-                    command.ExecuteScalar();
-                }
-            }
-            catch (Exception ex)
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.peajeMConnectionString1);
+            if (Prueba.QuickOpen(con, 1000) == false)
             {
                 MessageBox.Show("No se puso establecer una conexión a la base de datos.\n  " +
-                                "Las causas pueden ser:  \n " +
+                                "Las causas pueden ser:\n " +
                                 "-No está conectado a la red Vega Monumental.\n" +
-                                "-Peaje está cerrado.", ex.Message);
-                this.DialogResult = DialogResult.Cancel;
+                                " -Peaje está cerrado.\n" +
+                                " -El cable de red está desconectado de su computador", "Peaje Briceño");
+                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
                 this.BeginInvoke(new MethodInvoker(this.Close));
             }
         }
