@@ -13,6 +13,7 @@ using Microsoft.Reporting.WinForms;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Diagnostics;
 using System.Threading;
+using AccesoDatos;
 
 namespace ReportesSitioCero
 {
