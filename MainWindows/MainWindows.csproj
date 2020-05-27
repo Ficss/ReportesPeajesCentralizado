@@ -256,6 +256,10 @@
       <Project>{7930828b-e2a4-4cb1-9017-d7859e657f8a}</Project>
       <Name>ReportesMayo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ReportesOrellaDos\ReportesOrellaDos.csproj">
+      <Project>{c879dfce-9d4a-4fed-81f2-9236106f3700}</Project>
+      <Name>ReportesOrellaDos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportesPeajes\ReportesPeajes.csproj">
       <Project>{5f754bdf-64c3-4dd7-bb0b-87e31190d344}</Project>
       <Name>ReportesPeajes</Name>

@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A024337E-2E7E-4FAB-AF5F-D18174EDD108}</ProjectGuid>
+    <ProjectGuid>{C879DFCE-9D4A-4FED-81F2-9236106F3700}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReportesSitioCero</RootNamespace>
-    <AssemblyName>ReportesSitioCero</AssemblyName>
+    <RootNamespace>ReportesOrellaDos</RootNamespace>
+    <AssemblyName>ReportesOrellaDos</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,26 +49,6 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
@@ -117,14 +98,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>peajeMDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ReportesPeajeSitioCero.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportesPeajeSitioCero.Designer.cs">
-      <DependentUpon>ReportesPeajeSitioCero.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportesPeajeOrellaDos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesPeajeOrellaDos.Designer.cs">
+      <DependentUpon>ReportesPeajeOrellaDos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -135,14 +116,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
     <EmbeddedResource Include="RecaudacionDiaria.rdlc" />
     <EmbeddedResource Include="RecaudacionMensual.rdlc" />
+    <EmbeddedResource Include="RecaudacionAlDia.rdlc" />
     <EmbeddedResource Include="RecaudacionSemanal.rdlc" />
     <EmbeddedResource Include="RecaudacionCajero.rdlc" />
     <EmbeddedResource Include="CompradorVendedor.rdlc" />
-    <EmbeddedResource Include="ReportesPeajeSitioCero.resx">
-      <DependentUpon>ReportesPeajeSitioCero.cs</DependentUpon>
+    <EmbeddedResource Include="ReportesPeajeOrellaDos.resx">
+      <DependentUpon>ReportesPeajeOrellaDos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="peajeMDataSet.xsc">
@@ -170,13 +151,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8_Microsoft_Excel_48px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
       <Project>{7d534ead-2fb4-4144-be48-5469bfb413c8}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Microsoft_Excel_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

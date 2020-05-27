@@ -132,6 +132,16 @@ namespace ReportesSitioCero
                         // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_diario' Puede moverla o quitarla según sea necesario.
                         this.informe_diarioTableAdapter.Fill(this.peajeMDataSet.informe_diario);
                     }
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_diario_manual", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@v_fecha", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        // TODO: esta línea de código carga datos en la tabla 'peajeMDataSet.informe_diario' Puede moverla o quitarla según sea necesario.
+                        this.informe_diario_manualTableAdapter.Fill(this.peajeMDataSet.informe_diario_manual);
+                    }
                 }
                 reportViewer1.LocalReport.EnableHyperlinks = true;
                 ReportParameter[] rparams = new ReportParameter[] {

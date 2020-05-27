@@ -16,6 +16,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Threading;
 using System.Configuration;
+using ReportesOrellaDos;
 
 namespace MainWindows
 {
@@ -28,6 +29,7 @@ namespace MainWindows
         ReportesPeajeMayo pm;
         ReportesPeajeManga pma;
         ReportesPeajeSitioCero sc;
+        ReportesPeajeOrellaDos pod;
         CodigosIngreso ci;
         RegistroClientes rc;
         AboutBox1 ab;
@@ -163,6 +165,7 @@ namespace MainWindows
         {
             Principal();
             Orella();
+            OrellaDos();
             Briceno();
             Mayo();
             Sitiocero();
@@ -219,6 +222,18 @@ namespace MainWindows
             po.WindowState = FormWindowState.Maximized;
             po.Show();
             po.Activate();
+        }
+        #endregion
+        #region Abrir reportes orella dos
+        private void kryptonLinkLabel3_LinkClicked(object sender, EventArgs e)
+        {
+            pod = ReportesPeajeOrellaDos.Instance();
+            pod.MdiParent = this;
+            pod.WindowState = FormWindowState.Normal;
+            pod.Show();
+            pod.WindowState = FormWindowState.Maximized;
+            pod.Show();
+            pod.Activate();
         }
         #endregion
         #region Abrir reportes principal
@@ -339,6 +354,10 @@ namespace MainWindows
         {
             Sitiocero();
         }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OrellaDos();
+        }
         #region Métodos para comprobar conexion y actualizar label - Peaje principal
         private void Principal()
         {
@@ -362,12 +381,28 @@ namespace MainWindows
             if (Prueba.QuickOpen(con, 600) == true)
             {
                 pbOrella.Image = Properties.Resources.icons8_system_information;
-                kryptonLinkLabel1.Text = "Reportes peaje orella";
+                kryptonLinkLabel1.Text = "Reportes peaje Orella";
             }
             else
             {
                 pbOrella.Image = Properties.Resources.icons8_no_network;
-                kryptonLinkLabel1.Text = "Reportes peaje orella - [No conectado]";
+                kryptonLinkLabel1.Text = "Reportes peaje Orella - [No conectado]";
+            }
+        }
+        #endregion
+        #region Métodos para comprobar conexion y actualizar label - Peaje orella dos
+        private void OrellaDos()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["OD"].ConnectionString);
+            if (Prueba.QuickOpen(con, 600) == true)
+            {
+                pbOD.Image = Properties.Resources.icons8_system_information;
+                kryptonLinkLabel3.Text = "Reportes peaje Orella dos";
+            }
+            else
+            {
+                pbOD.Image = Properties.Resources.icons8_no_network;
+                kryptonLinkLabel3.Text = "Reportes peaje Orella dos - [No conectado]";
             }
         }
         #endregion
@@ -378,12 +413,12 @@ namespace MainWindows
             if (Prueba.QuickOpen(con, 1000) == true)
             {
                 pbBriceno.Image = Properties.Resources.icons8_system_information;
-                kryptonLinkLabel10.Text = "Reportes peaje briceño";
+                kryptonLinkLabel10.Text = "Reportes peaje Briceño";
             }
             else
             {
                 pbBriceno.Image = Properties.Resources.icons8_no_network;
-                kryptonLinkLabel10.Text = "Reportes peaje briceño - [No conectado]";
+                kryptonLinkLabel10.Text = "Reportes peaje Briceño - [No conectado]";
             }
         }
         #endregion
@@ -418,6 +453,9 @@ namespace MainWindows
                 kryptonLinkLabel2.Text = "Reportes peaje sitio cero - [No conectado]";
             }
         }
+
         #endregion
+
+        
     }
 }

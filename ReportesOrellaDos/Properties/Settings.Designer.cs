@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReportesSitioCero.Properties {
+namespace ReportesOrellaDos.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,11 +26,11 @@ namespace ReportesSitioCero.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.221;Initial Catalog=peajeM;Persist Security Info=True;User " +
-            "ID=sa;Password=Vegam123;")]
-        public string SC {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.214;Initial Catalog=OrellaDos;Persist Security Info=True;Us" +
+            "er ID=sa;Password=Vegam123")]
+        public string OD {
             get {
-                return ((string)(this["SC"]));
+                return ((string)(this["OD"]));
             }
         }
     }

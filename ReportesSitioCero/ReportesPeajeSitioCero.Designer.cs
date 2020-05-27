@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -37,15 +38,17 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesPeajeSitioCero));
-            this.informe_al_diaBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_al_diaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peajeMDataSet = new ReportesSitioCero.peajeMDataSet();
-            this.informe_diarioBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_recaudacion_mensualBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_recaudacion_semanalBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_cajeroBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_acumuladoBindingSource = new System.Windows.Forms.BindingSource();
-            this.inf_vehiculos_compara_mesBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_diarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_diario_manualBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_recaudacion_mensualBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_recaudacion_semanalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_cajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_acumuladoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inf_vehiculos_compara_mesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.reportViewer7 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -117,9 +120,11 @@
             this.informe_cajeroTableAdapter = new ReportesSitioCero.peajeMDataSetTableAdapters.informe_cajeroTableAdapter();
             this.informe_acumuladoTableAdapter = new ReportesSitioCero.peajeMDataSetTableAdapters.informe_acumuladoTableAdapter();
             this.inf_vehiculos_compara_mesTableAdapter = new ReportesSitioCero.peajeMDataSetTableAdapters.inf_vehiculos_compara_mesTableAdapter();
+            this.informe_diario_manualTableAdapter = new ReportesSitioCero.peajeMDataSetTableAdapters.informe_diario_manualTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.informe_al_diaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peajeMDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_diarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informe_diario_manualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_recaudacion_mensualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_recaudacion_semanalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_cajeroBindingSource)).BeginInit();
@@ -192,6 +197,11 @@
             // 
             this.informe_diarioBindingSource.DataMember = "informe_diario";
             this.informe_diarioBindingSource.DataSource = this.peajeMDataSet;
+            // 
+            // informe_diario_manualBindingSource
+            // 
+            this.informe_diario_manualBindingSource.DataMember = "informe_diario_manual";
+            this.informe_diario_manualBindingSource.DataSource = this.peajeMDataSet;
             // 
             // informe_recaudacion_mensualBindingSource
             // 
@@ -320,7 +330,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource2.Name = "DataSet1";
             reportDataSource2.Value = this.informe_diarioBindingSource;
+            reportDataSource3.Name = "DataSet2";
+            reportDataSource3.Value = this.informe_diario_manualBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ReportesSitioCero.RecaudacionDiaria.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 106);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);
@@ -403,9 +416,9 @@
             this.reportViewer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.informe_recaudacion_mensualBindingSource;
-            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource4.Name = "DataSet1";
+            reportDataSource4.Value = this.informe_recaudacion_mensualBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer2.LocalReport.ReportEmbeddedResource = "ReportesSitioCero.RecaudacionMensual.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(0, 106);
             this.reportViewer2.Margin = new System.Windows.Forms.Padding(4);
@@ -505,9 +518,9 @@
             this.reportViewer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource4.Name = "DataSet1";
-            reportDataSource4.Value = this.informe_recaudacion_semanalBindingSource;
-            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource5.Name = "DataSet1";
+            reportDataSource5.Value = this.informe_recaudacion_semanalBindingSource;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewer3.LocalReport.ReportEmbeddedResource = "ReportesSitioCero.RecaudacionSemanal.rdlc";
             this.reportViewer3.Location = new System.Drawing.Point(0, 106);
             this.reportViewer3.Margin = new System.Windows.Forms.Padding(4);
@@ -606,12 +619,12 @@
             this.reportViewer4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource5.Name = "DataSet1";
-            reportDataSource5.Value = this.informe_cajeroBindingSource;
-            reportDataSource6.Name = "DataSet2";
-            reportDataSource6.Value = this.informe_acumuladoBindingSource;
-            this.reportViewer4.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource6.Name = "DataSet1";
+            reportDataSource6.Value = this.informe_cajeroBindingSource;
+            reportDataSource7.Name = "DataSet2";
+            reportDataSource7.Value = this.informe_acumuladoBindingSource;
             this.reportViewer4.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer4.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewer4.LocalReport.ReportEmbeddedResource = "ReportesSitioCero.RecaudacionCajero.rdlc";
             this.reportViewer4.Location = new System.Drawing.Point(0, 106);
             this.reportViewer4.Margin = new System.Windows.Forms.Padding(4);
@@ -711,9 +724,9 @@
             this.reportViewer5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource7.Name = "DataSet1";
-            reportDataSource7.Value = this.inf_vehiculos_compara_mesBindingSource;
-            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource8.Name = "DataSet1";
+            reportDataSource8.Value = this.inf_vehiculos_compara_mesBindingSource;
+            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource8);
             this.reportViewer5.LocalReport.ReportEmbeddedResource = "ReportesSitioCero.CompradorVendedor.rdlc";
             this.reportViewer5.Location = new System.Drawing.Point(0, 106);
             this.reportViewer5.Margin = new System.Windows.Forms.Padding(4);
@@ -840,9 +853,9 @@
             this.reportViewer6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource8.Name = "DataSet1";
-            reportDataSource8.Value = null;
-            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource8);
+            reportDataSource9.Name = "DataSet1";
+            reportDataSource9.Value = null;
+            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource9);
             this.reportViewer6.LocalReport.ReportEmbeddedResource = "ReportesPrincipal.CompradorVendedor.rdlc";
             this.reportViewer6.Location = new System.Drawing.Point(0, 106);
             this.reportViewer6.Margin = new System.Windows.Forms.Padding(4);
@@ -1098,6 +1111,10 @@
             // 
             this.inf_vehiculos_compara_mesTableAdapter.ClearBeforeFill = true;
             // 
+            // informe_diario_manualTableAdapter
+            // 
+            this.informe_diario_manualTableAdapter.ClearBeforeFill = true;
+            // 
             // ReportesPeajeSitioCero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1112,6 +1129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.informe_al_diaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peajeMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_diarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informe_diario_manualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_recaudacion_mensualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_recaudacion_semanalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_cajeroBindingSource)).EndInit();
@@ -1260,6 +1278,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel16;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel17;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvCierresZ;
+        private System.Windows.Forms.BindingSource informe_diario_manualBindingSource;
+        private peajeMDataSetTableAdapters.informe_diario_manualTableAdapter informe_diario_manualTableAdapter;
     }
 }
 
