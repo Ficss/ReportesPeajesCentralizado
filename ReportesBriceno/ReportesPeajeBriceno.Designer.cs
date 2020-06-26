@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -39,15 +40,15 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesPeajeBriceno));
-            this.informe_al_diaBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_al_diaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSet1 = new ReportesBriceno.DataSet1();
-            this.informe_diarioBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_diario_manualBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_recaudacion_mensualBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_recaudacion_semanalBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_acumuladoBindingSource = new System.Windows.Forms.BindingSource();
-            this.informe_cajeroBindingSource = new System.Windows.Forms.BindingSource();
-            this.inf_vehiculos_compara_mesBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_diarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_diario_manualBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_recaudacion_mensualBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_recaudacion_semanalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_acumuladoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_cajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inf_vehiculos_compara_mesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -299,6 +300,7 @@
             // 
             // btnBuscarDiario
             // 
+            this.btnBuscarDiario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBuscarDiario.Location = new System.Drawing.Point(595, 14);
             this.btnBuscarDiario.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarDiario.Name = "btnBuscarDiario";
@@ -1127,6 +1129,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes Peaje Briceño";
             this.Load += new System.EventHandler(this.ReportesPeajeBriceno_Load);
+            this.SizeChanged += new System.EventHandler(this.ReportesPeajeBriceno_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.informe_al_diaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_diarioBindingSource)).EndInit();

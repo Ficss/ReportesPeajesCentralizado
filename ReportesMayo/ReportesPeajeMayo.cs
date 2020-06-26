@@ -5,9 +5,10 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace ReportesMayo
 {
     public partial class ReportesPeajeMayo : KryptonForm
@@ -37,6 +38,21 @@ namespace ReportesMayo
 
             dtpPrimeraSemana.MaxDate = nextSaturday;
             dtpUltimaSemana.MaxDate = nextSaturday;
+            //Cell
+            dgvCierresZ.BorderStyle = BorderStyle.None;
+            dgvCierresZ.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dgvCierresZ.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCierresZ.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dgvCierresZ.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dgvCierresZ.DefaultCellStyle.Font = new System.Drawing.Font("Cambria", 10);
+            dgvCierresZ.BackgroundColor = Color.White;
+
+            //Header
+            dgvCierresZ.EnableHeadersVisualStyles = false;
+            dgvCierresZ.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCierresZ.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft San Seriff", 12);
         }
         #endregion
         #region Load
@@ -351,8 +367,224 @@ namespace ReportesMayo
                 KryptonMessageBox.Show(ex.Message);
             }
         }
+
         #endregion
 
+        #region Cargar Informe Detalle Diario - Report 8
 
+        
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime fecha_elegida = kryptonDateTimePicker2.Value.Date;
+                string fecha = fecha_elegida.ToString("dd-MM-yyyy");
+                string con = Properties.Settings.Default.peajeF;
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_cobrados_nocobrados", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+                this.informe_tickets_cobradosTableAdapter.Fill(this.peajeFDataSet.informe_tickets_cobrados);
+
+                this.sp_informe_total_vehiculosTableAdapter.Fill(this.peajeFDataSet.sp_informe_total_vehiculos, Convert.ToDateTime(fecha));
+
+                this.sp_informe_promedio_permanenciaTableAdapter.Fill(this.peajeFDataSet.sp_informe_promedio_permanencia, Convert.ToDateTime(fecha));
+
+
+                ReportParameter[] rparams = new ReportParameter[] {
+                new ReportParameter("fecha", fecha)
+                };
+                reportViewer8.LocalReport.SetParameters(rparams);
+                this.reportViewer8.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+        #region Cargar Informe Detalle Mensual - Report 9
+        
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string formated = kryptonDateTimePicker3.Value.Month.ToString() + '/' + kryptonDateTimePicker4.Value.Year.ToString();
+                DateTime date = Convert.ToDateTime(formated);
+                var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+                string con = Properties.Settings.Default.peajeF;
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_cobrados_nocobrados_rango", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
+                        cmd.Parameters.Add("@fecha_fin", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+                this.informe_tickets_cobradosTableAdapter.Fill(this.peajeFDataSet.informe_tickets_cobrados);
+
+                this.sp_informe_total_vehiculos_rangoTableAdapter.Fill(this.peajeFDataSet.sp_informe_total_vehiculos_rango, Convert.ToDateTime(firstDayOfMonth), Convert.ToDateTime(lastDayOfMonth));
+
+                this.sp_informe_promedio_permanencia_rangoTableAdapter.Fill(this.peajeFDataSet.sp_informe_promedio_permanencia_rango, Convert.ToDateTime(firstDayOfMonth), Convert.ToDateTime(lastDayOfMonth));
+
+                ReportParameter[] rparams = new ReportParameter[] {
+                new ReportParameter("desde", firstDayOfMonth.ToShortDateString()),
+                new ReportParameter("hasta", lastDayOfMonth.ToShortDateString()),
+                };
+                reportViewer9.LocalReport.SetParameters(rparams);
+                this.reportViewer9.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+        #region Cargar Informe Detalle Semanal - Report 10
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime fecha_inicial = kryptonDateTimePicker6.Value.Date;
+                DateTime fecha_final = kryptonDateTimePicker5.Value.Date;
+                string fecha_i = fecha_inicial.ToString("dd/MM/yyyy");
+                string fecha_f = fecha_final.ToString("dd/MM/yyyy");
+                string con = Properties.Settings.Default.peajeF;
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_informe_cobrados_nocobrados_rango", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@fecha_inicio", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_i);
+                        cmd.Parameters.Add("@fecha_fin", SqlDbType.DateTime).Value = Convert.ToDateTime(fecha_f);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+                this.informe_tickets_cobradosTableAdapter.Fill(this.peajeFDataSet.informe_tickets_cobrados);
+
+                this.sp_informe_total_vehiculos_rangoTableAdapter.Fill(this.peajeFDataSet.sp_informe_total_vehiculos_rango, Convert.ToDateTime(fecha_i), Convert.ToDateTime(fecha_f));
+
+                this.sp_informe_promedio_permanencia_rangoTableAdapter.Fill(this.peajeFDataSet.sp_informe_promedio_permanencia_rango, Convert.ToDateTime(fecha_i), Convert.ToDateTime(fecha_f));
+
+                ReportParameter[] rparams = new ReportParameter[] {
+                new ReportParameter("desde", fecha_i),
+                new ReportParameter("hasta", fecha_f),
+                };
+                reportViewer10.LocalReport.SetParameters(rparams);
+                this.reportViewer10.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+        #region Cargar grilla con los datos de los cierres Z
+        private void btnCierresZ_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string formated = dtpMesCierreZ.Value.Month.ToString() + '/' + dtpAnCierreZ.Value.Year.ToString();
+                DateTime date = Convert.ToDateTime(formated);
+                var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+                DataTable dt = new DataTable();
+                string con = Properties.Settings.Default.peajeF;
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    connection.Open();
+                    SqlCommand myCmd = new SqlCommand("sp_Cargar_CierreZ", connection);
+                    myCmd.CommandType = CommandType.StoredProcedure;
+                    myCmd.Parameters.Add("@finicial", SqlDbType.DateTime).Value = Convert.ToDateTime(firstDayOfMonth);
+                    myCmd.Parameters.Add("@ffinal", SqlDbType.DateTime).Value = Convert.ToDateTime(lastDayOfMonth);
+                    SqlDataAdapter da = new SqlDataAdapter(myCmd);
+                    da.Fill(dt);
+                    dgvCierresZ.DataSource = dt;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            //dgvCierresZ.DataBind();
+        }
+        #endregion
+        #region Método para exportar a excel
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            var dia = new SaveFileDialog();
+            dia.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dia.Filter = "Excel Worksheets (*.xlsx)|*.xlsx|xls file (*.xls)|*.xls|All files (*.*)|*.*";
+            if (dia.ShowDialog(this) == DialogResult.OK)
+            {
+                Excel._Application xlApp = new Excel.Application();
+                Excel._Workbook xlWorkBook = xlApp.Workbooks.Add(Type.Missing);
+                Excel._Worksheet xlWorkSheet = null;
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                xlWorkSheet = xlWorkBook.ActiveSheet;
+                xlWorkSheet.Name = "21Mayo";
+
+                for (int x = 1; x < dgvCierresZ.Columns.Count + 1; x++)
+                {
+                    xlWorkSheet.Cells[1, x] = dgvCierresZ.Columns[x - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dgvCierresZ.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvCierresZ.Columns.Count; j++)
+                    {
+                        //xlWorkSheet.Cells[i + 2, j + 1] = dgvCierresZ.Rows[i].Cells[j].Value.ToString();
+                        xlWorkSheet.Cells[i + 2, j + 1] = dgvCierresZ.Rows[i].Cells[j].Value;
+                    }
+                }
+
+                xlWorkBook.SaveAs(dia.FileName, Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+                xlWorkBook.Close(true, Type.Missing, Type.Missing);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+                MessageBox.Show($"Datos exportados exitósamente en: {dia.InitialDirectory}");
+            }
+        }
+        #endregion
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+        private void ReportesPeajeMayo_SizeChanged(object sender, EventArgs e)
+        {
+            //kryptonDateTimePicker2.Left = (this.ClientSize.Width - kryptonDateTimePicker2.Width) / 2;
+            //kryptonButton1.Left = (this.ClientSize.Width - kryptonDateTimePicker2.Width) / 2;
+        }
     }
 }

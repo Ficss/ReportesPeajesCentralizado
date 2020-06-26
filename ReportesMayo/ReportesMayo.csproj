@@ -136,6 +136,9 @@
     <EmbeddedResource Include="RecaudacionCajero.rdlc" />
     <EmbeddedResource Include="CompradorVendedor.rdlc" />
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="DetalleDiario.rdlc" />
+    <EmbeddedResource Include="DetalleMensual.rdlc" />
+    <EmbeddedResource Include="DetalleSemanal.rdlc" />
     <EmbeddedResource Include="ReportesPeajeMayo.resx">
       <DependentUpon>ReportesPeajeMayo.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +150,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="peajeFDataSet.xsc">
@@ -180,6 +184,9 @@
       <Project>{7d534ead-2fb4-4144-be48-5469bfb413c8}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Microsoft_Excel_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

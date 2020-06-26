@@ -327,7 +327,8 @@
             // 
             // btnBuscarDiario
             // 
-            this.btnBuscarDiario.Location = new System.Drawing.Point(595, 15);
+            this.btnBuscarDiario.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBuscarDiario.Location = new System.Drawing.Point(596, 15);
             this.btnBuscarDiario.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarDiario.Name = "btnBuscarDiario";
             this.btnBuscarDiario.Size = new System.Drawing.Size(149, 49);
@@ -1308,6 +1309,7 @@
             this.Name = "ReportesPeajePrincipal";
             this.Text = "Reportes Peaje Principal";
             this.Load += new System.EventHandler(this.ReportesPeajePrincipal_Load);
+            this.SizeChanged += new System.EventHandler(this.ReportesPeajePrincipal_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.informe_al_diaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peajeMDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informe_diarioBindingSource)).EndInit();

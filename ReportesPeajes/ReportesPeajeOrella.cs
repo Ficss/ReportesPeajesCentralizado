@@ -411,7 +411,7 @@ namespace ReportesPeajes
                 Excel._Worksheet xlWorkSheet = null;
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
                 xlWorkSheet = xlWorkBook.ActiveSheet;
-                xlWorkSheet.Name = "Principal";
+                xlWorkSheet.Name = "Orella";
 
                 for (int x = 1; x < dgvCierresZ.Columns.Count + 1; x++)
                 {
@@ -456,6 +456,11 @@ namespace ReportesPeajes
             {
                 GC.Collect();
             }
+        }
+
+        private void btnBuscarDiario_SizeChanged(object sender, EventArgs e)
+        {
+            btnBuscarDiario.Left = (this.ClientSize.Width - btnBuscarDiario.Width) / 2;
         }
     }
 }

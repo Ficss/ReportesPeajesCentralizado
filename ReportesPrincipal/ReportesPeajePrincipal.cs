@@ -539,6 +539,11 @@ namespace ReportesPrincipal
                 GC.Collect();
             }
         }
+
+        private void ReportesPeajePrincipal_SizeChanged(object sender, EventArgs e)
+        {
+            btnBuscarDiario.Left = (this.ClientSize.Width - btnBuscarDiario.Width) / 2;
+        }
     }
    
 }

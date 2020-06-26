@@ -277,12 +277,14 @@
             // 
             // btnBuscarDiario
             // 
+            this.btnBuscarDiario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBuscarDiario.Location = new System.Drawing.Point(596, 15);
             this.btnBuscarDiario.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarDiario.Name = "btnBuscarDiario";
             this.btnBuscarDiario.Size = new System.Drawing.Size(149, 49);
             this.btnBuscarDiario.TabIndex = 2;
             this.btnBuscarDiario.Values.Text = "Recuperar Datos";
+            this.btnBuscarDiario.SizeChanged += new System.EventHandler(this.btnBuscarDiario_SizeChanged);
             this.btnBuscarDiario.Click += new System.EventHandler(this.btnBuscarDiario_Click);
             // 
             // reportViewer1

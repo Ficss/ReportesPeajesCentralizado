@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -40,15 +39,15 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesPeajeSitioCero));
-            this.informe_al_diaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_al_diaBindingSource = new System.Windows.Forms.BindingSource();
             this.peajeMDataSet = new ReportesSitioCero.peajeMDataSet();
-            this.informe_diarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informe_diario_manualBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informe_recaudacion_mensualBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informe_recaudacion_semanalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informe_cajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.informe_acumuladoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inf_vehiculos_compara_mesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informe_diarioBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_diario_manualBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_recaudacion_mensualBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_recaudacion_semanalBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_cajeroBindingSource = new System.Windows.Forms.BindingSource();
+            this.informe_acumuladoBindingSource = new System.Windows.Forms.BindingSource();
+            this.inf_vehiculos_compara_mesBindingSource = new System.Windows.Forms.BindingSource();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.reportViewer7 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -300,12 +299,14 @@
             // 
             // btnBuscarDiario
             // 
+            this.btnBuscarDiario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBuscarDiario.Location = new System.Drawing.Point(596, 15);
             this.btnBuscarDiario.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarDiario.Name = "btnBuscarDiario";
             this.btnBuscarDiario.Size = new System.Drawing.Size(149, 49);
             this.btnBuscarDiario.TabIndex = 2;
             this.btnBuscarDiario.Values.Text = "Recuperar Datos";
+            this.btnBuscarDiario.SizeChanged += new System.EventHandler(this.btnBuscarDiario_SizeChanged);
             this.btnBuscarDiario.Click += new System.EventHandler(this.btnBuscarDiario_Click);
             // 
             // kryptonPage1

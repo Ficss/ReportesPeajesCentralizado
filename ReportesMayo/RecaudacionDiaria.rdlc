@@ -122,6 +122,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>9</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
