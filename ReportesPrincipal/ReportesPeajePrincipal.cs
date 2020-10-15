@@ -31,8 +31,8 @@ namespace ReportesPrincipal
         {
             InitializeComponent();
             kryptonDateTimePicker1.MaxDate = DateTime.Now.AddDays(-1);
-            dtpInicialDetalle.MaxDate = DateTime.Now.AddDays(-1);
-            dtpFinalDetalle.MaxDate = DateTime.Now.AddDays(-1);
+            //dtpInicialDetalle.MaxDate = DateTime.Now.AddDays(-1);
+            //dtpFinalDetalle.MaxDate = DateTime.Now.AddDays(-1);
 
             DateTime today = DateTime.Today;
 
@@ -480,7 +480,7 @@ namespace ReportesPrincipal
             //dgvCierresZ.DataBind();
         }
         #endregion
-
+        #region Botón exportar excel
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
             var dia = new SaveFileDialog();
@@ -520,7 +520,7 @@ namespace ReportesPrincipal
                 MessageBox.Show($"Datos exportados exitósamente en: {dia.InitialDirectory}");
             }
         }
-
+        #endregion
         private void releaseObject(object obj)
         {
             try

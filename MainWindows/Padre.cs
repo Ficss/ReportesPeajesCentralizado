@@ -41,7 +41,7 @@ namespace MainWindows
             InitializeComponent();
             CheckForUpdate();
             string pc = Environment.MachineName;
-            if (pc.Equals("LSCHALKER-NTBK"))
+            if (pc.Equals("HRIQUELME-NTBK"))
             {
                 lblClientes.Visible = true;
                 lblCodigos.Visible = true;

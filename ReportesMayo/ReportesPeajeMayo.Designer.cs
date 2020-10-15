@@ -331,7 +331,7 @@
             this.kryptonPage9,
             this.kryptonPage10,
             this.kryptonPage11});
-            this.kryptonNavigator1.SelectedIndex = 7;
+            this.kryptonNavigator1.SelectedIndex = 10;
             this.kryptonNavigator1.Size = new System.Drawing.Size(1344, 692);
             this.kryptonNavigator1.TabIndex = 3;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -1412,6 +1412,7 @@
             this.btnExportarExcel.Size = new System.Drawing.Size(52, 52);
             this.btnExportarExcel.TabIndex = 4;
             this.btnExportarExcel.UseVisualStyleBackColor = false;
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
             // 
             // dtpMesCierreZ
             // 
