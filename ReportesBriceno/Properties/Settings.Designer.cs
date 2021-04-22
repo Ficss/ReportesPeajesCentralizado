@@ -12,7 +12,7 @@ namespace ReportesBriceno.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,8 @@ namespace ReportesBriceno.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.208;Initial Catalog=peajeM;Persist Security Info=True;User " +
-            "ID=sa;Password=Vegam123;Connect Timeout=1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.55;Initial Catalog=peajeBriceno;Persist Security Info=True;" +
+            "User ID=sa;Password=Vegam123;Connect Timeout=1")]
         public string peajeMConnectionString1 {
             get {
                 return ((string)(this["peajeMConnectionString1"]));

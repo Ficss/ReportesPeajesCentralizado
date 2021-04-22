@@ -244,9 +244,21 @@
       <Project>{7d534ead-2fb4-4144-be48-5469bfb413c8}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ReporteCajaDerecha\ReportesCajaDerecha.csproj">
+      <Project>{5f33acd9-e00f-4ab9-8bb0-c4ea0c4bb106}</Project>
+      <Name>ReportesCajaDerecha</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReporteCajaIzquierda\ReportesCajaIzquierda.csproj">
+      <Project>{667c7ed2-0a9c-41e6-8b60-a43374e420fa}</Project>
+      <Name>ReportesCajaIzquierda</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportesBriceno\ReportesBriceno.csproj">
       <Project>{26e27d22-44b2-4393-a6f4-c1a04d03ca20}</Project>
       <Name>ReportesBriceno</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportesCajaManual\ReportesCajaManual.csproj">
+      <Project>{6442232c-8e06-4579-8107-aaa30a68b4f5}</Project>
+      <Name>ReportesCajaManual</Name>
     </ProjectReference>
     <ProjectReference Include="..\ReportesManga\ReportesManga.csproj">
       <Project>{af97f5a7-99bc-4edd-be8c-fd8346cac252}</Project>
@@ -267,6 +279,10 @@
     <ProjectReference Include="..\ReportesPrincipal\ReportesPrincipal.csproj">
       <Project>{3d948815-8905-4cfc-88e8-7a4018611dd1}</Project>
       <Name>ReportesPrincipal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportesSantaIsabel\ReportesSantaIsabel.csproj">
+      <Project>{09b79fa6-4269-42f5-8902-7799c88ee94f}</Project>
+      <Name>ReportesSantaIsabel</Name>
     </ProjectReference>
     <ProjectReference Include="..\ReportesSitioCero\ReportesSitioCero.csproj">
       <Project>{a024337e-2e7e-4fab-af5f-d18174edd108}</Project>

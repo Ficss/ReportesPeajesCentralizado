@@ -12,7 +12,7 @@ namespace ReportesOrellaDos.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,8 @@ namespace ReportesOrellaDos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.214;Initial Catalog=OrellaDos;Persist Security Info=True;Us" +
-            "er ID=sa;Password=Vegam123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.57;Initial Catalog=peajeOrellaDos;Persist Security Info=Tru" +
+            "e;User ID=sa;Password=Vegam123")]
         public string OD {
             get {
                 return ((string)(this["OD"]));

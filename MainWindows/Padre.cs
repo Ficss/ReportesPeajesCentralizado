@@ -13,11 +13,12 @@ using Squirrel;
 using System.Net;
 using AccesoDatos;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Threading;
 using System.Configuration;
 using ReportesOrellaDos;
-
+using ReporteCajaDerecha;
+using ReporteCajaIzquierda;
+using ReportesSantaIsabel;
+using ReportesCajaManual;
 namespace MainWindows
 {
     public partial class Padre : KryptonForm
@@ -30,6 +31,10 @@ namespace MainWindows
         ReportesPeajeManga pma;
         ReportesPeajeSitioCero sc;
         ReportesPeajeOrellaDos pod;
+        ReportesCajaDerecha rcd;
+        ReportesCajaIzquierda rci;
+        ReportesCajaSantaIsabel rsi;
+        FormReportesCajaManual rcm;
         CodigosIngreso ci;
         RegistroClientes rc;
         AboutBox1 ab;
@@ -98,12 +103,12 @@ namespace MainWindows
         }
         #endregion
         #region Cambiar color de tema
-        private void kryptonLinkLabel4_LinkClicked(object sender, EventArgs e)
-        {
-            Random r = new Random();
-            int random = r.Next(0, 10);
-            kryptonManager1.GlobalPaletteMode = (PaletteModeManager)Convert.ToInt32(random);
-        }
+        //private void kryptonLinkLabel4_LinkClicked(object sender, EventArgs e)
+        //{
+        //    Random r = new Random();
+        //    int random = r.Next(0, 10);
+        //    kryptonManager1.GlobalPaletteMode = (PaletteModeManager)Convert.ToInt32(random);
+        //}
         #endregion
         #region Método de verificación de actualizaciones
         private async void CheckForUpdate()
@@ -296,6 +301,49 @@ namespace MainWindows
             sc.Activate();
         }
         #endregion
+        private void kryptonLinkLabel4_LinkClicked(object sender, EventArgs e)
+        {
+            rcd = ReportesCajaDerecha.Instance();
+            rcd.MdiParent = this;
+            rcd.WindowState = FormWindowState.Normal;
+            rcd.Show();
+            rcd.WindowState = FormWindowState.Maximized;
+            rcd.Show();
+            rcd.Activate();
+        }
+
+        private void kryptonLinkLabel8_LinkClicked(object sender, EventArgs e)
+        {
+            rci = ReportesCajaIzquierda.Instance();
+            rci.MdiParent = this;
+            rci.WindowState = FormWindowState.Normal;
+            rci.Show();
+            rci.WindowState = FormWindowState.Maximized;
+            rci.Show();
+            rci.Activate();
+        }
+
+        private void kryptonLinkLabel9_LinkClicked(object sender, EventArgs e)
+        {
+            rsi = ReportesCajaSantaIsabel.Instance();
+            rsi.MdiParent = this;
+            rsi.WindowState = FormWindowState.Normal;
+            rsi.Show();
+            rsi.WindowState = FormWindowState.Maximized;
+            rsi.Show();
+            rsi.Activate();
+        }
+
+        private void kryptonLinkLabel6_LinkClicked(object sender, EventArgs e)
+        {
+            rcm = FormReportesCajaManual.Instance();
+            rcm.MdiParent = this;
+            rcm.WindowState = FormWindowState.Normal;
+            rcm.Show();
+            rcm.WindowState = FormWindowState.Maximized;
+            rcm.Show();
+            rcm.Activate();
+        }
         #region Abrir formulario de registro códigos de ingreso
         private void lblCodigos_LinkClicked(object sender, EventArgs e)
         {
@@ -329,7 +377,7 @@ namespace MainWindows
             notificacionInicio.ShowBalloonTip(5000);
         }
         #endregion
-
+        #region MyRegion
         private void button2_Click(object sender, EventArgs e)
         {
             Principal();
@@ -358,6 +406,7 @@ namespace MainWindows
         {
             OrellaDos();
         }
+        #endregion
         #region Métodos para comprobar conexion y actualizar label - Peaje principal
         private void Principal()
         {
@@ -453,6 +502,7 @@ namespace MainWindows
                 kryptonLinkLabel2.Text = "Reportes peaje sitio cero - [No conectado]";
             }
         }
+
 
         #endregion
 
